@@ -1,0 +1,45 @@
+[
+   {
+      "id": 14,
+      "title": "Visit the Amazon Renewed Store",
+      "description": "Apple iPhone XS Max, 256GB, Gold - Unlocked (Renewed Premium)",
+      "newPrice": 469.89,
+      "oldPrice": 0,
+      "reviews": 12740,
+      "images": [
+         "https://m.media-amazon.com/images/I/618cA+Uah5L._AC_SX679_.jpg"
+      ]
+   },
+   {
+      "id": 15,
+      "title": "Visit the OnePlus Store",
+      "description": "OnePlus Nord N200 | 5G Unlocked Android Smartphone U.S Version | 6.49\" Full HD+LCD Screen | 90Hz Smooth Display | Large 5000mAh Battery | Fast Charging | 64GB Storage | Triple Camera,Blue Quantum",
+      "newPrice": 239.99,
+      "oldPrice": 0,
+      "reviews": 852,
+      "images": [
+         "https://m.media-amazon.com/images/I/71DCZOdq92S._AC_SX466_.jpg",
+         "https://m.media-amazon.com/images/I/71xFRmip0iS._AC_SX466_.jpg",
+         "https://m.media-amazon.com/images/I/610lPUsvJbS._AC_SX466_.jpg",
+         "https://m.media-amazon.com/images/I/61J2rvijhZS._AC_SX466_.jpg",
+         "https://m.media-amazon.com/images/I/71hCU6s3AWS._AC_SX466_.jpg",
+         "https://m.media-amazon.com/images/I/71sTYskG46S._AC_SX466_.jpg"
+      ]
+   },
+   {
+      "id": 16,
+      "title": "Visit the SAMSUNG Store",
+      "description": "SAMSUNG Galaxy S21 Ultra 5G Factory Unlocked Android Cell Phone 128GB US Version Smartphone Pro-Grade Camera 8K Video 108MP High Res, Phantom Black",
+      "newPrice": 1199.99,
+      "oldPrice": 0,
+      "reviews": 1941,
+      "images": [
+         "https://m.media-amazon.com/images/I/61O45C5qASL._AC_SX466_.jpg",
+         "https://m.media-amazon.com/images/I/61YXGi+bYgL._AC_SY741_.jpg",
+         "https://m.media-amazon.com/images/I/61q6TeoVo6L._AC_SY741_.jpg",
+         "https://m.media-amazon.com/images/I/61w+m0vSueL._AC_SY741_.jpg",
+         "https://m.media-amazon.com/images/I/91BG98VgvCL._AC_SY741_.jpg",
+         "https://m.media-amazon.com/images/I/91umLqj5x6L._AC_SY741_.jpg"
+      ]
+   }
+]

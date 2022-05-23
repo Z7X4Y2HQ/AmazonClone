@@ -1,0 +1,50 @@
+[
+   {
+      "id": 1,
+      "title": "Visit the ROCCAT Store",
+      "description": "ROCCAT Vulcan 122 Mechanical PC Tactile Gaming Keyboard, Titan Switch, AIMO RGB Backlit Lighting Per Key, Detachable Palm/Wrist Rest, Anodized Aluminum Top Plate, Full Size, White/Silver",
+      "newPrice": 99.99,
+      "oldPrice": 159.99,
+      "reviews": 1000,
+      "images": [
+         "https://m.media-amazon.com/images/I/819FcxSYcFL._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/71tugJnHWGL._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/81vUlvgkS5L._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/81Xh4I9ADsL._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/81Xh4I9ADsL._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/81SqY5MylhL._AC_SX679_.jpg"
+      ]
+   },
+   {
+      "id": 2,
+      "title": "Visit the Corsair Store",
+      "description": "CORSAIR K70 RGB TKL – Champion Series Tenkeyless Mechanical Gaming Keyboard - Cherry MX Speed Keyswitches - Durable Aluminum Frame - Per-Key RGB LED Backlighting - Detachable USB Type-C Cable",
+      "newPrice": 119.95,
+      "oldPrice": 299.99,
+      "reviews": 1500,
+      "images": [
+         "https://m.media-amazon.com/images/I/817DLnXqEYL._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/91-7BZYMV7L._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/9184F6kZVzL._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/81V4m+3Yq7L._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/91yqOO69DsL._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/91gEUOH83dL._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/91rwkr8+siL._AC_SX679_.jpg"
+      ]
+   },
+   {
+      "id": 3,
+      "title": "Visit the Meta Quest Store",
+      "description": "Meta Quest 2 — Advanced All-In-One Virtual Reality Headset — 256 GB",
+      "newPrice": 399.00,
+      "oldPrice": 0,
+      "reviews": 47446,
+      "images": [
+         "https://m.media-amazon.com/images/I/61tE7IcuLmL._SX522_.jpg",
+         "https://m.media-amazon.com/images/I/71zZSh0B4UL._SX522_.jpg",
+         "https://m.media-amazon.com/images/I/61SbF9h0MLL._SX522_.jpg",
+         "https://m.media-amazon.com/images/I/81fQRLqbeyL._SX522_.jpg",
+         "https://m.media-amazon.com/images/I/71aC4njSCGL._SX522_.jpg"
+      ]
+   }
+]

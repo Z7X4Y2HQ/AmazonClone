@@ -1,0 +1,47 @@
+[
+   {
+      "id": 11,
+      "title": "Visit the LG Store",
+      "description": "LG Gram 17Z95P Laptop 17\" Ultra-Lightweight, IPS, (2560 x 1600), Intel Evo 11th gen CORE i7 , 16GB RAM, 1TB SSD, Windows 11 Home, 80Wh Battery, Alexa Built-in, 2X USB-C, HDMI, USB-A – Black",
+      "newPrice": 1572.89,
+      "oldPrice": 555.68,
+      "reviews":  155,
+      "images": [
+         "https://m.media-amazon.com/images/I/71Qy5NSsbnL._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/71T5rozRC+L._AC_SL1500_.jpg",
+         "https://m.media-amazon.com/images/I/71kaHhmJtLL._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/617oOGCKQgL._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/71j2w7vSVSL._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/71u-EPK6-EL._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/71ge54axuEL._AC_SX679_.jpg"     
+      ]
+   },
+
+   {
+      "id": 12,
+      "title": "Visit the ASUS Store",
+      "description": "ASUS VivoBook 15 M515 Thin and Light Laptop, 15.6” IPS FHD Display, Windows 10 Home with Free Upgrade to Windows 11, AMD Ryzen 7 5700U, 8GB RAM, 512GB SSD, Fingerprint Reader, Slate Grey, M515UA-EB72",
+      "newPrice": 889.89,
+      "oldPrice": 225.68,
+      "reviews": 30880,
+      "images": [
+         "https://m.media-amazon.com/images/I/715kq+g7qLL._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/81nM32Xb11L._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/51rgaD9HwSL._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/61JF1lp-HKL._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/71GF6ibKkwL._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/71bzKR1IZkL._AC_SX679_.jpg"     
+      ]
+   },
+   {
+      "id": 13,
+      "title": "Visit the Amazon Renewed Store",
+      "description": "Apple iPhone 12 Pro Max, 128GB, Pacific Blue - Unlocked (Renewed Premium)",
+      "newPrice": 929.00,
+      "oldPrice": 225.68,
+      "reviews": 91,
+      "images": [
+         "https://m.media-amazon.com/images/I/71FuI8YvCNL._AC_SX679_.jpg"    
+      ]
+   }
+]

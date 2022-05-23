@@ -1,0 +1,143 @@
+[
+   {
+      "id": 12,
+      "title": "Visit the ASUS Store",
+      "description": "ASUS VivoBook 15 M515 Thin and Light Laptop, 15.6” IPS FHD Display, Windows 10 Home with Free Upgrade to Windows 11, AMD Ryzen 7 5700U, 8GB RAM, 512GB SSD, Fingerprint Reader, Slate Grey, M515UA-EB72",
+      "newPrice": 889.89,
+      "oldPrice": 225.68,
+      "reviews": 30880,
+      "images": [
+         "https://m.media-amazon.com/images/I/7189iXimfWL._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/716oDOEARJL._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/71J7ScSjhlL._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/71P2go8xdYL._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/717-6cnCAmL._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/81hf1300BkL._AC_SX679_.jpg"
+      ]
+   },
+   {
+      "id": 10,
+      "title": "Visit the HP Store",
+      "description": "HP Envy 17 Laptop, 11th Gen Intel Core i7-1165G7, 12 GB RAM, 1 TB SATA Hard Drive & 256 GB SSD Storage, 17.3-inch Full HD IPS Touchscreen, Windows 10 Home, HD Webcam, Audio by B&O (17-cg1010nr, 2021)",
+      "newPrice": 799.89,
+      "oldPrice": 455.68,
+      "reviews": 350760,
+      "images": [
+         "https://m.media-amazon.com/images/I/819zQmqyDcL._SX425_.jpg",
+         "https://m.media-amazon.com/images/I/917+DXeMHhL._SX425_.jpg",
+         "https://m.media-amazon.com/images/I/71fGRaM7sWL._SX522_.jpg",
+         "https://m.media-amazon.com/images/I/71mdRf1LrzL._SX522_.jpg",
+         "https://m.media-amazon.com/images/I/714pmLavQKL._SX522_.jpg",
+         "https://m.media-amazon.com/images/I/71qbRrelpcL._SX522_.jpg"
+      ]
+   },
+   {
+      "id": 13,
+      "title": "Visit the Amazon Renewed Store",
+      "description": "Apple iPhone 12 Pro Max, 128GB, Pacific Blue - Unlocked (Renewed Premium)",
+      "newPrice": 929.00,
+      "oldPrice": 225.68,
+      "reviews": 91,
+      "images": [
+         "https://m.media-amazon.com/images/I/617TJv0v73L._AC_SX466_.jpg",
+         "https://m.media-amazon.com/images/I/717ZJuaPaOS._AC_SX466_.jpg",
+         "https://m.media-amazon.com/images/I/81qL5BZT-0S._AC_SX466_.jpg",
+         "https://m.media-amazon.com/images/I/71CwKwQXgwS._AC_SX466_.jpg",
+         "https://m.media-amazon.com/images/I/71UDIIaEq2S._AC_SX466_.jpg",
+         "https://m.media-amazon.com/images/I/811jLotveMS._AC_SX466_.jpg"
+      ]
+   },
+   {
+      "id": 11,
+      "title": "Visit the Acer Store",
+      "description": "Acer Travelmate Spin P4, 14 Full HD Touch, Intel i5-1135G7, 8GB DDR4, 512GB NVMe SSD, Thunderbolt 4, Intel Wi-Fi 6 AX201, Rechargeable Active Stylus, Fingerprint Reader, Win 10 Pro, TMP414RN-51-54JZ",
+      "newPrice": 669.89,
+      "oldPrice": 555.68,
+      "reviews": 30760,
+      "images": [
+         "https://m.media-amazon.com/images/I/61-ODJrgv6L._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/61MxE93f37L._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/61MxE93f37L._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/6134OVOkraL._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/61x4rFwlYqL._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/61TJvJzazzL._AC_SX679_.jpg"
+      ]
+   },
+   {
+      "id": 1,
+      "title": "Visit the ROCCAT Store",
+      "description": "ROCCAT Vulcan 122 Mechanical PC Tactile Gaming Keyboard, Titan Switch, AIMO RGB Backlit Lighting Per Key, Detachable Palm/Wrist Rest, Anodized Aluminum Top Plate, Full Size, White/Silver",
+      "newPrice": 99.99,
+      "oldPrice": 159.99,
+      "reviews": 1000,
+      "images": [
+         "https://m.media-amazon.com/images/I/715kq+g7qLL._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/81nM32Xb11L._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/51rgaD9HwSL._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/61JF1lp-HKL._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/71GF6ibKkwL._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/71bzKR1IZkL._AC_SX679_.jpg"     
+      ]
+   },
+   {
+      "id": 16,
+      "title": "Visit the SAMSUNG Store",
+      "description": "SAMSUNG Galaxy S21 Ultra 5G Factory Unlocked Android Cell Phone 128GB US Version Smartphone Pro-Grade Camera 8K Video 108MP High Res, Phantom Black",
+      "newPrice": 1199.99,
+      "oldPrice": 0,
+      "reviews": 1941,
+      "images": [
+         "https://m.media-amazon.com/images/I/61O45C5qASL._AC_SX466_.jpg",
+         "https://m.media-amazon.com/images/I/61YXGi+bYgL._AC_SY741_.jpg",
+         "https://m.media-amazon.com/images/I/61q6TeoVo6L._AC_SY741_.jpg",
+         "https://m.media-amazon.com/images/I/61w+m0vSueL._AC_SY741_.jpg",
+         "https://m.media-amazon.com/images/I/91BG98VgvCL._AC_SY741_.jpg",
+         "https://m.media-amazon.com/images/I/91umLqj5x6L._AC_SY741_.jpg"
+      ]
+   },
+   {
+      "id": 7,
+      "title": "Visit the Razer Store",
+      "description": "Razer Blade 15 Gaming Laptop: NVIDIA GeForce RTX 3080 Ti - 12th Gen Intel 14-Core i9 CPU - 15.6” 4K UHD 144Hz - 32GB DDR5 RAM, 1TB PCIe SSD - Windows 11 - CNC Aluminum - Chroma RGB - Thunderbolt 4",
+      "newPrice": 3999.99,
+      "oldPrice": 245.68,
+      "reviews": 2124,
+      "images": [
+         "https://m.media-amazon.com/images/I/61tE7IcuLmL._SX522_.jpg",
+         "https://m.media-amazon.com/images/I/71zZSh0B4UL._SX522_.jpg",
+         "https://m.media-amazon.com/images/I/61SbF9h0MLL._SX522_.jpg",
+         "https://m.media-amazon.com/images/I/81fQRLqbeyL._SX522_.jpg",
+         "https://m.media-amazon.com/images/I/71aC4njSCGL._SX522_.jpg"
+      ]
+   },
+
+   {
+      "id": 8,
+      "title": "Visit the HP Store",
+      "description": "HP 24mh FHD Monitor - Computer Monitor with 23.8-Inch IPS Display (1080p) - Built-In Speakers and VESA Mounting - Height/Tilt Adjustment for Ergonomic Viewing - HDMI and DisplayPort - (1D0J9AA#ABA)",
+      "newPrice": 69.00,
+      "oldPrice": 0,
+      "reviews": 2124,
+      "images": [
+         "https://m.media-amazon.com/images/I/91fAU6mxFsL._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/81zsiJ+JnfL._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/81Tte45ADrL._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/918LKJhnCjL._AC_SX679_.jpg"
+      ]
+   },
+   {
+      "id": 9,
+      "title": "Visit the Nintendo Store",
+      "description": "Nintendo Switch – OLED Model w/ Neon Red & Neon Blue Joy-Con",
+      "newPrice": 365.90,
+      "oldPrice": 10.0,
+      "reviews": 12482,
+      "images": [
+         "https://m.media-amazon.com/images/I/61k5IJVYTUL._SX522_.jpg",
+         "https://m.media-amazon.com/images/I/51l0gLUlj9L._SX522_.jpg",
+         "https://m.media-amazon.com/images/I/61L1stOWmwL._SX522_.jpg",
+         "https://m.media-amazon.com/images/I/71iOm44AhlL._SX522_.jpg",
+         "https://m.media-amazon.com/images/I/71sdSc-FDUL._SX522_.jpg"
+      ]
+   }
+]

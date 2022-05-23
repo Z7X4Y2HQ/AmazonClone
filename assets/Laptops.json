@@ -1,0 +1,66 @@
+[
+   {
+      "id": 12,
+      "title": "Visit the ASUS Store",
+      "description": "ASUS VivoBook 15 M515 Thin and Light Laptop, 15.6” IPS FHD Display, Windows 10 Home with Free Upgrade to Windows 11, AMD Ryzen 7 5700U, 8GB RAM, 512GB SSD, Fingerprint Reader, Slate Grey, M515UA-EB72",
+      "newPrice": 889.89,
+      "oldPrice": 225.68,
+      "reviews": 30880,
+      "images": [
+         "https://m.media-amazon.com/images/I/715kq+g7qLL._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/81nM32Xb11L._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/51rgaD9HwSL._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/61JF1lp-HKL._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/71GF6ibKkwL._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/71bzKR1IZkL._AC_SX679_.jpg"     
+      ]
+   },
+   {
+      "id": 10,
+      "title": "Visit the HP Store",
+      "description": "HP Envy 17 Laptop, 11th Gen Intel Core i7-1165G7, 12 GB RAM, 1 TB SATA Hard Drive & 256 GB SSD Storage, 17.3-inch Full HD IPS Touchscreen, Windows 10 Home, HD Webcam, Audio by B&O (17-cg1010nr, 2021)",
+      "newPrice": 799.89,
+      "oldPrice": 455.68,
+      "reviews": 350760,
+      "images": [
+         "https://m.media-amazon.com/images/I/91uj92+DajL._AC_SX466_.jpg",
+         "https://m.media-amazon.com/images/I/81rrSkh79OS._AC_SX466_.jpg",
+         "https://m.media-amazon.com/images/I/8120cbdxTcS._AC_SX466_.jpg",
+         "https://m.media-amazon.com/images/I/81PRy4c30RS._AC_SX466_.jpg",
+         "https://m.media-amazon.com/images/I/71q2hrmGLzS._AC_SX466_.jpg",
+         "https://m.media-amazon.com/images/I/81KXgG7k-3S._AC_SX466_.jpg",
+         "https://m.media-amazon.com/images/I/81+DyGda7nS._AC_SX466_.jpg"
+      ]
+   },
+   {
+      "id": 11,
+      "title": "Visit the Acer Store",
+      "description": "Acer Travelmate Spin P4, 14 Full HD Touch, Intel i5-1135G7, 8GB DDR4, 512GB NVMe SSD, Thunderbolt 4, Intel Wi-Fi 6 AX201, Rechargeable Active Stylus, Fingerprint Reader, Win 10 Pro, TMP414RN-51-54JZ",
+      "newPrice": 669.89,
+      "oldPrice": 555.68,
+      "reviews": 30760,
+      "images": [
+         "https://m.media-amazon.com/images/I/71Qy5NSsbnL._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/71T5rozRC+L._AC_SL1500_.jpg",
+         "https://m.media-amazon.com/images/I/71j2w7vSVSL._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/71u-EPK6-EL._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/71ge54axuEL._AC_SX679_.jp"     
+      ]
+   },
+   {
+      "id": 9,
+      "title": "Visit the HP Store",
+      "description": "2021 HP 15.6 Thin Laptop, AMD 3050U, 8GB RAM 128GB SSD Webcam, 1-Year Office365, Wi-Fi, Dual Core up to 2.8 GHz, Windows 10 S, FHD Display, Google Classroom Zoom School Business Ready, ROKC Bundle",
+      "newPrice": 3899.89,
+      "oldPrice": 245.68,
+      "reviews": 35060,
+      "images": [
+         "https://m.media-amazon.com/images/I/617TJv0v73L._AC_SX466_.jpg",
+         "https://m.media-amazon.com/images/I/717ZJuaPaOS._AC_SX466_.jpg",
+         "https://m.media-amazon.com/images/I/81qL5BZT-0S._AC_SX466_.jpg",
+         "https://m.media-amazon.com/images/I/71CwKwQXgwS._AC_SX466_.jpg",
+         "https://m.media-amazon.com/images/I/71UDIIaEq2S._AC_SX466_.jpg",
+         "https://m.media-amazon.com/images/I/811jLotveMS._AC_SX466_.jpg"
+      ]
+   }
+]

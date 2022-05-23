@@ -1,0 +1,18 @@
+{
+  "expo": {
+    "name": "Navigation",
+    "slug": "Navigation",
+    "version": "1.0.0",
+    "sdkVersion": "44.0.0",
+    "androidNavigationBar": {
+      "backgroundColor": "#ffffff",
+      "barStyle": "dark-content"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "android": {
+      "package": "com.amazonn.clone"
+    }
+  }
+}
