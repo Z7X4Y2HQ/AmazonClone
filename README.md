@@ -1,4 +1,5 @@
 # AmazonClone
+CheckList of things that need to be done by the end of this Week, Hopefully
 - Recreate Settings Page with Pressable
 - Radio Buttons in the LoginScreen (Modify Checkbox Component)
 - Clean Code
