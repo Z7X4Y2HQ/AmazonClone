@@ -1,3 +1,4 @@
+#Amazon Clone
 - Recreate Settings Page with Pressable
 - Radio Buttons in the LoginScreen (Modify Checkbox Component)
 - Clean Code
