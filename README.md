@@ -16,5 +16,4 @@ CheckList of things that need to be done by the end of this Week, Hopefully
 - [ ] Add a Splash Screen and the Amazon Logo
 
 Link to try out the App on Expo Go: https://expo.dev/@z7x4y2hq/Navigation  
-OR  
-Try the APK: https://github.com/Z7X4Y2HQ/AmazonClone/releases
+Or Try the APK: https://github.com/Z7X4Y2HQ/AmazonClone/releases
