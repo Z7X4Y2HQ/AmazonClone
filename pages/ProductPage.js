@@ -1,4 +1,4 @@
-import { Animated, useWindowDimensions, Text, StyleSheet, ScrollView, Modal, View, Image, TouchableOpacity, Pressable } from 'react-native';
+import { Animated, Dimensions, useWindowDimensions, Text, StyleSheet, ScrollView, Modal, View, Image, TouchableOpacity, Pressable } from 'react-native';
 import { useState, useRef} from 'react';
 import { Searchbar } from 'react-native-paper';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -6,6 +6,9 @@ import BottomMenu from '../Components/BottomNavigationMenu'
 import { Entypo, Foundation, SimpleLineIcons, FontAwesome, EvilIcons, AntDesign} from '@expo/vector-icons';
 import Checkbox from 'expo-checkbox';
 import Divider from '../Components/Divider';
+
+const {width} = Dimensions.get("window");
+const height = width/2 ;
 
 export default function ProductPage({ route, navigation }) {
 
@@ -26,8 +29,9 @@ export default function ProductPage({ route, navigation }) {
   return (
     <View style={{ flex: 1 }}>
       <Modal animationType="fade" transparent={true} visible={modalVisible} onRequestClose={() => {setModalVisible(!modalVisible);}}>
-          <Pressable onPress={() => setModalVisible(!modalVisible)} style={{flex:1, backgroundColor: 'rgba(0, 0, 0, 0.5)'}}>
-            <View style={{flex: 1, marginVertical:254, margin: 110, backgroundColor: '#f1f1f1',  borderRadius: 10}}>
+          <Pressable onPress={() => setModalVisible(!modalVisible)} style={{flex:1, alignItems: 'center', backgroundColor: 'rgba(0, 0, 0, 0.5)'}}>
+            <View style={{flex: 2}}></View>
+            <View style={{flex: 1.39, width: width/2.5, backgroundColor: '#f1f1f1',  borderRadius: 10}}>
               <Pressable onPress={() => setModalVisible(true)} style={{flex:1}}>
                 <View style={{flex:1, padding: 10, paddingHorizontal: 20, justifyContent: "space-between", alignItems: "flex-start", flexDirection: 'row'}}>
                   <Text style={{fontWeight: 'bold'}}>Qty:</Text>
@@ -48,6 +52,7 @@ export default function ProductPage({ route, navigation }) {
                 </Pressable>
               </View>
             </View>
+            <View style={{flex:2}}></View>
           </Pressable>
       </Modal>
       <View style={{ flex: 14, flexDirection: 'row', alignItems: 'flex-start' }}>
