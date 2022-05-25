@@ -12,3 +12,4 @@ CheckList of things that need to be done by the end of this Week, Hopefully
 - [ ] Try [react-native-mmkv-storage](https://github.com/ammarahm-ed/react-native-mmkv-storage) for localStorage
 - [ ] Better Product Page Based off of the New JSON File (IF There is)
 - [ ] Fix ProductPage Qty Modal
+- [ ] Rename Project from Navigation to Amazon Clone
