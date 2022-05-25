@@ -13,3 +13,8 @@ CheckList of things that need to be done by the end of this Week, Hopefully
 - [ ] Better Product Page Based off of the New JSON File (IF There is)
 - [ ] Fix ProductPage Qty Modal
 - [ ] Rename Project from Navigation to Amazon Clone
+- [ ] Add a Splash Screen and the Amazon Logo
+
+Link to try out the App on Expo Go: https://expo.dev/@z7x4y2hq/Navigation 
+OR
+Try the APK: https://github.com/Z7X4Y2HQ/AmazonClone/releases
