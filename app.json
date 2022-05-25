@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "Navigation",
-    "slug": "Navigation",
+    "name": "AmazonClone",
+    "slug": "AmazonClone",
     "version": "1.0.0",
     "sdkVersion": "44.0.0",
-    "androidNavigationBar": {
+    "androidAmazonCloneBar": {
       "backgroundColor": "#ffffff",
       "barStyle": "dark-content"
     },

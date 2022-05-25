@@ -1,4 +1,4 @@
-package com.navigation;
+package com.clone.amazon;
 
 import android.os.Build;
 import android.os.Bundle;
