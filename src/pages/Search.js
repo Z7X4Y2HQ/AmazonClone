@@ -6,13 +6,13 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 export default function Search({navigation}){
   
-  const _input = useRef();
+  const searchBar = useRef();
 
   useEffect(() => {
     setTimeout(() => {
-      _input.current.focus();
+      searchBar.current.focus();
     }, 1);
-  }); 
+  });
 
   return(
     <View style={{flex:1}}>
@@ -23,7 +23,7 @@ export default function Search({navigation}){
                 <Pressable style={{marginTop:22}} onPress={() => navigation.goBack()}>
                   {({ pressed }) => (<AntDesign style={{ color: pressed ? '#008298' : 'black'}} name="arrowleft" size={24} color="black" />)}
                 </Pressable>
-                <Searchbar ref={_input} style={{flex: 9, margin: 9, borderRadius: 7}} iconColor="black" placeholder="Search Amazon" />
+                <Searchbar ref={searchBar} style={{flex: 9, margin: 9, borderRadius: 7}} iconColor="black" placeholder="Search Amazon" />
               </View>
             </LinearGradient>
           </View>

@@ -51,7 +51,6 @@ export default function HomeScreen({ navigation }) {
                 ))
               }
             </ScrollView>
-            {/* <LinearGradient colors={["transparent", "#ced5d5", "#d4dbdb"]} locations={[0,2,2]} style={{elevation: 25, backgroundColor: "transparent", position: "absolute", top: 0, bottom: 2460, left: 0, right: 0}}></LinearGradient> */}
             <ScrollView style={{elevation:300, position: 'absolute', top: 280,width}} showsHorizontalScrollIndicator={false} horizontal>
                 {
                 headerOver.map((image, index) => (
@@ -95,7 +94,7 @@ export default function HomeScreen({ navigation }) {
               <Text style={{ marginHorizontal: 16, marginTop: 16, fontSize: 18}}>
                 Laptops
               </Text>
-              <FlatList data={Laptops} renderItem={({ item }) => (
+              <FlatList data={Laptops} numColumns={2} renderItem={({ item }) => (
                 <View style={{flex: 1, justifyContent: "center", alignItems: "center"}}>
                   <TouchableOpacity onPress={() => {navigation.push("ProductPage", item)}}>
                     <View style={{backgroundColor: "white", height: 200, width: 200, justifyContent: "center", alignItems: "center"}}>
@@ -103,9 +102,7 @@ export default function HomeScreen({ navigation }) {
                     </View>
                   </TouchableOpacity>
                 </View>
-              )}
-              numColumns={2}
-              />
+              )}/>
             </View>
             <View style={{borderTopWidth: 4, borderColor: '#e3e5e4'}}></View>
             <View style={{backgroundColor: "white"}}>
@@ -136,7 +133,7 @@ export default function HomeScreen({ navigation }) {
               <Text style={{ marginHorizontal: 16, marginTop: 16, fontSize: 18}}>
                 Modern use electonics
               </Text>
-              <FlatList data={data} renderItem={({ item }) => (
+              <FlatList data={data} numColumns={3} renderItem={({ item }) => (
                 <View style={{flex: 1, justifyContent: "center", alignItems: "center"}}>
                   <TouchableOpacity onPress={() => {navigation.push("ProductPage", item)}}>
                     <View style={{backgroundColor: "white", height: 130, width: 130, justifyContent: "center", alignItems: "center"}}>
@@ -144,9 +141,7 @@ export default function HomeScreen({ navigation }) {
                     </View>
                   </TouchableOpacity>
                 </View>
-              )}
-              numColumns={3}
-              />
+              )}/>
             </View>
             <View style={{borderTopWidth: 4, borderColor: '#e3e5e4'}}></View>
             <View style={{backgroundColor: "white"}}>

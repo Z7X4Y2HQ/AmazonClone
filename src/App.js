@@ -10,7 +10,6 @@ import ProductPage from './pages/ProductPage';
 import ListScreen from './pages/List';
 import Account from './pages/Account';
 
-
 const Stack = createNativeStackNavigator();
 
 export default () => {
