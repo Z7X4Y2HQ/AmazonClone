@@ -6,7 +6,7 @@ export default BottomMenu = ({navigation}) => (
     
     <View style={styles.BottomMenu}>
             <Pressable onPress={() => navigation.push('Home')}>
-              {({ pressed }) => ( <AntDesign style={{ color: pressed ? '#008298' : '#black', margin: 8}} name="home" size={26} color="black" />)}
+              {({ pressed }) => ( <AntDesign style={{ color: pressed ? '#008298' : 'black', margin: 8}} name="home" size={26} color="black" />)}
             </Pressable>
             <Pressable onPress={() => navigation.push('Account')}>
               {({ pressed }) => (

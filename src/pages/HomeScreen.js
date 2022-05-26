@@ -1,9 +1,8 @@
-import { Text, FlatList, StyleSheet, View, TouchableOpacity, Dimensions, Image, ScrollView } from 'react-native';
+import { Text, FlatList, Pressable, StyleSheet, View, TouchableOpacity, Dimensions, Image, ScrollView } from 'react-native';
 import { SimpleLineIcons } from '@expo/vector-icons';
 import BottomMenu from '../Components/BottomNavigationMenu'
 import { Searchbar } from 'react-native-paper';
 import { LinearGradient } from 'expo-linear-gradient';
-import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
 import Productsdata from '../assets/FakeData.json' 
 import data from '../assets/random.json' 
 import Laptops from '../assets/Laptops.json'

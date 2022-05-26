@@ -1,4 +1,4 @@
-import { Text, View, StyleSheet, ScrollView, TouchableOpacity } from "react-native";
+import { Text, View, Pressable, StyleSheet, ScrollView, TouchableOpacity } from "react-native";
 import { Searchbar } from 'react-native-paper';
 import { LinearGradient } from 'expo-linear-gradient';
 import { List } from "react-native-paper";
@@ -7,7 +7,7 @@ import React, { useState } from "react";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import Feather from "react-native-vector-icons/Feather";
 import AntDesign from "react-native-vector-icons/AntDesign";
-import Pressable from "react-native/Libraries/Components/Pressable/Pressable";
+
 
 export default function Settings({ navigation }) {
   const [expanded, setExpanded] = useState(true);
