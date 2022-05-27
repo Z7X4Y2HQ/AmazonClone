@@ -1,8 +1,8 @@
-import { ScrollView, Text, Image, StyleSheet, TextInput, View, Pressable } from 'react-native';
 import React from 'react'
-import { AntDesign } from '@expo/vector-icons';
+import { ScrollView, Text, Image, StyleSheet, TextInput, View, Pressable } from 'react-native';
 import Checkbox from "expo-checkbox";
 import { LinearGradient } from "expo-linear-gradient";
+import { AntDesign } from '@expo/vector-icons';
 
 
 export default function LoginScreen({ navigation }) {
@@ -31,7 +31,7 @@ export default function LoginScreen({ navigation }) {
       >
         <Image
           style={{ height: 33, width: 95 }}
-          source={require("../assets/amazon_black.png")}
+          source={require("../assets/Images/amazon_black.png")}
         ></Image>
       </View>
       <Text

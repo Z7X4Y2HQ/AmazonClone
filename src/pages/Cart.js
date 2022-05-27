@@ -1,20 +1,27 @@
+import React, { useContext, useEffect } from "react";
 import { Text, ScrollView, StyleSheet, View, Image, Pressable } from "react-native";
 import { Searchbar } from 'react-native-paper';
 import { LinearGradient } from 'expo-linear-gradient';
-import BottomMenu from '../Components/BottomNavigationMenu'
-import React, { Component } from "react";
 import { SimpleLineIcons } from '@expo/vector-icons';
 
+import BottomMenu from '../Components/BottomNavigationMenu'
+import TopSearchBar from "../Components/TopSearchBar";
+
+import { NavBarContext } from "../Contexts/NavBarContext";
+
+
 export default function Cart({ navigation }) {
+  const {currentScreen, checkCurrentScreen} = useContext(NavBarContext);
+
+  useEffect(()=> {
+    checkCurrentScreen("Cart")
+  })
+
   return (
     <View style={{ flex: 1, backgroundColor: 'white' }}>
       <View style={{ flex: 14, flexDirection: 'row', alignItems: 'flex-start' }}>
         <View style={{ flex: 1 }}>
-          <LinearGradient start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} colors={['#81d8e3', '#93dfd9', '#a5e7cf']}>
-            <View style={{ flexDirection: 'row', paddingLeft: 5, paddingRight: 6, paddingTop: 24 }}>
-              <Searchbar onPressIn={() => navigation.push('Search')} style={{ flex: 9, margin: 9, borderRadius: 7 }} iconColor="black" placeholder="Search Amazon" />
-            </View>
-          </LinearGradient>
+          <TopSearchBar navigation={navigation}/>
           <ScrollView>
           <LinearGradient style={{padding:10, justifyContent: 'center'}} start={{x: 0, y: 0}} end={{x: 1, y: 0}}  colors={['#b6e8f0', '#bfece8', '#caf0e1']}>
               <View style={{flex:1, flexDirection: 'row'}}>
@@ -46,7 +53,7 @@ export default function Cart({ navigation }) {
                     width: 300,
                     resizeMode: "center",
                   }}
-                  source={require("../assets/cart.png")}
+                  source={require("../assets/Images/cart.png")}
                 ></Image>
               </View>
               <View style={{ alignItems: "center"  }}>

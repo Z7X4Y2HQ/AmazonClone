@@ -1,11 +1,13 @@
+import { useState, useRef  } from 'react';
 import { Animated, Dimensions, useWindowDimensions, Text, StyleSheet, ScrollView, Modal, View, Image, TouchableOpacity, Pressable } from 'react-native';
-import { useState, useRef} from 'react';
 import { Searchbar } from 'react-native-paper';
 import { LinearGradient } from 'expo-linear-gradient';
-import BottomMenu from '../Components/BottomNavigationMenu'
-import { Entypo, Foundation, SimpleLineIcons, FontAwesome, EvilIcons, AntDesign} from '@expo/vector-icons';
+import { Entypo, Foundation, SimpleLineIcons, FontAwesome, EvilIcons, AntDesign } from '@expo/vector-icons';
 import Checkbox from 'expo-checkbox';
+
+import BottomMenu from '../Components/BottomNavigationMenu'
 import Divider from '../Components/Divider';
+import LocationIndicator from '../Components/LocationIndicator';
 
 const {width} = Dimensions.get("window");
 const height = width/2 ;
@@ -59,19 +61,14 @@ export default function ProductPage({ route, navigation }) {
         <View style={{ flex: 1 }}>
           <LinearGradient start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} colors={['#81d8e3', '#93dfd9', '#a5e7cf']}>
             <View style={{ flexDirection: 'row', paddingLeft: 5, paddingRight: 6, paddingTop: 24 }}>
-                <Pressable style={{marginTop:22}} onPress={() => navigation.goBack()}>
+                <Pressable style={{marginTop:22, paddingHorizontal: 8}} onPress={() => navigation.goBack()}>
                   {({ pressed }) => (<AntDesign style={{ color: pressed ? '#008298' : 'black'}} name="arrowleft" size={24} color="black" />)}
                 </Pressable>
               <Searchbar onPressIn={() => navigation.push('Search')} style={{ flex: 9, margin: 9, borderRadius: 7 }} iconColor="black" placeholder="Search Amazon" />
             </View>
           </LinearGradient>
           <ScrollView style={{flex: 1}}>
-            <LinearGradient style={{padding:10, justifyContent: 'center'}} start={{x: 0, y: 0}} end={{x: 1, y: 0}}  colors={['#b6e8f0', '#bfece8', '#caf0e1']}>
-              <View style={{flex:1, flexDirection: 'row'}}>
-                <SimpleLineIcons style={{paddingLeft:4}} name="location-pin" size={16} color="black" /> 
-                <Text style={{fontSize:12}}> Deliver to Pakistan</Text>
-              </View>
-            </LinearGradient>
+            <LocationIndicator />
             <View style={{flex:1,backgroundColor: 'white', flexDirection: 'row', padding: 4, justifyContent: 'space-between' ,alignItems: 'center', paddingHorizontal: 14}}>
              <Pressable>
                 <Text style={{color: '#046f84', fontSize: 12}}>

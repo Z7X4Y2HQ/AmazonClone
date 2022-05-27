@@ -1,17 +1,20 @@
+import React, { useContext, useEffect } from "react";
+import { Text, View, StyleSheet, Pressable, Image, ScrollView } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import Feather from "react-native-vector-icons/Feather";
-import {
-    Text,
-    View,
-    StyleSheet,
-    Pressable,
-    Image,
-    ScrollView,
-} from "react-native";
-import React from "react";
+
 import BottomMenu from '../Components/BottomNavigationMenu'
 
+import { NavBarContext } from "../Contexts/NavBarContext";
+
 export default function Account({ navigation }) {
+    const {currentScreen, checkCurrentScreen} = useContext(NavBarContext);
+
+    useEffect(()=> {
+      checkCurrentScreen("Account")
+    })
+  
+
     return (
         <View style={{ flex: 1, backgroundColor: 'white'}}>
             <View style={{ flex: 14, flexDirection: 'row', alignItems: 'flex-start' }}>
@@ -32,7 +35,7 @@ export default function Account({ navigation }) {
                             <View style={{ alignItems: "center" }}>
                                 <Image
                                     style={{ height: 30, width: 100 }}
-                                    source={require("../assets/amazon_black.png")}
+                                    source={require("../assets/Images/amazon_black.png")}
                                 ></Image>
                             </View>
 
@@ -123,7 +126,7 @@ export default function Account({ navigation }) {
                                             marginVertical: 22,
                                             marginLeft: 20,
                                         }}
-                                        source={require("../assets/deliverybox.png")}
+                                        source={require("../assets/Images/deliverybox.png")}
                                     ></Image>
 
                                     <Image
@@ -133,7 +136,7 @@ export default function Account({ navigation }) {
                                             marginVertical: 22,
                                             marginLeft: 20,
                                         }}
-                                        source={require("../assets/shoppingbag.png")}
+                                        source={require("../assets/Images/shoppingbag.png")}
                                     ></Image>
 
                                     <Image
@@ -143,7 +146,7 @@ export default function Account({ navigation }) {
                                             marginVertical: 22,
                                             marginLeft: 20,
                                         }}
-                                        source={require("../assets/checklist.png")}
+                                        source={require("../assets/Images/checklist.png")}
                                     ></Image>
 
                                 </View>

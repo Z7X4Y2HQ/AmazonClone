@@ -1,28 +1,31 @@
+import React, { useState, useContext, useEffect } from "react";
 import { Text, View, Pressable, StyleSheet, ScrollView, TouchableOpacity } from "react-native";
 import { Searchbar } from 'react-native-paper';
 import { LinearGradient } from 'expo-linear-gradient';
 import { List } from "react-native-paper";
-import BottomMenu from '../Components/BottomNavigationMenu'
-import React, { useState } from "react";
-import FontAwesome from "react-native-vector-icons/FontAwesome";
-import Feather from "react-native-vector-icons/Feather";
-import AntDesign from "react-native-vector-icons/AntDesign";
+import { FontAwesome, Feather, AntDesign} from '@expo/vector-icons';
 
+import BottomMenu from '../Components/BottomNavigationMenu'
+import TopSearchBar from "../Components/TopSearchBar";
+
+import { NavBarContext } from "../Contexts/NavBarContext";
 
 export default function Settings({ navigation }) {
   const [expanded, setExpanded] = useState(true);
   const [expanded1, setExpanded1] = useState(true);
   const [expanded2, setExpanded2] = useState(true);
 
+  const {currentScreen, checkCurrentScreen} = useContext(NavBarContext);
+
+  useEffect(()=> {
+    checkCurrentScreen("Settings")
+  })
+
   return (
     <View style={{ flex: 1 }}>
       <View style={{ flex: 14, flexDirection: 'row', alignItems: 'flex-start' }}>
         <View style={{ flex: 1 }}>
-          <LinearGradient start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} colors={['#81d8e3', '#93dfd9', '#a5e7cf']}>
-            <View style={{ flexDirection: 'row', paddingLeft: 6, paddingRight: 6, paddingTop: 24 }}>
-              <Searchbar onPressIn={() => navigation.push('Search')} style={{ flex: 9, margin: 9, borderRadius: 7 }} iconColor="black" placeholder="Search Amazon" />
-            </View>
-          </LinearGradient>
+          <TopSearchBar navigation={navigation}/> 
           <LinearGradient
             style={{ flex: 1 }}
             start={{ x: 0, y: 1 }}

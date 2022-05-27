@@ -1,9 +1,11 @@
-import { FlatList, StyleSheet, ScrollView, TouchableOpacity, Pressable, Text, View } from 'react-native';
 import { useState } from 'react';
+import { FlatList, StyleSheet, ScrollView, TouchableOpacity, Pressable, Text, View } from 'react-native';
 import { Searchbar } from 'react-native-paper';
 import { LinearGradient } from 'expo-linear-gradient';
-import Productsdata from '../assets/data'
 import { AntDesign, FontAwesome } from '@expo/vector-icons';
+
+import Productsdata from '../assets/Data/data.json'
+
 import BottomMenu from '../Components/BottomNavigationMenu'
 import CardComponet from '../Components/CardComponet'
 
@@ -32,7 +34,7 @@ export default function ListScreen({ navigation }) {
           <View style={{flex:1}}>
             <LinearGradient start={{x: 0, y: 0}} end={{x: 1, y: 0}}  colors={['#81d8e3', '#93dfd9', '#a5e7cf']}>
               <View style={{flexDirection: 'row', paddingLeft: 5, paddingRight: 6, paddingTop: 24}}>
-                <Pressable style={{marginTop:22}} onPress={() => navigation.goBack()}>
+                <Pressable style={{marginTop:22, paddingHorizontal: 8}} onPress={() => navigation.goBack()}>
                   {({ pressed }) => (<AntDesign style={{ color: pressed ? '#008298' : 'black'}} name="arrowleft" size={24} color="black" />)}
                 </Pressable>
                 <Searchbar onPressIn={() => navigation.push('Search')} style={{flex: 9, margin: 9, borderRadius: 7}} iconColor="black" placeholder="Search Amazon" />
