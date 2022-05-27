@@ -15,12 +15,12 @@ import { NavBarContext } from './Contexts/NavBarContext';
 export default () => {
 
   const Stack = createNativeStackNavigator();
-  const [currentScreen, checkCurrentScreen] = useState("Home")
+  const [currentScreen, setCurrentScreen] = useState("Home")
   
   return (
     <View style={{flex:8}}>
       <NavigationContainer>
-        <NavBarContext.Provider value={{currentScreen, checkCurrentScreen}}>
+        <NavBarContext.Provider value={{currentScreen, setCurrentScreen}}>
           <Stack.Navigator initialRouteName="Home" screenOptions={{headerShown: false}}>
             <Stack.Screen name="Home" component={HomeScreen}/>
             <Stack.Screen name="LoginScreen" component={LoginScreen} />

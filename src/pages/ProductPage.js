@@ -144,8 +144,7 @@ export default function ProductPage({ route, navigation }) {
                     <Text>Operating System: {isExpanded && <Text style={{fontWeight: 'bold'}}> Win 11</Text>} {!isExpanded && <Text style={{fontWeight: 'bold', lineHeight:23}}>{'\n'}Win 11</Text>}</Text>
                   </View>
                   <View style={{flex:1, flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
-                    {!isExpanded && <AntDesign name="down" size={20} color="black" />}
-                    {isExpanded && <AntDesign name="up" size={20} color="black" />}
+                    <AntDesign name={isExpanded ? "up" : "down"} size={20} color="black" />
                   </View>
                 </View>
               </Pressable>

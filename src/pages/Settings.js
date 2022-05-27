@@ -15,11 +15,11 @@ export default function Settings({ navigation }) {
   const [expanded1, setExpanded1] = useState(true);
   const [expanded2, setExpanded2] = useState(true);
 
-  const {currentScreen, checkCurrentScreen} = useContext(NavBarContext);
+  const { setCurrentScreen } = useContext(NavBarContext);
 
   useEffect(()=> {
-    checkCurrentScreen("Settings")
-  })
+    setCurrentScreen("Settings")
+  }, [])
 
   return (
     <View style={{ flex: 1 }}>

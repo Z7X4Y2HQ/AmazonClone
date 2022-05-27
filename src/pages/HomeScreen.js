@@ -37,11 +37,11 @@ const headerOver = [
 
 export default function HomeScreen({ navigation }) {
 
-  const { currentScreen, checkCurrentScreen } = useContext(NavBarContext);
+  const { setCurrentScreen } = useContext(NavBarContext);
 
   useEffect(() => {
-    checkCurrentScreen("Home")
-  })
+    setCurrentScreen("Home")
+  }, [])
 
   return (
     <View style={styles.singleFlex}>

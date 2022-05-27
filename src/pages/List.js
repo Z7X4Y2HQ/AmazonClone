@@ -81,20 +81,14 @@ export default function ListScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   main: {
-    flex: 1,
-    // backgroundColor:'grey',
+    flex: 1
   },
   search: {
-    // marginTop: 5,
-    // marginRight:20,
-    // marginBottom:0.5,
     backgroundColor: "#85dae1",
-    paddingVertical: 8,
-    // backgroundColor:'blue',
+    paddingVertical: 8
   },
   filt: {
-    flex: 0.7,
-    // backgroundColor:'red'
+    flex: 0.7
   },
   flatlist: {
     flex: 5,
@@ -102,19 +96,18 @@ const styles = StyleSheet.create({
   bar: {
     borderWidth: 0.5,
     borderColor: "#008298",
-    // backgroundColor:'grey',
     width: "100%",
     flex: 0.7,
     marginVertical: 0,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-evenly",
-    paddingVertical: 18,
+    paddingVertical: 18
   },
   filterbutton: {
     borderLeftWidth: 1,
     paddingHorizontal: 14,
     borderRightWidth: 1,
-    color: "#008298",
+    color: "#008298"
   },
 });
