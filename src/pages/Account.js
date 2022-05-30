@@ -9,11 +9,11 @@ import { NavBarContext } from "../Contexts/NavBarContext";
 
 export default function Account({ navigation }) {
 
-    const { setCurrentScreen } = useContext(NavBarContext);
+    // const { setCurrentScreen } = useContext(NavBarContext);
 
-    useEffect(() => {
-        setCurrentScreen("Account")
-    }, [])
+    // useEffect(() => {
+    //     setCurrentScreen("Account")
+    // }, [])
 
     return (
         <View style={styles.mainContainer}>
@@ -25,10 +25,10 @@ export default function Account({ navigation }) {
                                 source={require("../assets/Images/amazon_black.png")}></Image>
                         </View>
                         <View style={{ flexDirection: "row" }}>
-                            <Pressable onPress={() => navigation.push('LoginScreen')}>
+                            <Pressable onPress={() => navigation.navigate('LoginScreen')}>
                                 <Feather style={{ paddingRight: 20 }} name="bell" size={24} />
                             </Pressable>
-                            <Pressable onPress={() => navigation.push('Search')}>
+                            <Pressable onPress={() => navigation.navigate('Search')}>
                                 <Feather style={{ paddingRight: 10 }} name="search" size={24} />
                             </Pressable>
                         </View>
@@ -42,10 +42,10 @@ export default function Account({ navigation }) {
                             </View>
                         </LinearGradient>
                         <View style={{ alignItems: "center" }}>
-                            <Pressable onPress={() => navigation.push('LoginScreen')} style={[styles.button, {marginBottom: 15}]}>
+                            <Pressable onPress={() => navigation.navigate('LoginScreen')} style={[styles.button, {marginBottom: 15}]}>
                                 <Text>Sign In</Text>
                             </Pressable>
-                            <Pressable onPress={() => navigation.push('LoginScreen')} style={styles.button}>
+                            <Pressable onPress={() => navigation.navigate('LoginScreen')} style={styles.button}>
                                 <Text>Create Account</Text>
                             </Pressable>
                         </View>

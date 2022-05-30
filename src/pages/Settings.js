@@ -1,13 +1,11 @@
 import React, { useState, useContext, useEffect } from "react";
 import { Text, View, Pressable, StyleSheet, ScrollView, TouchableOpacity } from "react-native";
-import { Searchbar } from 'react-native-paper';
 import { LinearGradient } from 'expo-linear-gradient';
 import { List } from "react-native-paper";
 import { FontAwesome, Feather, AntDesign} from '@expo/vector-icons';
 
 import BottomMenu from '../Components/BottomNavigationMenu'
-import TopSearchBar from "../Components/TopSearchBar";
-
+import SearchBar from "../Components/SearchBar";
 import { NavBarContext } from "../Contexts/NavBarContext";
 
 export default function Settings({ navigation }) {
@@ -15,17 +13,11 @@ export default function Settings({ navigation }) {
   const [expanded1, setExpanded1] = useState(true);
   const [expanded2, setExpanded2] = useState(true);
 
-  const { setCurrentScreen } = useContext(NavBarContext);
-
-  useEffect(()=> {
-    setCurrentScreen("Settings")
-  }, [])
-
   return (
     <View style={{ flex: 1 }}>
       <View style={{ flex: 14, flexDirection: 'row', alignItems: 'flex-start' }}>
         <View style={{ flex: 1 }}>
-          <TopSearchBar navigation={navigation}/> 
+          <SearchBar navigation={navigation}/> 
           <LinearGradient
             style={{ flex: 1 }}
             start={{ x: 0, y: 1 }}
@@ -159,7 +151,7 @@ export default function Settings({ navigation }) {
                     // backgroundColor: "red",
                   }}
                 >
-                  <TouchableOpacity onPress={()=>{navigation.push('LoginScreen')}}>
+                  <TouchableOpacity onPress={()=>{navigation.navigate('LoginScreen')}}>
                     <View
                       style={{
                         backgroundColor: "white",
@@ -190,22 +182,22 @@ export default function Settings({ navigation }) {
       <View style={{backgroundColor: 'rgba(226,234,234,100)', height:6, borderBottomLeftRadius: 0, borderBottomRightRadius:0, borderRadius: 10, flexDirection: 'row', justifyContent: 'center'}}></View>
       <View style={{backgroundColor: 'rgba(226,234,234,100)', flexDirection: 'row', justifyContent: 'center'}}>
       <View style={{backgroundColor: 'white', paddingTop: 25, width: '100%', borderTopRightRadius:20, borderTopLeftRadius: 20, flexDirection: 'row', justifyContent: 'center'}}>
-        <Pressable onPress={()=>{navigation.push('LoginScreen')}}>
+        <Pressable onPress={()=>{navigation.navigate('LoginScreen')}}>
           <View style={{marginHorizontal: 3, paddingHorizontal:12, borderColor: '#d9dcdc', borderWidth: 1, padding: 8, borderRadius: 10, marginBottom:10}} >
             <Text>Orders</Text>
           </View>
         </Pressable>
-        <Pressable onPress={()=>{navigation.push('LoginScreen')}}>
+        <Pressable onPress={()=>{navigation.navigate('LoginScreen')}}>
           <View style={{marginHorizontal: 3, paddingHorizontal:12, borderColor: '#d9dcdc', borderWidth: 1, padding: 8, borderRadius: 10, marginBottom:10}} >
             <Text>Buy Again</Text>
           </View>
         </Pressable>
-        <Pressable onPress={()=>{navigation.push('LoginScreen')}}>
+        <Pressable onPress={()=>{navigation.navigate('LoginScreen')}}>
           <View style={{marginHorizontal: 3, paddingHorizontal:12, borderColor: '#d9dcdc', borderWidth: 1, padding: 8, borderRadius: 10, marginBottom:10}} >
             <Text>Account</Text>
           </View>
         </Pressable>
-        <Pressable onPress={()=>{navigation.push('LoginScreen')}}>
+        <Pressable onPress={()=>{navigation.navigate('LoginScreen')}}>
           <View style={{marginHorizontal: 3, paddingHorizontal:12, borderColor: '#d9dcdc', borderWidth: 1, padding: 8, borderRadius: 10, marginBottom:10}} >
             <Text>lists</Text>
           </View>

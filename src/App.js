@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -15,12 +15,14 @@ import { NavBarContext } from './Contexts/NavBarContext';
 export default () => {
 
   const Stack = createNativeStackNavigator();
-  const [currentScreen, setCurrentScreen] = useState("Home")
+  const navigationRef = useRef(null);
+  const previousScreens = useRef([]);
+  const [currentScreen, setCurrentScreen] = useState(null)
   
   return (
-    <View style={{flex:8}}>
-      <NavigationContainer>
-        <NavBarContext.Provider value={{currentScreen, setCurrentScreen}}>
+    <View style={{flex:1}}>
+      <NavigationContainer ref={navigationRef} onStateChange={() => previousScreens.current.push(navigationRef.current.getCurrentRoute().name)}>
+        <NavBarContext.Provider value={{currentScreen, setCurrentScreen, previousScreens}}>
           <Stack.Navigator initialRouteName="Home" screenOptions={{headerShown: false}}>
             <Stack.Screen name="Home" component={HomeScreen}/>
             <Stack.Screen name="LoginScreen" component={LoginScreen} />

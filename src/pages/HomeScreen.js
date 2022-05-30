@@ -10,7 +10,7 @@ import Gaming from '../assets/Data/Gaming.json'
 import Mobile from '../assets/Data/Mobiles.json'
 
 import BottomMenu from '../Components/BottomNavigationMenu'
-import TopSearchBar from '../Components/TopSearchBar';
+import TopSearchBar from '../Components/SearchBar';
 import HomeProductlist from '../Components/HomeProductList';
 import HomeProductGallery from '../Components/HomeProductGallery';
 import LocationIndicator from '../Components/LocationIndicator';
@@ -36,18 +36,18 @@ const headerOver = [
 ]
 
 export default function HomeScreen({ navigation }) {
+  const { currentScreen, setCurrentScreen } = useContext(NavBarContext);
+  console.log(currentScreen)
 
-  const { setCurrentScreen } = useContext(NavBarContext);
+  const {previousScreens} = useContext(NavBarContext)
 
-  useEffect(() => {
-    setCurrentScreen("Home")
-  }, [])
+  console.log([previousScreens])
 
   return (
     <View style={styles.singleFlex}>
       <View style={[styles.mainHomeContainer, styles.backgroundColorWhite]}>
         <View style={styles.singleFlex}>
-          <TopSearchBar navigation={navigation} />
+          <SearchBar navigation={navigation} />
           <ScrollView>
             <LocationIndicator />
             <ScrollView style={styles.headerImageSlider} pagingEnabled showsHorizontalScrollIndicator={false} horizontal>
@@ -74,7 +74,7 @@ export default function HomeScreen({ navigation }) {
               <HomeProductlist JSONdata={Productsdata} navigation={navigation} />
             </View>
             <View>
-              <Pressable onPress={() => navigation.push('List')}>
+              <Pressable onPress={() => navigation.navigate('List')}>
                 <Image style={styles.homeListImage} source={require('../assets/Images/img4.png')} />
               </Pressable>
             </View>

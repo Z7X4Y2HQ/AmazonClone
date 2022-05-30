@@ -37,14 +37,14 @@ export default function ListScreen({ navigation }) {
                 <Pressable style={{marginTop:22, paddingHorizontal: 8}} onPress={() => navigation.goBack()}>
                   {({ pressed }) => (<AntDesign style={{ color: pressed ? '#008298' : 'black'}} name="arrowleft" size={24} color="black" />)}
                 </Pressable>
-                <Searchbar onPressIn={() => navigation.push('Search')} style={{flex: 9, margin: 9, borderRadius: 7}} iconColor="black" placeholder="Search Amazon" />
+                <Searchbar onPressIn={() => navigation.navigate('Search')} style={{flex: 9, margin: 9, borderRadius: 7}} iconColor="black" placeholder="Search Amazon" />
               </View>
             </LinearGradient>
             <ScrollView>
               <View>
                 <Text style={{marginHorizontal: 17, marginTop: 17, fontSize: 21, fontWeight: 'bold'}}>Computers, Mobile and IT Accessories</Text>
                 <Text style={{marginHorizontal: 17, marginTop: 3, marginBottom: 17, fontSize: 15}}>Shop laptops, desktops, moniters, tablets, PC gaming, hard drives and storage, accessories and more</Text>
-              </View> 
+              </View>
               <View style={{flex:1, justifyContent: 'center', alignItems: 'center'}}>
                 <View style={styles.main}>
                   <View style={styles.filt}>
@@ -62,7 +62,7 @@ export default function ListScreen({ navigation }) {
                   <View style={styles.flatlist}>
                     <FlatList data={sort(Productsdata)} renderItem={({ item }) => (
                       <View>
-                        <TouchableOpacity onPress={() => navigation.push("ProductPage", item)}>
+                        <TouchableOpacity onPress={() => navigation.navigate("ProductPage", item)}>
                           <CardComponet item={item} />
                         </TouchableOpacity>
                       </View>

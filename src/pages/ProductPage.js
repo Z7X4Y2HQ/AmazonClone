@@ -1,5 +1,5 @@
-import { useState, useRef  } from 'react';
-import { Animated, Dimensions, useWindowDimensions, Text, StyleSheet, ScrollView, Modal, View, Image, TouchableOpacity, Pressable } from 'react-native';
+import { useState, useRef, useEffect, useContext  } from 'react';
+import { Animated, Alert, BackHandler, Dimensions, useWindowDimensions, Text, StyleSheet, ScrollView, Modal, View, Image, TouchableOpacity, Pressable } from 'react-native';
 import { Searchbar } from 'react-native-paper';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Entypo, Foundation, SimpleLineIcons, FontAwesome, EvilIcons, AntDesign } from '@expo/vector-icons';
@@ -8,14 +8,23 @@ import Checkbox from 'expo-checkbox';
 import BottomMenu from '../Components/BottomNavigationMenu'
 import Divider from '../Components/Divider';
 import LocationIndicator from '../Components/LocationIndicator';
+import SearchBar from '../Components/SearchBar';
+
+import { NavBarContext } from '../Contexts/NavBarContext';
 
 const {width} = Dimensions.get("window");
 const height = width/2 ;
 
 export default function ProductPage({ route, navigation }) {
 
-  const items = route.params;
+  const { currentScreen, setCurrentScreen } = useContext(NavBarContext);
+
+  const {previousScreens} = useContext(NavBarContext)
   
+  console.log(previousScreens.current[previousScreens.current.length - 1])
+
+  const items = route.params;
+
   const scrollX = useRef(new Animated.Value(0)).current;
   const { width: windowWidth } = useWindowDimensions();
 
@@ -27,6 +36,21 @@ export default function ProductPage({ route, navigation }) {
   const [isChecked, setChecked] = useState(false);
   const [isChecked2, setChecked2] = useState(false);
   const [detailsSeeMore, setDetailsSeeMore] = useState(false);
+
+  console.log(currentScreen);
+
+  useEffect(() => {
+    const backAction = () => {
+      currentScreen == "ProductPageFromHome" ? setCurrentScreen("Home") : undefined
+    };
+
+    const backHandler = BackHandler.addEventListener(
+      "hardwareBackPress",
+      backAction
+    );
+
+    return () => backHandler.remove();
+  }, []);
 
   return (
     <View style={{ flex: 1 }}>
@@ -59,14 +83,7 @@ export default function ProductPage({ route, navigation }) {
       </Modal>
       <View style={{ flex: 14, flexDirection: 'row', alignItems: 'flex-start' }}>
         <View style={{ flex: 1 }}>
-          <LinearGradient start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} colors={['#81d8e3', '#93dfd9', '#a5e7cf']}>
-            <View style={{ flexDirection: 'row', paddingLeft: 5, paddingRight: 6, paddingTop: 24 }}>
-                <Pressable style={{marginTop:22, paddingHorizontal: 8}} onPress={() => navigation.goBack()}>
-                  {({ pressed }) => (<AntDesign style={{ color: pressed ? '#008298' : 'black'}} name="arrowleft" size={24} color="black" />)}
-                </Pressable>
-              <Searchbar onPressIn={() => navigation.push('Search')} style={{ flex: 9, margin: 9, borderRadius: 7 }} iconColor="black" placeholder="Search Amazon" />
-            </View>
-          </LinearGradient>
+          <SearchBar navigation={navigation}/>
           <ScrollView style={{flex: 1}}>
             <LocationIndicator />
             <View style={{flex:1,backgroundColor: 'white', flexDirection: 'row', padding: 4, justifyContent: 'space-between' ,alignItems: 'center', paddingHorizontal: 14}}>
@@ -209,10 +226,10 @@ export default function ProductPage({ route, navigation }) {
                 </Pressable>
               </View>
               <View style={{paddingHorizontal:14}}>
-                <TouchableOpacity onPress={() => {navigation.push('Cart')}} style={styles.cart}>
+                <TouchableOpacity onPress={() => {navigation.navigate('Cart')}} style={styles.cart}>
                   <Text>Add to Cart</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => {navigation.push('LoginScreen')}} style={styles.buy}>
+                <TouchableOpacity onPress={() => {navigation.navigate('LoginScreen')}} style={styles.buy}>
                   <Text>Buy Now</Text>
                 </TouchableOpacity>
                 <View style={{flex:1, flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', paddingLeft:2, paddingBottom: 12}}>
