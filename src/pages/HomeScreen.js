@@ -37,11 +37,11 @@ const headerOver = [
 
 export default function HomeScreen({ navigation }) {
   const { currentScreen, setCurrentScreen } = useContext(NavBarContext);
-  console.log(currentScreen)
-
   const {previousScreens} = useContext(NavBarContext)
 
-  console.log([previousScreens])
+  console.log("\nPrevious Screeen : ", previousScreens)
+  console.log("\nCurrent Screeen : ", currentScreen)
+
 
   return (
     <View style={styles.singleFlex}>

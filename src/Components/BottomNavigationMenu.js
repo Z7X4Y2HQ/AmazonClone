@@ -5,11 +5,12 @@ import { NavBarContext } from '../Contexts/NavBarContext';
 
 export default function BottomMenu({navigation}){
   const {currentScreen, setCurrentScreen} = useContext(NavBarContext)
+  const { previousScreens } = useContext(NavBarContext)
   
   return(
     <View style={styles.BottomMenu}>
       <Pressable onPress={() => {navigation.navigate('Home');setCurrentScreen("Home")}}>
-        {({ pressed }) => ( <AntDesign style={{ color: currentScreen == "Home" ? '#008298' : 'black', margin: 8}} name="home" size={26} color="black" />)}
+        {({ pressed }) => ( <AntDesign style={{ color: currentScreen == "Home" || previousScreens.current[previousScreens.current.length - 1] == "Home" || previousScreens.current[previousScreens.current.length - 1] == "ProductPage" ? '#008298' : 'black', margin: 8}} name="home" size={26} color="black" />)}
       </Pressable>
       <Pressable onPress={() => {navigation.navigate('Account');setCurrentScreen("Account")}}>
         {({ pressed }) => (

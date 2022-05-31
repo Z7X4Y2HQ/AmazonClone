@@ -9,12 +9,14 @@ import { NavBarContext } from '../Contexts/NavBarContext'
 
 export default SearchBar = ({ref, navigation}) => {
   const { currentScreen, setCurrentScreen } = useContext(NavBarContext);
+  const { previousScreens } = useContext(NavBarContext)
 
   return(
     <LinearGradient start={{x: 0, y: 0}} end={{x: 1, y: 0}}  colors={['#81d8e3', '#93dfd9', '#a5e7cf']}>
         <View style={styles.searchBarContainer}>
-          { currentScreen == "Search" || currentScreen == "ProductPageFromHome" ?    
-          <Pressable style={{marginTop:22, paddingHorizontal: 8}} onPress={() => {navigation.goBack();setCurrentScreen(null)}}>
+          { currentScreen == "ProductPage" 
+          ?    
+          <Pressable style={{marginTop:22, paddingHorizontal: 8}} onPress={() => {navigation.goBack();setCurrentScreen(previousScreens.current[previousScreens.current.length - 1])}}>
             {({ pressed }) => (<AntDesign style={{ color: pressed ? '#008298' : 'black'}} name="arrowleft" size={24} color="black" />)}
           </Pressable>
           : undefined

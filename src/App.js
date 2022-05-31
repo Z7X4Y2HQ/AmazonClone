@@ -16,8 +16,8 @@ export default () => {
 
   const Stack = createNativeStackNavigator();
   const navigationRef = useRef(null);
-  const previousScreens = useRef([]);
-  const [currentScreen, setCurrentScreen] = useState(null)
+  const previousScreens = useRef(["Home"]);
+  const [currentScreen, setCurrentScreen] = useState("Home")
   
   return (
     <View style={{flex:1}}>

@@ -18,10 +18,7 @@ const height = width/2 ;
 export default function ProductPage({ route, navigation }) {
 
   const { currentScreen, setCurrentScreen } = useContext(NavBarContext);
-
-  const {previousScreens} = useContext(NavBarContext)
-  
-  console.log(previousScreens.current[previousScreens.current.length - 1])
+  const { previousScreens } = useContext(NavBarContext)
 
   const items = route.params;
 
@@ -36,8 +33,6 @@ export default function ProductPage({ route, navigation }) {
   const [isChecked, setChecked] = useState(false);
   const [isChecked2, setChecked2] = useState(false);
   const [detailsSeeMore, setDetailsSeeMore] = useState(false);
-
-  console.log(currentScreen);
 
   useEffect(() => {
     const backAction = () => {
