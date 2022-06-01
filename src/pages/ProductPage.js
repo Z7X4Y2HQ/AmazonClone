@@ -44,6 +44,8 @@ export default function ProductPage({ route, navigation }) {
       backAction
     );
 
+    setCurrentScreen("ProductPageFromHome")
+
     return () => backHandler.remove();
   }, []);
 

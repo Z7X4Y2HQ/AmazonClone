@@ -9,11 +9,11 @@ import { NavBarContext } from "../Contexts/NavBarContext";
 
 export default function Account({ navigation }) {
 
-    // const { setCurrentScreen } = useContext(NavBarContext);
+    const { setCurrentScreen } = useContext(NavBarContext);
 
-    // useEffect(() => {
-    //     setCurrentScreen("Account")
-    // }, [])
+    useEffect(() => {
+        setCurrentScreen("Account")
+    }, [])
 
     return (
         <View style={styles.mainContainer}>

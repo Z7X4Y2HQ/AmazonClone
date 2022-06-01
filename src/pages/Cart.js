@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useEffect, useContext } from "react";
 import { Text, ScrollView, StyleSheet, View, Image, Pressable } from "react-native";
 
 import BottomMenu from '../Components/BottomNavigationMenu'
 
 import LocationIndicator from "../Components/LocationIndicator";
+import { NavBarContext } from "../Contexts/NavBarContext";
 
 export default function Cart({ navigation }) {
+
+  const { currentScreen, setCurrentScreen } = useContext(NavBarContext);
+
+  useEffect(()=>{
+    setCurrentScreen("Cart")
+  }, [])
 
   return (
     <View style={styles.mainContainer}>

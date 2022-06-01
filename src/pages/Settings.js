@@ -12,6 +12,17 @@ export default function Settings({ navigation }) {
   const [expanded, setExpanded] = useState(true);
   const [expanded1, setExpanded1] = useState(true);
   const [expanded2, setExpanded2] = useState(true);
+  const { currentScreen, setCurrentScreen } = useContext(NavBarContext);
+  const {previousScreens} = useContext(NavBarContext)
+
+
+  console.log("\nSettings Previous Screeen : ", previousScreens)
+  console.log("\Settings nCurrent Screeen : ", currentScreen)
+
+
+  useEffect(()=>{
+    setCurrentScreen("Settings")
+  }, [])
 
   return (
     <View style={{ flex: 1 }}>

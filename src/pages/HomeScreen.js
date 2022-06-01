@@ -41,6 +41,11 @@ export default function HomeScreen({ navigation }) {
 
   console.log("\nPrevious Screeen : ", previousScreens)
   console.log("\nCurrent Screeen : ", currentScreen)
+  console.log("\nPrevious Screen : ", previousScreens.current[previousScreens.current.length - 1])
+
+  useEffect(() => {
+    setCurrentScreen("Home")
+  }, [])
 
 
   return (
