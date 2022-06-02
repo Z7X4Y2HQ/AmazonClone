@@ -1,52 +1,5 @@
 [
    {
-      "id": 1,
-      "title": "Visit the ASUS Store",
-      "description": "ASUS VivoBook 15 M515 Thin and Light Laptop, 15.6” IPS FHD Display, Windows 10 Home with Free Upgrade to Windows 11, AMD Ryzen 7 5700U, 8GB RAM, 512GB SSD, Fingerprint Reader, Slate Grey, M515UA-EB72",
-      "newPrice": 889,
-      "cents": 89,
-      "oldPrice": 225.68,
-      "reviews": 30880,
-      "images": [
-         "https://m.media-amazon.com/images/I/715kq+g7qLL._AC_SX679_.jpg",
-         "https://m.media-amazon.com/images/I/81nM32Xb11L._AC_SX679_.jpg",
-         "https://m.media-amazon.com/images/I/51rgaD9HwSL._AC_SX679_.jpg",
-         "https://m.media-amazon.com/images/I/61JF1lp-HKL._AC_SX679_.jpg",
-         "https://m.media-amazon.com/images/I/71GF6ibKkwL._AC_SX679_.jpg",
-         "https://m.media-amazon.com/images/I/71bzKR1IZkL._AC_SX679_.jpg"     
-      ]
-   },
-   {
-      "id": 2,
-      "title": "Visit the HP Store",
-      "description": "HP Envy 17 Laptop, 11th Gen Intel Core i7-1165G7, 12 GB RAM, 1 TB SATA Hard Drive & 256 GB SSD Storage, 17.3-inch Full HD IPS Touchscreen, Windows 10 Home, HD Webcam, Audio by B&O (17-cg1010nr, 2021)",
-      "newPrice": 799,
-      "cents": 89,
-      "oldPrice": 455.68,
-      "reviews": 350760,
-      "images": [
-         "https://m.media-amazon.com/images/I/91uj92+DajL._AC_SX466_.jpg",
-         "https://m.media-amazon.com/images/I/81rrSkh79OS._AC_SX466_.jpg",
-         "https://m.media-amazon.com/images/I/8120cbdxTcS._AC_SX466_.jpg",
-         "https://m.media-amazon.com/images/I/81PRy4c30RS._AC_SX466_.jpg",
-         "https://m.media-amazon.com/images/I/71q2hrmGLzS._AC_SX466_.jpg",
-         "https://m.media-amazon.com/images/I/81KXgG7k-3S._AC_SX466_.jpg",
-         "https://m.media-amazon.com/images/I/81+DyGda7nS._AC_SX466_.jpg"
-      ]
-   },
-   {
-      "id": 3,
-      "title": "Visit the Amazon Renewed Store",
-      "description": "Apple iPhone 12 Pro Max, 128GB, Pacific Blue - Unlocked (Renewed Premium)",
-      "newPrice": 929,
-      "cents": 10,
-      "oldPrice": 225.68,
-      "reviews": 91,
-      "images": [
-         "https://m.media-amazon.com/images/I/71FuI8YvCNL._AC_SX679_.jpg"    
-      ]
-   },
-   {
       "id": 4,
       "title": "Visit the Acer Store",
       "description": "Acer Travelmate Spin P4, 14 Full HD Touch, Intel i5-1135G7, 8GB DDR4, 512GB NVMe SSD, Thunderbolt 4, Intel Wi-Fi 6 AX201, Rechargeable Active Stylus, Fingerprint Reader, Win 10 Pro, TMP414RN-51-54JZ",
@@ -142,6 +95,53 @@
          "https://m.media-amazon.com/images/I/61L1stOWmwL._SX522_.jpg",
          "https://m.media-amazon.com/images/I/71iOm44AhlL._SX522_.jpg",
          "https://m.media-amazon.com/images/I/71sdSc-FDUL._SX522_.jpg"
+      ]
+   },
+   {
+      "id": 1,
+      "title": "Visit the ASUS Store",
+      "description": "ASUS VivoBook 15 M515 Thin and Light Laptop, 15.6” IPS FHD Display, Windows 10 Home with Free Upgrade to Windows 11, AMD Ryzen 7 5700U, 8GB RAM, 512GB SSD, Fingerprint Reader, Slate Grey, M515UA-EB72",
+      "newPrice": 889,
+      "cents": 89,
+      "oldPrice": 225.68,
+      "reviews": 30880,
+      "images": [
+         "https://m.media-amazon.com/images/I/715kq+g7qLL._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/81nM32Xb11L._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/51rgaD9HwSL._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/61JF1lp-HKL._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/71GF6ibKkwL._AC_SX679_.jpg",
+         "https://m.media-amazon.com/images/I/71bzKR1IZkL._AC_SX679_.jpg"     
+      ]
+   },
+   {
+      "id": 2,
+      "title": "Visit the HP Store",
+      "description": "HP Envy 17 Laptop, 11th Gen Intel Core i7-1165G7, 12 GB RAM, 1 TB SATA Hard Drive & 256 GB SSD Storage, 17.3-inch Full HD IPS Touchscreen, Windows 10 Home, HD Webcam, Audio by B&O (17-cg1010nr, 2021)",
+      "newPrice": 799,
+      "cents": 89,
+      "oldPrice": 455.68,
+      "reviews": 350760,
+      "images": [
+         "https://m.media-amazon.com/images/I/91uj92+DajL._AC_SX466_.jpg",
+         "https://m.media-amazon.com/images/I/81rrSkh79OS._AC_SX466_.jpg",
+         "https://m.media-amazon.com/images/I/8120cbdxTcS._AC_SX466_.jpg",
+         "https://m.media-amazon.com/images/I/81PRy4c30RS._AC_SX466_.jpg",
+         "https://m.media-amazon.com/images/I/71q2hrmGLzS._AC_SX466_.jpg",
+         "https://m.media-amazon.com/images/I/81KXgG7k-3S._AC_SX466_.jpg",
+         "https://m.media-amazon.com/images/I/81+DyGda7nS._AC_SX466_.jpg"
+      ]
+   },
+   {
+      "id": 3,
+      "title": "Visit the Amazon Renewed Store",
+      "description": "Apple iPhone 12 Pro Max, 128GB, Pacific Blue - Unlocked (Renewed Premium)",
+      "newPrice": 929,
+      "cents": 10,
+      "oldPrice": 225.68,
+      "reviews": 91,
+      "images": [
+         "https://m.media-amazon.com/images/I/71FuI8YvCNL._AC_SX679_.jpg"    
       ]
    }
 ]

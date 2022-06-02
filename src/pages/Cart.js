@@ -1,8 +1,10 @@
 import React, { useEffect, useContext, useState } from "react";
 import { Text, FlatList, BackHandler, TouchableOpacity, ScrollView, StyleSheet, View, Image, Pressable } from "react-native";
 import Checkbox from "expo-checkbox";
-import { Feather, Entypo } from '@expo/vector-icons';
-import { LinearGradient } from 'expo-linear-gradient'
+import { Feather, Entypo, FontAwesome } from '@expo/vector-icons';
+import { LinearGradient } from 'expo-linear-gradient';
+import featured from '../assets/Data/data.json'
+import recc from '../assets/Data/random.json'
 
 
 import BottomMenu from '../Components/BottomNavigationMenu'
@@ -12,6 +14,7 @@ import { NavBarContext } from "../Contexts/NavBarContext";
 import Divider from "../Components/Divider";
 
 import Productsdata from '../assets/Data/data.json'
+import { backgroundColor } from "react-native/Libraries/Components/View/ReactNativeStyleAttributes";
 
 export default function Cart({ route, navigation }) {
 
@@ -94,7 +97,7 @@ export default function Cart({ route, navigation }) {
                 </Text>
                 <View style={{ paddingHorizontal: 14 }}>
                   <TouchableOpacity onPress={() => { navigation.navigate("LoginScreen") }} style={{ elevation: 3, alignItems: "center", borderColor: "#fed813", borderWidth: 1, marginVertical: 6, paddingVertical: 14, borderRadius: 8, backgroundColor: "#fed813" }}>
-                    <Text style={{fontSize: 15}}>Proceed to checkout {"("}{cartItemsNum} item{cartItemsNum > 1 ? <Text>s</Text> : null}{")"}</Text>
+                    <Text style={{ fontSize: 15 }}>Proceed to checkout {"("}{cartItemsNum} item{cartItemsNum > 1 ? <Text>s</Text> : null}{")"}</Text>
                   </TouchableOpacity>
                 </View>
                 <View style={{ paddingVertical: 12, paddingHorizontal: 14, borderBottomWidth: 0.8, borderColor: '#eaeaea', flexDirection: 'row' }}>
@@ -118,7 +121,7 @@ export default function Cart({ route, navigation }) {
                     </View>
                   </View>
                 </View>
-                <View style={{ flexDirection: 'row', justifyContent: 'flex-start', borderColor: '#eaeaea', borderBottomWidth: 0.8, paddingBottom: 10}}>
+                <View style={{ flexDirection: 'row', justifyContent: 'flex-start', borderColor: '#eaeaea', borderBottomWidth: 0.8, paddingBottom: 10 }}>
                   <View style={{ paddingLeft: 14, padding: 5 }}>
                     <View style={{ flexDirection: 'row' }}>
                       <LinearGradient style={{ borderTopLeftRadius: 3, borderBottomLeftRadius: 3 }} start={{ x: 0, y: 1 }} end={{ x: 0, y: 0 }} colors={['#e8eaee', '#eff1f3', '#f6f9fe']}>
@@ -137,28 +140,91 @@ export default function Cart({ route, navigation }) {
                       </LinearGradient>
                     </View>
                   </View>
-                  <View style={{ flexDirection: 'column', paddingTop: 5}}>
+                  <View style={{ flexDirection: 'column', paddingTop: 5 }}>
                     <View style={{ flexDirection: 'row' }}>
-                      <Pressable onPress={() => {setCartItemsNum(cartItemsNum => cartItemsNum = cartItemsNum - 1)}} style={{ elevation: 3, marginLeft: 25, paddingHorizontal: 10, paddingVertical: 6, borderWidth: 1, borderRadius: 5, borderColor: '#e2e4e3', backgroundColor: 'white' }}>
+                      <Pressable onPress={() => { setCartItemsNum(cartItemsNum => cartItemsNum = cartItemsNum - 1)}} style={{ elevation: 3, marginLeft: 25, paddingHorizontal: 10, paddingVertical: 6, borderWidth: 1, borderRadius: 5, borderColor: '#e2e4e3', backgroundColor: 'white' }}>
                         <Text style={{ fontSize: 12 }}>Delete</Text>
                       </Pressable>
                       <Pressable style={{ elevation: 3, marginLeft: 10, paddingHorizontal: 10, paddingVertical: 6, borderWidth: 1, borderRadius: 5, borderColor: '#e2e4e3', backgroundColor: 'white' }}>
                         <Text style={{ fontSize: 12 }}>Save for later</Text>
                       </Pressable>
                     </View>
-                    <View style={{paddingTop: 6, paddingRight: 10}}>
-                      <Text style={{ textAlign: "right", color: '#2c6674', fontSize: 12}}>Compare with similar items</Text>
+                    <View style={{ paddingTop: 6, paddingRight: 10 }}>
+                      <Text style={{ textAlign: "right", color: '#2c6674', fontSize: 12 }}>Compare with similar items</Text>
                     </View>
                   </View>
                 </View>
-                <View style={{paddingHorizontal: 14, paddingRight: 14, borderColor: '#eaeaea', borderBottomWidth: 0.8, paddingVertical: 25, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}}> 
-                  <View style={{flexDirection: 'column'}}>
-                    <Text style={{fontWeight: 'bold', paddingBottom: 2, fontSize: 16}}>Returns are easy</Text>
-                    <Text style={{}}>30-day returns on millions of items</Text>
+                <View style={{ paddingHorizontal: 14, paddingRight: 14, borderColor: '#eaeaea', borderBottomWidth: 0.8, paddingVertical: 25, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <View style={{ flexDirection: 'column' }}>
+                    <Text style={{ fontWeight: 'bold', paddingBottom: 2, fontSize: 16 }}>Returns are easy</Text>
+                    <Text>30-day returns on millions of items</Text>
                   </View>
                   <View>
-                    <Image style={{height: 50, width: 50}} source={require("../assets/Images/returns.png")} />
+                    <Image style={{ height: 50, width: 50 }} source={require("../assets/Images/returns.png")} />
                   </View>
+                </View>
+                <View style={{ paddingHorizontal: 14, paddingVertical: 6, backgroundColor: '#e9edee' }}>
+                  <View style={{ backgroundColor: 'white', paddingHorizontal: 10, paddingVertical: 10 }}>
+                    <Text style={{ fontWeight: 'bold', fontSize: 20 }}>Recommendations based on items in your cart</Text>
+                    <FlatList horizontal data={featured} renderItem={({ item }) => (
+                      <Pressable onPress={() => { navigation.navigate('ProductPage', item) }} style={{ margin: 10 }}>
+                        <View>
+                          <Image style={{ height: 140, width: 140, resizeMode: "contain" }} source={{ uri: item.images[0] }} />
+                        </View>
+                        <View style={{ flex: 1, width: 140 }}>
+                          <Text numberOfLines={2}>{item.description}</Text>
+                          <View style={{ flexDirection: "row", paddingVertical: 4 }}>
+                            <FontAwesome size={13} name="star" color={"#ffa41d"} />
+                            <FontAwesome size={13} name="star" color={"#ffa41d"} />
+                            <FontAwesome size={13} name="star" color={"#ffa41d"} />
+                            <FontAwesome size={13} name="star" color={"#ffa41d"} />
+                            <FontAwesome size={13} name="star-half-empty" color={"#ffa41d"}><Text style={{ fontSize: 11, color: '#046f84' }}>  {item.reviews}</Text></FontAwesome>
+                          </View>
+                          <View>
+                            <Text style={{ fontSize: 13 }}>$ {item.newPrice}.{item.cents}</Text>
+                          </View>
+                          <View>
+                            <Text style={{ paddingVertical: 2, fontSize: 10 }}>$51.58 shipping</Text>
+                          </View>
+                          <Pressable onPress={() => { setCartItemsNum(cartItemsNum => cartItemsNum = cartItemsNum + 1); setEmptyCart(false); setAddedToCart(item) }} style={{ width: 80, elevation: 3, paddingHorizontal: 10, paddingVertical: 6, borderRadius: 5, backgroundColor: '#fed813' }}>
+                            <Text style={{ fontSize: 12 }}>Add to cart</Text>
+                          </Pressable>
+                        </View>
+                      </Pressable>
+                    )}
+                    />
+                  </View>
+                  <View style={{ marginTop: 20, backgroundColor: 'white', paddingHorizontal: 10, paddingVertical: 10 }}>
+                    <Text style={{ fontWeight: 'bold', fontSize: 20 }}>Featured items you may like</Text>
+                    <FlatList horizontal data={recc} renderItem={({ item }) => (
+                      <Pressable onPress={() => { navigation.navigate('ProductPage', item) }} style={{ margin: 10 }}>
+                        <View>
+                          <Image style={{ height: 140, width: 140, resizeMode: "contain" }} source={{ uri: item.images[0] }} />
+                        </View>
+                        <View style={{ flex: 1, width: 140 }}>
+                          <Text numberOfLines={2}>{item.description}</Text>
+                          <View style={{ flexDirection: "row", paddingVertical: 4 }}>
+                            <FontAwesome size={13} name="star" color={"#ffa41d"} />
+                            <FontAwesome size={13} name="star" color={"#ffa41d"} />
+                            <FontAwesome size={13} name="star" color={"#ffa41d"} />
+                            <FontAwesome size={13} name="star" color={"#ffa41d"} />
+                            <FontAwesome size={13} name="star-half-empty" color={"#ffa41d"}><Text style={{ fontSize: 11, color: '#046f84' }}>  {item.reviews}</Text></FontAwesome>
+                          </View>
+                          <View>
+                            <Text style={{ fontSize: 13 }}>$ {item.newPrice}.{item.cents}</Text>
+                          </View>
+                          <View>
+                            <Text style={{ paddingVertical: 2, fontSize: 10 }}>$51.58 shipping</Text>
+                          </View>
+                          <Pressable onPress={() => { setCartItemsNum(cartItemsNum => cartItemsNum = cartItemsNum + 1); setEmptyCart(false); setAddedToCart(item) }} style={{ width: 80, elevation: 3, paddingHorizontal: 10, paddingVertical: 6, borderRadius: 5, backgroundColor: '#fed813' }}>
+                            <Text style={{ fontSize: 12 }}>Add to cart</Text>
+                          </Pressable>
+                        </View>
+                      </Pressable>
+                    )}
+                    />
+                  </View>
+
                 </View>
               </View>
             }

@@ -9,8 +9,8 @@ import SearchBar from "../Components/SearchBar";
 import { NavBarContext } from "../Contexts/NavBarContext";
 
 export default function Settings({ navigation }) {
-  const [expanded, setExpanded] = useState(true);
-  const [expanded1, setExpanded1] = useState(true);
+  const [expanded, setExpanded] = useState(false);
+  const [expanded1, setExpanded1] = useState(false);
   const [expanded2, setExpanded2] = useState(true);
   
   const { currentScreen, setCurrentScreen } = useContext(NavBarContext);
@@ -37,164 +37,367 @@ export default function Settings({ navigation }) {
         <View style={{ flex: 1 }}>
           <SearchBar navigation={navigation}/> 
           <LinearGradient
-            style={{ flex: 1 }}
-            start={{ x: 0, y: 1 }}
-            end={{ x: 0, y: 0 }}
-            colors={["#fff", "#94dfd8", "#94dfda"]}
-          >
-            <ScrollView>
-              <View>
-                <View style={{ paddingTop: 15, paddingHorizontal: 10 }}>
-                  <List.Accordion
-                    title="Shope by Department"
-                    theme={{ colors: { primary: "#000" } }}
-                    left={(props) => (
-                      <FontAwesome style={{}} name="shopping-cart" size={22} />
-                    )}
-                    // expanded={expanded}
-                    onPress={() => {
-                      setExpanded(!expanded);
-                    }}
-                    style={{ paddingLeft: 24 }}
-                  >
-                    <List.Item
-                      style={styles.lis}
-                      onPress={() => { }}
-                      title="Arts & Craft"
-                    />
-                    <List.Item
-                      style={styles.lis}
-                      onPress={() => { }}
-                      title="Automative"
-                    />
-                    <List.Item style={styles.lis} onPress={() => { }} title="Baby" />
-                    <List.Item
-                      style={styles.lis}
-                      onPress={() => { }}
-                      title="Books"
-                    />
-                    <List.Item
-                      style={styles.lis}
-                      onPress={() => { }}
-                      title="Computer"
-                    />
-                    <List.Item
-                      style={styles.lis}
-                      onPress={() => { }}
-                      title="Electronics"
-                    />
-                    <List.Item
-                      style={styles.lis}
-                      onPress={() => { }}
-                      title="Men's Fashion"
-                    />
-                    <List.Item
-                      style={styles.lis}
-                      onPress={() => { }}
-                      title="Health"
-                    />
-                  </List.Accordion>
-                </View>
+        style={{ flex: 1 }}
+        start={{ x: 0, y: 1 }}
+        end={{ x: 0, y: 0 }}
+        colors={["#fff", "#94dfd8", "#94dfda"]}
+      >
+        <ScrollView>
+          <View style={styles.main}>
+            <View style={{ marginTop: 12, paddingHorizontal: 10 }}>
+              <TouchableOpacity
+                onPress={() => {
+                  setExpanded(!expanded);
+                }}
+              >
+                <View
+                  style={{
+                    backgroundColor: "white",
+                    borderColor: "#839a9a",
+                    borderWidth: 1,
+                    backgroundColor: "white",
+                    marginBottom: 0,
+                    paddingHorizontal: 15,
+                    paddingVertical: 15,
+                    borderRadius: 10,
+                    // opacity: 0.9,
+                    flexDirection: "column",
 
-                <View style={{ paddingTop: 15, paddingHorizontal: 10 }}>
-                  <List.Accordion
-                    
-                    title="Settings"
-                    left={(props) => (
-                      <Feather style={{}} name="settings" size={22} />
-                    )}
-                    theme={{ colors: { primary: "#000" } }}
-                    // expanded={expanded}
-                    onPress={() => {
-                      setExpanded1(!expanded1);
+                    // alignItems: "center",
+                  }}
+                >
+                  <View
+                    style={{
+                      flexDirection: "row",
+                      alignItems: "center",
+                      justifyContent: "space-between",
                     }}
-                    style={{ paddingLeft: 24 }}
                   >
-                    <List.Item
-                      style={styles.lis}
-                      onPress={() => { }}
-                      title="Country & Language 🇺🇸"
-                    />
-                    <List.Item
-                      style={styles.lis}
-                      onPress={() => { }}
-                      title="Notifcations"
-                    />
-                    <List.Item
-                      style={styles.lis}
-                      onPress={() => { }}
-                      title="Permissions"
-                    />
-                    <List.Item
-                      style={styles.lis}
-                      onPress={() => { }}
-                      title="Legal & About"
-                    />
-                  </List.Accordion>
+                    <View style={{ flexDirection: "row" }}>
+                      <Text style={{ paddingLeft: 15, fontSize: 16 }}>
+                        Shope by Department
+                      </Text>
+                    </View>
+                    <View style={{}}>
+                      <AntDesign style={{}} name="right" size={15} />
+                    </View>
+                  </View>
+                  {expanded && (
+                    <>
+                      <TouchableOpacity onPress={() => {}} styles={{}}>
+                        <View
+                          style={{
+                            // backgroundColor: "white",
+                            paddingHorizontal: 15,
+                            paddingTop: 10,
+                            borderRadius: 10,
+                            paddingVertical: 12,
+                            // backgroundColor:'red',
+                            marginTop: 5,
+                          }}
+                        >
+                          <Text style={{ fontSize: 15 }}>Arts & Craft</Text>
+                        </View>
+                      </TouchableOpacity>
+
+                      <TouchableOpacity onPress={() => {}} styles={{}}>
+                        <View
+                          style={{
+                            paddingHorizontal: 15,
+                            paddingVertical: 10,
+                            borderRadius: 10,
+                          }}
+                        >
+                          <Text style={{ fontSize: 15 }}>Automative</Text>
+                        </View>
+                      </TouchableOpacity>
+
+                      <TouchableOpacity onPress={() => {}} styles={{}}>
+                        <View
+                          style={{
+                            paddingHorizontal: 15,
+                            paddingVertical: 10,
+                            borderRadius: 10,
+                          }}
+                        >
+                          <Text style={{ fontSize: 15 }}>Books</Text>
+                        </View>
+                      </TouchableOpacity>
+
+                      <TouchableOpacity onPress={() => {}} styles={{}}>
+                        <View
+                          style={{
+                            paddingHorizontal: 15,
+                            paddingVertical: 10,
+                            borderRadius: 10,
+                          }}
+                        >
+                          <Text style={{ fontSize: 15 }}>Computer</Text>
+                          {/* <AntDesign
+                   style={{ paddingRight: 20 }}
+                   name="right"
+                   size={15}
+                 /> */}
+                        </View>
+                      </TouchableOpacity>
+
+                      <TouchableOpacity onPress={() => {}} styles={{}}>
+                        <View
+                          style={{
+                            paddingHorizontal: 15,
+                            paddingVertical: 10,
+                            borderRadius: 10,
+                            // backgroundColor:'red'
+                          }}
+                        >
+                          <Text style={{ fontSize: 15 }}>Electronics</Text>
+                          {/* <AntDesign
+                   style={{ paddingRight: 20 }}
+                   name="right"
+                   size={15}
+                 /> */}
+                        </View>
+                      </TouchableOpacity>
+
+                      <TouchableOpacity onPress={() => {}} styles={{}}>
+                        <View
+                          style={{
+                            paddingHorizontal: 15,
+                            // paddingTop: 18,
+                            // paddingBottom: 15,
+                            paddingVertical: 10,
+                            borderRadius: 10,
+                            // backgroundColor:'red',
+                          }}
+                        >
+                          <Text style={{ fontSize: 15 }}>Men's Fashion</Text>
+                          {/* <AntDesign
+                   style={{ paddingRight: 20 }}
+                   name="right"
+                   size={15}
+                 /> */}
+                        </View>
+                      </TouchableOpacity>
+
+                      <TouchableOpacity onPress={() => {}} styles={{}}>
+                        <View
+                          style={{
+                            paddingHorizontal: 15,
+                            // paddingTop: 18,
+                            // paddingBottom: 10,
+                            paddingVertical: 10,
+                            borderRadius: 10,
+                            // backgroundColor:'red',
+                          }}
+                        >
+                          <Text style={{ fontSize: 15 }}>Health</Text>
+                          {/* <AntDesign
+                   style={{ paddingRight: 20 }}
+                   name="right"
+                   size={15}
+                 /> */}
+                        </View>
+                      </TouchableOpacity>
+                    </>
+                  )}
                 </View>
+              </TouchableOpacity>
+            </View>
+
+            {/* settings */}
+            <View style={{ marginTop: 12, paddingHorizontal: 10 }}>
+              <TouchableOpacity
+                onPress={() => {
+                  setExpanded1(!expanded1);
+                }}
+              >
                 <View
                   style={{
-                    paddingTop: 15,
-                    paddingHorizontal: 10,
-                    // backgroundColor: "red",
+                    backgroundColor: "white",
+                    borderColor: "#839a9a",
+                    borderWidth: 1,
+                    backgroundColor: "white",
+                    marginBottom: 0,
+                    paddingHorizontal: 15,
+                    paddingVertical: 15,
+                    borderRadius: 10,
+                    // opacity: 0.9,
+                    flexDirection: "column",
+
+                    // alignItems: "center",
                   }}
                 >
-                  <TouchableOpacity style={{}}>
-                    <View
-                      style={{
-                        backgroundColor: "white",
-                        borderRadius: 10,
-                        borderColor: '#839a9a',
-                        borderWidth: 1,
-                        elevation: 2,
-                        paddingVertical: 14,
-                        flexDirection: "row",
-                        justifyContent: "space-between",
-                        alignItems: 'center'
-                      }}
-                    >
-                      <Text style={{ paddingLeft: 55, fontSize: 16 }}>Customer Services</Text>
-                      <AntDesign
-                        style={{ paddingRight: 20 }}
-                        name="right"
-                        size={15}
-                      />
+                  <View
+                    style={{
+                      flexDirection: "row",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                    }}
+                  >
+                    <View style={{ flexDirection: "row" }}>
+                      <Text style={{ paddingLeft: 15, fontSize: 16 }}>
+                        Settings
+                      </Text>
                     </View>
-                  </TouchableOpacity>
+                    <View style={{}}>
+                      <AntDesign style={{}} name="right" size={15} />
+                    </View>
+                  </View>
+                  {expanded1 && (
+                    <>
+                      <TouchableOpacity onPress={() => {}} styles={{}}>
+                        <View
+                          style={{
+                            // backgroundColor: "white",
+                            paddingHorizontal: 15,
+                            paddingTop: 10,
+                            borderRadius: 10,
+                            paddingVertical: 12,
+                            // backgroundColor:'red',
+                            marginTop: 5,
+                          }}
+                        >
+                          <Text style={{ fontSize: 15 }}>
+                            Country & Language{" "}
+                          </Text>
+                        </View>
+                      </TouchableOpacity>
+
+                      <TouchableOpacity onPress={() => {}} styles={{}}>
+                        <View
+                          style={{
+                            paddingHorizontal: 15,
+                            paddingVertical: 10,
+                            borderRadius: 10,
+                          }}
+                        >
+                          <Text style={{ fontSize: 15 }}>Notifcations</Text>
+                        </View>
+                      </TouchableOpacity>
+
+                      <TouchableOpacity onPress={() => {}} styles={{}}>
+                        <View
+                          style={{
+                            paddingHorizontal: 15,
+                            paddingVertical: 10,
+                            borderRadius: 10,
+                          }}
+                        >
+                          <Text style={{ fontSize: 15 }}>Permissions</Text>
+                        </View>
+                      </TouchableOpacity>
+
+                      <TouchableOpacity onPress={() => {}} styles={{}}>
+                        <View
+                          style={{
+                            paddingHorizontal: 15,
+                            paddingVertical: 10,
+                            borderRadius: 10,
+                          }}
+                        >
+                          <Text style={{ fontSize: 15 }}>Legal & About</Text>
+                          {/* <AntDesign
+                   style={{ paddingRight: 20 }}
+                   name="right"
+                   size={15}
+                 /> */}
+                        </View>
+                      </TouchableOpacity>
+                    </>
+                  )}
                 </View>
+              </TouchableOpacity>
+            </View>
+
+            {/* Customer services */}
+            {/* Customer services */}
+            <View style={{ marginTop: 12, paddingHorizontal: 10 }}>
+              <TouchableOpacity
+                onPress={() => {
+                  navigation.navigate("LoginScreen");
+                }}
+              >
                 <View
                   style={{
-                    paddingTop: 15,
-                    paddingHorizontal: 10,
-                    // backgroundColor: "red",
+                    backgroundColor: "white",
+                    borderColor: "#839a9a",
+                    borderWidth: 1,
+                    backgroundColor: "white",
+                    marginBottom: 0,
+                    paddingHorizontal: 15,
+                    paddingVertical: 15,
+                    borderRadius: 10,
+                    // opacity: 0.9,
+                    flexDirection: "column",
+
+                    // alignItems: "center",
                   }}
                 >
-                  <TouchableOpacity onPress={()=>{navigation.navigate('LoginScreen')}}>
-                    <View
-                      style={{
-                        backgroundColor: "white",
-                        borderRadius: 10,
-                        borderColor: '#839a9a',
-                        borderWidth: 1,
-                        elevation: 2,
-                        paddingVertical: 14,
-                        flexDirection: "row",
-                        justifyContent: "space-between",
-                        alignItems: 'center'
-                      }}
-                    >
-                      <Text style={{ paddingLeft: 55, fontSize: 16 }}>Sign In</Text>
-                      <AntDesign
-                        style={{ paddingRight: 20 }}
-                        name="right"
-                        size={15}
-                      />
+                  <View
+                    style={{
+                      flexDirection: "row",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                    }}
+                  >
+                    <View style={{ flexDirection: "row" }}>
+                      <Text style={{ paddingLeft: 15, fontSize: 16 }}>
+                        Customer Services
+                      </Text>
                     </View>
-                  </TouchableOpacity>
+                    <View style={{}}>
+                      <AntDesign style={{}} name="right" size={15} />
+                    </View>
+                  </View>
                 </View>
-              </View>
-            </ScrollView>
-          </LinearGradient>
+              </TouchableOpacity>
+            </View>
+
+            {/* SIgn In services */}
+            <View style={{ marginTop: 12, paddingHorizontal: 10 }}>
+              <TouchableOpacity
+                onPress={() => {
+                  navigation.navigate("LoginScreen");
+                }}
+              >
+                <View
+                  style={{
+                    backgroundColor: "white",
+                    borderColor: "#839a9a",
+                    borderWidth: 1,
+                    backgroundColor: "white",
+                    marginBottom: 0,
+                    paddingHorizontal: 15,
+                    paddingVertical: 15,
+                    borderRadius: 10,
+                    // opacity: 0.9,
+                    flexDirection: "column",
+
+                    // alignItems: "center",
+                  }}
+                >
+                  <View
+                    style={{
+                      flexDirection: "row",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                    }}
+                  >
+                    <View style={{ flexDirection: "row" }}>
+                      <Text style={{ paddingLeft: 15, fontSize: 16 }}>
+                        Sign In
+                      </Text>
+                    </View>
+                    <View style={{}}>
+                      <AntDesign style={{}} name="right" size={15} />
+                    </View>
+                  </View>
+                </View>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </ScrollView>
+      </LinearGradient>
         </View>
       </View>
       <View style={{backgroundColor: 'rgba(226,234,234,100)', height:6, borderBottomLeftRadius: 0, borderBottomRightRadius:0, borderRadius: 10, flexDirection: 'row', justifyContent: 'center'}}></View>
