@@ -4,6 +4,7 @@
       "title": "Visit the Amazon Renewed Store",
       "description": "Apple iPhone XS Max, 256GB, Gold - Unlocked (Renewed Premium)",
       "newPrice": 469.89,
+      "cents": 89,
       "oldPrice": 0,
       "reviews": 12740,
       "images": [
@@ -14,7 +15,8 @@
       "id": 15,
       "title": "Visit the OnePlus Store",
       "description": "OnePlus Nord N200 | 5G Unlocked Android Smartphone U.S Version | 6.49\" Full HD+LCD Screen | 90Hz Smooth Display | Large 5000mAh Battery | Fast Charging | 64GB Storage | Triple Camera,Blue Quantum",
-      "newPrice": 239.99,
+      "newPrice": 239,
+      "cents": 99,
       "oldPrice": 0,
       "reviews": 852,
       "images": [
@@ -30,7 +32,8 @@
       "id": 16,
       "title": "Visit the SAMSUNG Store",
       "description": "SAMSUNG Galaxy S21 Ultra 5G Factory Unlocked Android Cell Phone 128GB US Version Smartphone Pro-Grade Camera 8K Video 108MP High Res, Phantom Black",
-      "newPrice": 1199.99,
+      "newPrice": 1199,
+      "cents": 99,
       "oldPrice": 0,
       "reviews": 1941,
       "images": [

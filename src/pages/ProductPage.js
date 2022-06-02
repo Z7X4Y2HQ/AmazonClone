@@ -15,16 +15,15 @@ import { NavBarContext } from '../Contexts/NavBarContext';
 const {width} = Dimensions.get("window");
 const height = width/2 ;
 
+
 export default function ProductPage({ route, navigation }) {
 
-  const { currentScreen, setCurrentScreen } = useContext(NavBarContext);
-  const { previousScreens } = useContext(NavBarContext)
-
+  
   const items = route.params;
-
+  
   const scrollX = useRef(new Animated.Value(0)).current;
   const { width: windowWidth } = useWindowDimensions();
-
+  
   const [qty, setQty] = useState(1);
   const [modalVisible, setModalVisible] = useState(false);
   const [isExpanded, setIsExpanded] = useState(true); 
@@ -33,17 +32,25 @@ export default function ProductPage({ route, navigation }) {
   const [isChecked, setChecked] = useState(false);
   const [isChecked2, setChecked2] = useState(false);
   const [detailsSeeMore, setDetailsSeeMore] = useState(false);
+  
+  const { currentScreen, setCurrentScreen } = useContext(NavBarContext);
+  const { previousScreens } = useContext(NavBarContext)
+  const { cartItemsNum, setCartItemsNum } = useContext(NavBarContext)
+  const { emptyCart, setEmptyCart } = useContext(NavBarContext)
+  const { addedToCart, setAddedToCart } = useContext(NavBarContext)
 
+  console.log(addedToCart)
+  
   useEffect(() => {
     const backAction = () => {
-      currentScreen == "ProductPageFromHome" ? setCurrentScreen("Home") : undefined
+      setCurrentScreen(previousScreens.current[previousScreens.current.length - 1]) 
     };
-
+    
     const backHandler = BackHandler.addEventListener(
       "hardwareBackPress",
       backAction
     );
-
+     
     setCurrentScreen("ProductPageFromHome")
 
     return () => backHandler.remove();
@@ -223,7 +230,7 @@ export default function ProductPage({ route, navigation }) {
                 </Pressable>
               </View>
               <View style={{paddingHorizontal:14}}>
-                <TouchableOpacity onPress={() => {navigation.navigate('Cart')}} style={styles.cart}>
+                <TouchableOpacity onPress={() => {setCartItemsNum(cartItemsNum => cartItemsNum = cartItemsNum + 1);setEmptyCart(false); setAddedToCart(items)}} style={[styles.cart, {backgroundColor: emptyCart ? "#fed813" : "white"}]}>
                   <Text>Add to Cart</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => {navigation.navigate('LoginScreen')}} style={styles.buy}>
@@ -431,9 +438,9 @@ const styles = StyleSheet.create({
   
   detail: { paddingTop: 6, backgroundColor: "white",},
   
-  cart: { alignItems: "center", backgroundColor: "#fed813", marginVertical: 6, paddingVertical: 14, borderRadius: 8},
+  cart: { elevation: 3, alignItems: "center", borderColor:  "#fed813", borderWidth: 1, marginVertical: 6, paddingVertical: 14, borderRadius: 8},
   
-  buy: { alignItems: "center", backgroundColor: "#ffa41d", marginVertical: 6, marginBottom: 15, paddingVertical: 14, borderRadius: 8},
+  buy: { elevation: 3, alignItems: "center", backgroundColor: "#ffa41d", marginVertical: 6, marginBottom: 15, paddingVertical: 14, borderRadius: 8},
   
   container: { flex: 1, paddingTop: 30, backgroundColor: '#fff', alignItems: "center", justifyContent: "center"},
   

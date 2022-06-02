@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import { Text, View, StyleSheet, Pressable, Image, ScrollView } from "react-native";
+import { Text, BackHandler, View, StyleSheet, Pressable, Image, ScrollView } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import Feather from "react-native-vector-icons/Feather";
 
@@ -9,11 +9,24 @@ import { NavBarContext } from "../Contexts/NavBarContext";
 
 export default function Account({ navigation }) {
 
-    const { setCurrentScreen } = useContext(NavBarContext);
+    const { currentScreen, setCurrentScreen } = useContext(NavBarContext);
+    const { previousScreens } = useContext(NavBarContext)
+
 
     useEffect(() => {
+        const backAction = () => {
+          setCurrentScreen(previousScreens.current[previousScreens.current.length - 1]) 
+        };
+    
+        const backHandler = BackHandler.addEventListener(
+          "hardwareBackPress",
+          backAction
+        );
+         
         setCurrentScreen("Account")
-    }, [])
+    
+        return () => backHandler.remove();
+      }, []);
 
     return (
         <View style={styles.mainContainer}>
@@ -35,14 +48,14 @@ export default function Account({ navigation }) {
                     </View>
                     <ScrollView>
                         <LinearGradient style={{}} start={{ x: 0, y: 1 }} end={{ x: 0, y: 0 }} colors={["#fff", "#94dfd8", "#94dfda"]}>
-                            <View style={{ height: 60, marginBottom: 25}}>
+                            <View style={{ height: 60, marginBottom: 25 }}>
                                 <Text style={styles.signInHeading}>
                                     Sign In For the Best Experience
                                 </Text>
                             </View>
                         </LinearGradient>
                         <View style={{ alignItems: "center" }}>
-                            <Pressable onPress={() => navigation.navigate('LoginScreen')} style={[styles.button, {marginBottom: 15}]}>
+                            <Pressable onPress={() => navigation.navigate('LoginScreen')} style={[styles.button, { marginBottom: 15 }]}>
                                 <Text>Sign In</Text>
                             </Pressable>
                             <Pressable onPress={() => navigation.navigate('LoginScreen')} style={styles.button}>
@@ -51,11 +64,11 @@ export default function Account({ navigation }) {
                         </View>
                         <View style={styles.signInPerks}>
                             <View>
-                                <Image style={styles.perksImage} 
+                                <Image style={styles.perksImage}
                                     source={require("../assets/Images/deliverybox.png")}></Image>
                                 <Image style={styles.perksImage}
                                     source={require("../assets/Images/shoppingbag.png")}></Image>
-                                <Image  style={styles.perksImage} 
+                                <Image style={styles.perksImage}
                                     source={require("../assets/Images/checklist.png")}></Image>
                             </View>
                             <View>
@@ -81,7 +94,7 @@ export default function Account({ navigation }) {
 
 const styles = StyleSheet.create({
     mainContainer: {
-        flex: 1, 
+        flex: 1,
         backgroundColor: 'white'
     },
     innerMain: {
@@ -89,49 +102,49 @@ const styles = StyleSheet.create({
         justifyContent: "flex-start",
     },
     topHeader: {
-        backgroundColor: "#94dfda", 
-        paddingTop: 36, 
-        paddingLeft: 6, 
-        paddingRight: 6, 
-        flexDirection: "row", 
-        justifyContent: "space-between", 
-        alignContent: "center", 
+        backgroundColor: "#94dfda",
+        paddingTop: 36,
+        paddingLeft: 6,
+        paddingRight: 6,
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignContent: "center",
         paddingVertical: 16
     },
     headerLogo: {
-        height: 30, 
+        height: 30,
         width: 100
     },
     signInHeading: {
-        fontSize: 22, 
-        color: "#2d4247", 
-        textAlign: "center", 
+        fontSize: 22,
+        color: "#2d4247",
+        textAlign: "center",
         paddingHorizontal: 100
     },
     button: {
-        backgroundColor: "#f1c876", 
-        borderWidth: 0.5, 
-        borderRadius: 3, 
-        padding: 14, 
-        color: "black", 
-        width: "94%", 
+        backgroundColor: "#f1c876",
+        borderWidth: 0.5,
+        borderRadius: 3,
+        padding: 14,
+        color: "black",
+        width: "94%",
         alignItems: "center"
     },
     signInPerks: {
-        flex: 1, 
-        marginHorizontal: 12, 
-        paddingVertical: 15, 
+        flex: 1,
+        marginHorizontal: 12,
+        paddingVertical: 15,
         flexDirection: "row"
     },
     perksImage: {
-        height: 70, 
-        width: 70, 
-        marginVertical: 22, 
+        height: 70,
+        width: 70,
+        marginVertical: 22,
         marginLeft: 20
     },
     perksText: {
         fontSize: 17,
-        marginLeft: 25, 
+        marginLeft: 25,
         height: 75
     }
 

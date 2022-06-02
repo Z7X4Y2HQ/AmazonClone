@@ -1,9 +1,10 @@
 [
    {
-      "id": 12,
+      "id": 1,
       "title": "Visit the ASUS Store",
       "description": "ASUS VivoBook 15 M515 Thin and Light Laptop, 15.6” IPS FHD Display, Windows 10 Home with Free Upgrade to Windows 11, AMD Ryzen 7 5700U, 8GB RAM, 512GB SSD, Fingerprint Reader, Slate Grey, M515UA-EB72",
-      "newPrice": 889.89,
+      "newPrice": 889,
+      "cents": 89,
       "oldPrice": 225.68,
       "reviews": 30880,
       "images": [
@@ -16,10 +17,11 @@
       ]
    },
    {
-      "id": 10,
+      "id": 2,
       "title": "Visit the HP Store",
       "description": "HP Envy 17 Laptop, 11th Gen Intel Core i7-1165G7, 12 GB RAM, 1 TB SATA Hard Drive & 256 GB SSD Storage, 17.3-inch Full HD IPS Touchscreen, Windows 10 Home, HD Webcam, Audio by B&O (17-cg1010nr, 2021)",
-      "newPrice": 799.89,
+      "newPrice": 799,
+      "cents": 89,
       "oldPrice": 455.68,
       "reviews": 350760,
       "images": [
@@ -48,10 +50,11 @@
       ]
    },
    {
-      "id": 9,
+      "id": 13,
       "title": "Visit the HP Store",
       "description": "2021 HP 15.6 Thin Laptop, AMD 3050U, 8GB RAM 128GB SSD Webcam, 1-Year Office365, Wi-Fi, Dual Core up to 2.8 GHz, Windows 10 S, FHD Display, Google Classroom Zoom School Business Ready, ROKC Bundle",
-      "newPrice": 3899.89,
+      "newPrice": 3899,
+      "cents": 89,
       "oldPrice": 245.68,
       "reviews": 35060,
       "images": [

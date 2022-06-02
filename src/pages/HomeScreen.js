@@ -1,5 +1,5 @@
 import { useContext, useEffect } from 'react';
-import { Text, Pressable, StyleSheet, View, Dimensions, Image, ScrollView } from 'react-native';
+import { Text, BackHandler, Pressable, StyleSheet, View, Dimensions, Image, ScrollView } from 'react-native';
 import { SimpleLineIcons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 
@@ -37,15 +37,27 @@ const headerOver = [
 
 export default function HomeScreen({ navigation }) {
   const { currentScreen, setCurrentScreen } = useContext(NavBarContext);
-  const {previousScreens} = useContext(NavBarContext)
+  const { previousScreens } = useContext(NavBarContext)
 
   console.log("\nPrevious Screeen : ", previousScreens)
   console.log("\nCurrent Screeen : ", currentScreen)
   console.log("\nPrevious Screen : ", previousScreens.current[previousScreens.current.length - 1])
 
+  
   useEffect(() => {
+    const backAction = () => {
+      setCurrentScreen(previousScreens.current[previousScreens.current.length - 1])
+    };
+
+    const backHandler = BackHandler.addEventListener(
+      "hardwareBackPress",
+      backAction
+    );
+     
     setCurrentScreen("Home")
-  }, [])
+
+    return () => backHandler.remove();
+  }, []);
 
 
   return (

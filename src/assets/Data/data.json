@@ -3,7 +3,8 @@
       "id": 1,
       "title": "Visit the ASUS Store",
       "description": "ASUS VivoBook 15 M515 Thin and Light Laptop, 15.6” IPS FHD Display, Windows 10 Home with Free Upgrade to Windows 11, AMD Ryzen 7 5700U, 8GB RAM, 512GB SSD, Fingerprint Reader, Slate Grey, M515UA-EB72",
-      "newPrice": 889.89,
+      "newPrice": 889,
+      "cents": 89,
       "oldPrice": 225.68,
       "reviews": 30880,
       "images": [
@@ -19,7 +20,8 @@
       "id": 2,
       "title": "Visit the HP Store",
       "description": "HP Envy 17 Laptop, 11th Gen Intel Core i7-1165G7, 12 GB RAM, 1 TB SATA Hard Drive & 256 GB SSD Storage, 17.3-inch Full HD IPS Touchscreen, Windows 10 Home, HD Webcam, Audio by B&O (17-cg1010nr, 2021)",
-      "newPrice": 799.89,
+      "newPrice": 799,
+      "cents": 89,
       "oldPrice": 455.68,
       "reviews": 350760,
       "images": [
@@ -36,7 +38,8 @@
       "id": 3,
       "title": "Visit the Amazon Renewed Store",
       "description": "Apple iPhone 12 Pro Max, 128GB, Pacific Blue - Unlocked (Renewed Premium)",
-      "newPrice": 929.00,
+      "newPrice": 929,
+      "cents": 10,
       "oldPrice": 225.68,
       "reviews": 91,
       "images": [
@@ -47,7 +50,8 @@
       "id": 4,
       "title": "Visit the Acer Store",
       "description": "Acer Travelmate Spin P4, 14 Full HD Touch, Intel i5-1135G7, 8GB DDR4, 512GB NVMe SSD, Thunderbolt 4, Intel Wi-Fi 6 AX201, Rechargeable Active Stylus, Fingerprint Reader, Win 10 Pro, TMP414RN-51-54JZ",
-      "newPrice": 669.89,
+      "newPrice": 669,
+      "cents": 89,
       "oldPrice": 555.68,
       "reviews": 30760,
       "images": [
@@ -62,7 +66,8 @@
       "id": 5,
       "title": "Visit the ROCCAT Store",
       "description": "ROCCAT Vulcan 122 Mechanical PC Tactile Gaming Keyboard, Titan Switch, AIMO RGB Backlit Lighting Per Key, Detachable Palm/Wrist Rest, Anodized Aluminum Top Plate, Full Size, White/Silver",
-      "newPrice": 99.99,
+      "newPrice": 99.89,
+      "cents": 99,
       "oldPrice": 159.99,
       "reviews": 1000,
       "images": [
@@ -78,7 +83,8 @@
       "id": 6,
       "title": "Visit the Corsair Store",
       "description": "CORSAIR K70 RGB TKL – Champion Series Tenkeyless Mechanical Gaming Keyboard - Cherry MX Speed Keyswitches - Durable Aluminum Frame - Per-Key RGB LED Backlighting - Detachable USB Type-C Cable",
-      "newPrice": 119.95,
+      "newPrice": 119,
+      "cents": 95,
       "oldPrice": 299.99,
       "reviews": 1500,
       "images": [
@@ -95,7 +101,8 @@
       "id": 7,
       "title": "Visit the Meta Quest Store",
       "description": "Meta Quest 2 — Advanced All-In-One Virtual Reality Headset — 256 GB",
-      "newPrice": 399.00,
+      "newPrice": 399,
+      "cents": 10,
       "oldPrice": 0,
       "reviews": 47446,
       "images": [
@@ -110,7 +117,8 @@
       "id": 8,
       "title": "Visit the HP Store",
       "description": "HP 24mh FHD Monitor - Computer Monitor with 23.8-Inch IPS Display (1080p) - Built-In Speakers and VESA Mounting - Height/Tilt Adjustment for Ergonomic Viewing - HDMI and DisplayPort - (1D0J9AA#ABA)",
-      "newPrice": 69.00,
+      "newPrice": 69,
+      "cents": 10,
       "oldPrice": 0,
       "reviews": 2124,
       "images": [
@@ -124,7 +132,8 @@
       "id": 9,
       "title": "Visit the Nintendo Store",
       "description": "Nintendo Switch – OLED Model w/ Neon Red & Neon Blue Joy-Con",
-      "newPrice": 365.90,
+      "newPrice": 365,
+      "cents": 90,
       "oldPrice": 10.0,
       "reviews": 12482,
       "images": [
@@ -139,7 +148,8 @@
       "id": 10,
       "title": "Visit the HP Store",
       "description": "Assassin’s Creed Valhalla PlayStation 4 Standard Edition with Free Upgrade to the Digital PS5 Version",
-      "newPrice": 19.99,
+      "newPrice": 19,
+      "cents": 99,
       "oldPrice": 245.68,
       "reviews": 13445,
       "images": [
@@ -156,7 +166,8 @@
       "id": 11,
       "title": "Visit the Razer Store",
       "description": "Razer Blade 15 Gaming Laptop: NVIDIA GeForce RTX 3080 Ti - 12th Gen Intel 14-Core i7 CPU - 15.6” QHD 240Hz - 32GB DDR5 RAM, 1TB PCIe SSD - Windows 11 - CNC Aluminum - Chroma RGB - Thunderbolt 4",
-      "newPrice": 3999.99,
+      "newPrice": 3999,
+      "cents": 99,
       "oldPrice": 245.68,
       "reviews": 2124,
       "images": [
@@ -173,7 +184,8 @@
       "id": 12,
       "title": "Visit the Acer Store",
       "description": "Acer Aspire 5 A515-46-R3UB | 15.6 Full HD IPS Display | AMD Ryzen 3 3350U Quad-Core Mobile Processor | 4GB DDR4 | 128GB NVMe SSD | WiFi 6 | Backlit KB | FPR | Amazon Alexa | Windows 11 Home in S mode",
-      "newPrice": 3999.89,
+      "newPrice": 3999,
+      "cents": 89,
       "oldPrice": 255.68,
       "reviews": 35040,
       "images": [
@@ -191,7 +203,8 @@
       "id": 13,
       "title": "Visit the HP Store",
       "description": "2021 HP 15.6 Thin Laptop, AMD 3050U, 8GB RAM 128GB SSD Webcam, 1-Year Office365, Wi-Fi, Dual Core up to 2.8 GHz, Windows 10 S, FHD Display, Google Classroom Zoom School Business Ready, ROKC Bundle",
-      "newPrice": 3899.89,
+      "newPrice": 3899,
+      "cents": 89,
       "oldPrice": 245.68,
       "reviews": 35060,
       "images": [
@@ -208,6 +221,7 @@
       "title": "Visit the Amazon Renewed Store",
       "description": "Apple iPhone XS Max, 256GB, Gold - Unlocked (Renewed Premium)",
       "newPrice": 469.89,
+      "cents": 89,
       "oldPrice": 0,
       "reviews": 12740,
       "images": [
@@ -218,7 +232,8 @@
       "id": 15,
       "title": "Visit the OnePlus Store",
       "description": "OnePlus Nord N200 | 5G Unlocked Android Smartphone U.S Version | 6.49\" Full HD+LCD Screen | 90Hz Smooth Display | Large 5000mAh Battery | Fast Charging | 64GB Storage | Triple Camera,Blue Quantum",
-      "newPrice": 239.99,
+      "newPrice": 239,
+      "cents": 99,
       "oldPrice": 0,
       "reviews": 852,
       "images": [
@@ -234,7 +249,8 @@
       "id": 16,
       "title": "Visit the SAMSUNG Store",
       "description": "SAMSUNG Galaxy S21 Ultra 5G Factory Unlocked Android Cell Phone 128GB US Version Smartphone Pro-Grade Camera 8K Video 108MP High Res, Phantom Black",
-      "newPrice": 1199.99,
+      "newPrice": 1199,
+      "cents": 99,
       "oldPrice": 0,
       "reviews": 1941,
       "images": [

@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
-import { Text, View, Pressable, StyleSheet, ScrollView, TouchableOpacity } from "react-native";
+import { Text, View, BackHandler, Pressable, StyleSheet, ScrollView, TouchableOpacity } from "react-native";
 import { LinearGradient } from 'expo-linear-gradient';
 import { List } from "react-native-paper";
 import { FontAwesome, Feather, AntDesign} from '@expo/vector-icons';
@@ -12,17 +12,24 @@ export default function Settings({ navigation }) {
   const [expanded, setExpanded] = useState(true);
   const [expanded1, setExpanded1] = useState(true);
   const [expanded2, setExpanded2] = useState(true);
+  
   const { currentScreen, setCurrentScreen } = useContext(NavBarContext);
-  const {previousScreens} = useContext(NavBarContext)
+  const { previousScreens } = useContext(NavBarContext)
 
+  useEffect(() => {
+    const backAction = () => {
+      setCurrentScreen(previousScreens.current[previousScreens.current.length - 1])
+    };
 
-  console.log("\nSettings Previous Screeen : ", previousScreens)
-  console.log("\Settings nCurrent Screeen : ", currentScreen)
-
-
-  useEffect(()=>{
+    const backHandler = BackHandler.addEventListener(
+      "hardwareBackPress",
+      backAction
+    );
+     
     setCurrentScreen("Settings")
-  }, [])
+
+    return () => backHandler.remove();
+  }, []);
 
   return (
     <View style={{ flex: 1 }}>

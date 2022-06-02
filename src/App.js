@@ -18,11 +18,19 @@ export default () => {
   const navigationRef = useRef(null);
   const previousScreens = useRef([]);
   const [currentScreen, setCurrentScreen] = useState("Home")
+  const [cartItemsNum, setCartItemsNum] = useState(0)
+  const [emptyCart, setEmptyCart] = useState(true)
+  const [addedToCart, setAddedToCart] = useState()
   
   return (
     <View style={{flex:1}}>
       <NavigationContainer ref={navigationRef} onStateChange={() => previousScreens.current.push(navigationRef.current.getCurrentRoute().name)}>
-        <NavBarContext.Provider value={{currentScreen, setCurrentScreen, previousScreens}}>
+        <NavBarContext.Provider 
+          value={{currentScreen, setCurrentScreen, 
+                  cartItemsNum, setCartItemsNum, 
+                  emptyCart, setEmptyCart,
+                  addedToCart, setAddedToCart,
+                  previousScreens}}>
           <Stack.Navigator initialRouteName="Home" screenOptions={{headerShown: false}}>
             <Stack.Screen name="Home" component={HomeScreen}/>
             <Stack.Screen name="LoginScreen" component={LoginScreen} />

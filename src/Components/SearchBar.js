@@ -11,6 +11,7 @@ export default SearchBar = ({ref, navigation}) => {
   const { currentScreen, setCurrentScreen } = useContext(NavBarContext);
   const { previousScreens } = useContext(NavBarContext)
 
+
   return(
     <LinearGradient start={{x: 0, y: 0}} end={{x: 1, y: 0}}  colors={['#81d8e3', '#93dfd9', '#a5e7cf']}>
         <View style={styles.searchBarContainer}>
