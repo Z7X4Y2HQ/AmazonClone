@@ -15,6 +15,3 @@ CheckList of things that need to be done by the end of this Week, Hopefully
 - [ ] Make Added to Cart Screen with useContext()
 - [ ] Try [react-native-mmkv-storage](https://github.com/ammarahm-ed/react-native-mmkv-storage) for localStorage
 - [x] Rename Project from Navigation to Amazon Clone
-
-Link to try out the App on Expo Go: https://expo.dev/@z7x4y2hq/Navigation
-Or Try the APK: https://github.com/Z7X4Y2HQ/AmazonClone/releases
