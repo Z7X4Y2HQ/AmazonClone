@@ -32,12 +32,6 @@ export default function LoginScreen({ navigation }) {
 
   const OTP = Math.floor(100000 + Math.random() * 900000);
 
-  console.log(OTP);
-
-  // console.log("Name: ", name);
-  // console.log("Email: ", email);
-  // console.log("Password: ", password);
-
   console.log(credentials);
 
   return (
@@ -542,7 +536,6 @@ export default function LoginScreen({ navigation }) {
               onEndEditing={(event) => {
                 setCredentials({ ...credentials, name: event.nativeEvent.text });
               }}
-              placeholder={OTP}
               style={{
                 backgroundColor: "white",
                 borderWidth: 1,
@@ -568,6 +561,7 @@ export default function LoginScreen({ navigation }) {
           >
             <Text>Verify</Text>
           </Pressable>
+          <Text>{OTP}</Text>
         </View>
       )}
     </View>
