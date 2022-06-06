@@ -8,30 +8,32 @@ export default HomeProductlist = ({ JSONdata, navigation }) => {
   return (
     <FlatList
       data={JSONdata}
-      renderItem={({ item }) => (
-        <View>
-          <Pressable
-            onPress={() => {
-              navigation.navigate("ProductPage", item);
-              setCurrentScreen("ProductPageFromHome");
-            }}
-          >
-            <View style={styles.productContainer}>
-              <Image style={styles.productImage} source={{ uri: item.images[0] }} />
-              <View style={styles.productInfoContainer}>
-                <Text numberOfLines={3} style={styles.productTitle}>
-                  {item.description}
-                </Text>
-                <View style={styles.priceContainer}>
-                  <Text style={styles.superScriptText}>$</Text>
-                  <Text style={{ fontSize: 24 }}>{item.newPrice}</Text>
-                  <Text style={styles.superScriptText}>00</Text>
+      renderItem={({ item }) => {
+        return (
+          <View>
+            <Pressable
+              onPress={() => {
+                navigation.navigate("ProductPage", item);
+                setCurrentScreen("ProductPageFromHome");
+              }}
+            >
+              <View style={styles.productContainer}>
+                <Image style={styles.productImage} source={{ uri: item.images[0] }} />
+                <View style={styles.productInfoContainer}>
+                  <Text numberOfLines={3} style={styles.productTitle}>
+                    {item.description}
+                  </Text>
+                  <View style={styles.priceContainer}>
+                    <Text style={styles.superScriptText}>$</Text>
+                    <Text style={{ fontSize: 24 }}>{item.newPrice}</Text>
+                    <Text style={styles.superScriptText}>00</Text>
+                  </View>
                 </View>
               </View>
-            </View>
-          </Pressable>
-        </View>
-      )}
+            </Pressable>
+          </View>
+        );
+      }}
     />
   );
 };

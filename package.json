@@ -9,19 +9,23 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@react-native-async-storage/async-storage": "~1.15.0",
     "@react-native-community/checkbox": "^0.5.12",
     "@react-native-community/slider": "4.1.12",
     "@react-navigation/native-stack": "^6.6.1",
     "accordion-collapse-react-native": "^1.1.0",
     "expo": "~44.0.2",
     "expo-blur": "~11.0.0",
+    "expo-checkbox": "~2.0.0",
     "expo-linear-gradient": "~11.0.3",
     "expo-splash-screen": "~0.14.1",
     "expo-status-bar": "~1.2.0",
+    "expo-updates": "~0.11.7",
     "image-auto-scroll": "^1.0.1",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-native": "0.64.3",
+    "react-native-fs": "^2.20.0",
     "react-native-image-slider-box": "^1.1.22",
     "react-native-paper": "^4.12.0",
     "react-native-safe-area-context": "3.3.2",
@@ -29,8 +33,8 @@
     "react-native-snap-carousel": "^3.9.1",
     "react-native-table-component": "^1.2.2",
     "react-native-web": "0.17.1",
-    "expo-checkbox": "~2.0.0",
-    "expo-updates": "~0.11.7"
+    "sync-storage": "^0.4.2",
+    "write-json-file": "^5.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"

@@ -259,8 +259,16 @@ export default function Cart({ route, navigation }) {
                         >
                           <Pressable
                             onPress={() => {
-                              setCartItemsNum((cartItemsNum) => (cartItemsNum = 0));
-                              setEmptyCart(!emptyCart);
+                              if (cartItemsNum <= 1) {
+                                setCartItemsNum(0);
+                                setEmptyCart(!emptyCart);
+                                setAddedToCart([])
+                              } else {
+                                  setCartItemsNum(
+                                    (cartItemsNum) => (cartItemsNum = cartItemsNum - 1)
+                                  )
+                              }
+                              
                             }}
                             style={{
                               borderWidth: 0.8,
@@ -317,6 +325,7 @@ export default function Cart({ route, navigation }) {
                           onPress={() => {
                             setCartItemsNum((cartItemsNum) => (cartItemsNum = 0));
                             setEmptyCart(!emptyCart);
+                            setAddedToCart([])
                           }}
                           style={{
                             elevation: 3,

@@ -55,10 +55,10 @@ export default function Account({ navigation }) {
                             </View>
                         </LinearGradient>
                         <View style={{ alignItems: "center" }}>
-                            <Pressable onPress={() => navigation.navigate('LoginScreen')} style={[styles.button, { marginBottom: 15 }]}>
+                            <Pressable onPress={() => navigation.navigate('LoginScreen')} style={[styles.button, { marginBottom: 15, backgroundColor: "#f1c876"}]}>
                                 <Text>Sign In</Text>
                             </Pressable>
-                            <Pressable onPress={() => navigation.navigate('LoginScreen')} style={styles.button}>
+                            <Pressable onPress={() => navigation.navigate('LoginScreen')} style={[styles.button, {backgroundColor: "#eff0f4"}]}>
                                 <Text>Create Account</Text>
                             </Pressable>
                         </View>
@@ -122,7 +122,6 @@ const styles = StyleSheet.create({
         paddingHorizontal: 100
     },
     button: {
-        backgroundColor: "#f1c876",
         borderWidth: 0.5,
         borderRadius: 3,
         padding: 14,

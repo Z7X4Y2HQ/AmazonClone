@@ -1,4 +1,4 @@
-package com.clone.amazon;
+package com.amazonn.clone;
 
 import android.os.Build;
 import android.os.Bundle;
