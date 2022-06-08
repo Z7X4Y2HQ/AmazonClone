@@ -35,12 +35,11 @@ export default function LoginScreen({ navigation }) {
   }
 
   const [OTP, setOTP] = useState(OTPGenerator());
-  const [OTPCheck, setOTPCheck] = useState({ OTPInput: "" });
+  const [OTPCheck, setOTPCheck] = useState({ OTPInput: undefined });
   const [incorrectOTP, setIncorrectOTP] = useState(false);
 
   console.log(credentials);
-  console.log("\nOTP: ", OTP);
-  console.log("\nOTPCheck: ", OTPCheck.OTPInput);
+
 
   return (
     <View>
@@ -563,9 +562,23 @@ export default function LoginScreen({ navigation }) {
           )}
           <Pressable
             onPress={() => {
-              toString(OTP) == OTPCheck
-                ? navigation.navigate("Author")
-                : setIncorrectOTP(true);
+
+              console.log("\nOTP: ",  typeof (""+OTP));
+              console.log("\nOTP: ",  (""+OTP).length);
+              console.log("\nOTPCheck: ",  typeof (OTPCheck.OTPInput));
+              console.log("\nOTPCheck: ",  (OTPCheck.OTPInput).length);
+
+              console.log(toString(OTP) == OTPCheck.OTPInput)
+
+              if (toString(OTP) == OTPCheck.OTPInput) {
+                setIncorrectOTP(false);
+                navigation.navigate("Author")
+                console.log("otp was correfcttt!!1111!!")
+              } else {
+                setIncorrectOTP(true);
+                console.log("otp was incorrect lmao poor little geh")
+              }
+
             }}
             style={{
               marginHorizontal: 20,
