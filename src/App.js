@@ -4,6 +4,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "./pages/HomeScreen";
 import Settings from "./pages/Settings";
+import Author from "./pages/Author";
 import LoginScreen from "./pages/LoginScreen";
 import Search from "./pages/Search";
 import Cart from "./pages/Cart";
@@ -21,7 +22,7 @@ export default () => {
   const [emptyCart, setEmptyCart] = useState(true);
   const [addedToCart, setAddedToCart] = useState();
 
-  const [credentials, setCredentials] = useState({ name: name, email: email, password: password});
+  const [credentials, setCredentials] = useState({ name: undefined , email: undefined, password: undefined});
 
 
   return (
@@ -38,9 +39,6 @@ export default () => {
             cartItemsNum, setCartItemsNum,
             emptyCart, setEmptyCart,
             addedToCart, setAddedToCart,
-            name, setName,
-            email, setEmail,
-            password, setPassword,
             credentials, setCredentials,
             previousScreens,
           }}
@@ -54,6 +52,7 @@ export default () => {
             <Stack.Screen name="ProductPage" component={ProductPage} />
             <Stack.Screen name="List" component={ListScreen} />
             <Stack.Screen name="Account" component={Account} />
+            <Stack.Screen name="Author" component={Author} />
           </Stack.Navigator>
         </NavBarContext.Provider>
       </NavigationContainer>

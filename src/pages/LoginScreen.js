@@ -6,10 +6,10 @@ import { AntDesign } from "@expo/vector-icons";
 import { NavBarContext } from "../Contexts/NavBarContext";
 
 export default function LoginScreen({ navigation }) {
-  const [isSelected, setSelection] = React.useState(false);
-  const [expand, setexpand] = React.useState(false);
-  const [deexpand, sedetexpand] = React.useState(true);
-  const [icon, seticon] = React.useState(false);
+  const [isSelected, setSelection] = useState(false);
+  const [expand, setexpand] = useState(false);
+  const [deexpand, sedetexpand] = useState(true);
+  const [icon, seticon] = useState(false);
 
   const { name, setName } = useContext(NavBarContext);
   const { email, setEmail } = useContext(NavBarContext);
@@ -30,9 +30,17 @@ export default function LoginScreen({ navigation }) {
   const [isChecked2, setChecked2] = React.useState(true);
   const [isChecked3, setChecked3] = React.useState(false);
 
-  const OTP = Math.floor(100000 + Math.random() * 900000);
+  function OTPGenerator() {
+    return Math.floor(100000 + Math.random() * 900000);
+  }
+
+  const [OTP, setOTP] = useState(OTPGenerator());
+  const [OTPCheck, setOTPCheck] = useState({ OTPInput: "" });
+  const [incorrectOTP, setIncorrectOTP] = useState(false);
 
   console.log(credentials);
+  console.log("\nOTP: ", OTP);
+  console.log("\nOTPCheck: ", OTPCheck.OTPInput);
 
   return (
     <View>
@@ -521,7 +529,7 @@ export default function LoginScreen({ navigation }) {
             }}
           >
             To verify your email, we've sent a One Time Password (OTP) to {credentials.email}{" "}
-            <Text style={{ color: "#65baca" }}>
+            <Text style={{ color: "#3f7f8e" }}>
               {"("}Change{")"}
             </Text>
           </Text>
@@ -534,7 +542,7 @@ export default function LoginScreen({ navigation }) {
             <Text style={{ fontWeight: "bold" }}>Enter OTP</Text>
             <TextInput
               onEndEditing={(event) => {
-                setCredentials({ ...credentials, name: event.nativeEvent.text });
+                setOTPCheck({ ...OTPCheck, OTPInput: event.nativeEvent.text });
               }}
               style={{
                 backgroundColor: "white",
@@ -548,8 +556,17 @@ export default function LoginScreen({ navigation }) {
               }}
             ></TextInput>
           </View>
+          {incorrectOTP && (
+            <View style={{ justifyContent: "center", alignItems: "center" }}>
+              <Text style={{ paddingVertical: 14 }}>lmfao wrong OTP XD, try again loser!</Text>
+            </View>
+          )}
           <Pressable
-            onPress={() => navigation.navigate("LoginScreen")}
+            onPress={() => {
+              toString(OTP) == OTPCheck
+                ? navigation.navigate("Author")
+                : setIncorrectOTP(true);
+            }}
             style={{
               marginHorizontal: 20,
               borderRadius: 7,
@@ -559,8 +576,17 @@ export default function LoginScreen({ navigation }) {
               backgroundColor: "#fdd800",
             }}
           >
-            <Text>Verify</Text>
+            <Text>Create yout Amazon account</Text>
           </Pressable>
+          <View style={{ justifyContent: "center", alignItems: "center", paddingVertical: 22 }}>
+            <Pressable
+              onPress={() => {
+                setOTP((OTP) => OTPGenerator());
+              }}
+            >
+              <Text style={{ color: "#3f7f8e" }}>Resent OTP</Text>
+            </Pressable>
+          </View>
           <Text>{OTP}</Text>
         </View>
       )}
@@ -570,19 +596,12 @@ export default function LoginScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   main: {
-    // flex: 1,
-    // backgroundColor: "lightgrey",
-    // justifyContent:'center',
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#f6f6f6",
-    // e1e5e4
   },
   checBoxes: {
     backgroundColor: "white",
-
-    // margin:5,
-    // alignItems:'center',
     width: "90%",
     borderRadius: 4,
   },
