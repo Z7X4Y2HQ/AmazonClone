@@ -11,10 +11,6 @@ export default function LoginScreen({ navigation }) {
   const [deexpand, sedetexpand] = useState(true);
   const [icon, seticon] = useState(false);
 
-  const { name, setName } = useContext(NavBarContext);
-  const { email, setEmail } = useContext(NavBarContext);
-  const { password, setPassword } = useContext(NavBarContext);
-
   const { credentials, setCredentials } = useContext(NavBarContext);
 
   const [emailadded, setEmailAdded] = useState(false);
@@ -26,9 +22,9 @@ export default function LoginScreen({ navigation }) {
   const [missingEmail, setMissingEmail] = useState(false);
   const [missingPassword, setMissingPassword] = useState(false);
 
-  const [isChecked, setChecked] = React.useState(false);
-  const [isChecked2, setChecked2] = React.useState(true);
-  const [isChecked3, setChecked3] = React.useState(false);
+  const [isChecked, setChecked] = useState(false);
+  const [isChecked2, setChecked2] = useState(true);
+  const [isChecked3, setChecked3] = useState(false);
 
   function OTPGenerator() {
     return Math.floor(100000 + Math.random() * 900000);
