@@ -12,9 +12,11 @@ export default function LoginScreen({ navigation }) {
   const [icon, seticon] = useState(false);
 
   const { credentials, setCredentials } = useContext(NavBarContext);
+  const { OTPCheck, setOTPCheck } = useContext(NavBarContext);
+  const { loggedIn, setLoggedIn } = useContext(NavBarContext);
+  const { credentialsAdded, setCredentialsAdded } = useContext(NavBarContext);
 
   const [emailadded, setEmailAdded] = useState(false);
-  const [credentialsAdded, setCredentialsAdded] = useState(false);
 
   const [alert, setAlert] = useState(false);
 
@@ -31,11 +33,9 @@ export default function LoginScreen({ navigation }) {
   }
 
   const [OTP, setOTP] = useState(OTPGenerator());
-  const [OTPCheck, setOTPCheck] = useState({ OTPInput: undefined });
   const [incorrectOTP, setIncorrectOTP] = useState(false);
 
   console.log(credentials);
-
 
   return (
     <View>
@@ -536,6 +536,7 @@ export default function LoginScreen({ navigation }) {
           >
             <Text style={{ fontWeight: "bold" }}>Enter OTP</Text>
             <TextInput
+              keyboardType="numeric"
               onEndEditing={(event) => {
                 setOTPCheck({ ...OTPCheck, OTPInput: event.nativeEvent.text });
               }}
@@ -553,28 +554,21 @@ export default function LoginScreen({ navigation }) {
           </View>
           {incorrectOTP && (
             <View style={{ justifyContent: "center", alignItems: "center" }}>
-              <Text style={{ paddingVertical: 14 }}>lmfao wrong OTP XD, try again loser!</Text>
+              <Text style={{ paddingVertical: 14 }}> wrong OTP, try again!</Text>
             </View>
           )}
           <Pressable
             onPress={() => {
+              console.log("OTP: ", "" + OTP);
+              console.log("OTPInput: ", OTPCheck.OTPInput);
 
-              console.log("\nOTP: ",  typeof (""+OTP));
-              console.log("\nOTP: ",  (""+OTP).length);
-              console.log("\nOTPCheck: ",  typeof (OTPCheck.OTPInput));
-              console.log("\nOTPCheck: ",  (OTPCheck.OTPInput).length);
-
-              console.log(toString(OTP) == OTPCheck.OTPInput)
-
-              if (toString(OTP) == OTPCheck.OTPInput) {
+              if ("" + OTP == OTPCheck.OTPInput) {
                 setIncorrectOTP(false);
-                navigation.navigate("Author")
-                console.log("otp was correfcttt!!1111!!")
+                setLoggedIn(true);
+                navigation.navigate("Author");
               } else {
                 setIncorrectOTP(true);
-                console.log("otp was incorrect lmao poor little geh")
               }
-
             }}
             style={{
               marginHorizontal: 20,

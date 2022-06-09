@@ -11,6 +11,7 @@ import Cart from "./pages/Cart";
 import ProductPage from "./pages/ProductPage";
 import ListScreen from "./pages/List";
 import Account from "./pages/Account";
+import LoggedOutScreen from "./pages/LoggedOutScreen";
 import { NavBarContext } from "./Contexts/NavBarContext";
 
 export default () => {
@@ -21,8 +22,12 @@ export default () => {
   const [cartItemsNum, setCartItemsNum] = useState(0);
   const [emptyCart, setEmptyCart] = useState(true);
   const [addedToCart, setAddedToCart] = useState();
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [credentialsAdded, setCredentialsAdded] = useState(false);
 
   const [credentials, setCredentials] = useState({ name: undefined , email: undefined, password: undefined});
+  const [OTPCheck, setOTPCheck] = useState({ OTPInput: undefined });
+
 
 
   return (
@@ -40,6 +45,9 @@ export default () => {
             emptyCart, setEmptyCart,
             addedToCart, setAddedToCart,
             credentials, setCredentials,
+            OTPCheck, setOTPCheck,
+            loggedIn, setLoggedIn,
+            credentialsAdded, setCredentialsAdded,
             previousScreens,
           }}
         >
@@ -53,6 +61,7 @@ export default () => {
             <Stack.Screen name="List" component={ListScreen} />
             <Stack.Screen name="Account" component={Account} />
             <Stack.Screen name="Author" component={Author} />
+            <Stack.Screen name="LoggedOut" component={LoggedOut} />
           </Stack.Navigator>
         </NavBarContext.Provider>
       </NavigationContainer>

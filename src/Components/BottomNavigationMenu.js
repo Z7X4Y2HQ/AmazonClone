@@ -6,6 +6,7 @@ import { NavBarContext } from "../Contexts/NavBarContext";
 export default function BottomMenu({ navigation }) {
   const { currentScreen, setCurrentScreen } = useContext(NavBarContext);
   const { cartItemsNum, setCartItemsNum } = useContext(NavBarContext);
+  const { loggedIn, setLoggedIn } = useContext(NavBarContext);
 
   return (
     <View style={styles.BottomMenu}>
@@ -30,8 +31,12 @@ export default function BottomMenu({ navigation }) {
       </Pressable>
       <Pressable
         onPress={() => {
-          navigation.navigate("Account");
-          setCurrentScreen("Account");
+          if (loggedIn == true) {
+            navigation.navigate("Author");
+          } else {
+            navigation.navigate("Account");
+            setCurrentScreen("Account");
+          }
         }}
       >
         <FontAwesome
