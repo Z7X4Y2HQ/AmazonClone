@@ -7,7 +7,7 @@ import {
   StyleSheet,
   ScrollView,
   TouchableOpacity,
-  Alert
+  Alert,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { List } from "react-native-paper";
@@ -27,8 +27,7 @@ export default function Settings({ navigation }) {
   const { loggedIn, setLoggedIn } = useContext(NavBarContext);
   const { credentials, setCredentials } = useContext(NavBarContext);
   const { credentialsAdded, setCredentialsAdded } = useContext(NavBarContext);
-
-
+  const { name, setName } = useContext(NavBarContext);
 
   useEffect(() => {
     const backAction = () => {
@@ -41,21 +40,22 @@ export default function Settings({ navigation }) {
 
     return () => backHandler.remove();
   }, []);
+
   const signOutAlert = () =>
     Alert.alert(
       "ConFirm Sign Out",
-       credentials.name + ", you are signing out of your Amazon apps on this device.",
+      name + ", you are signing out of your Amazon apps on this device.",
       [
         {
           text: "SIGN OUT",
           onPress: () => {
             setLoggedIn(false);
             setCredentialsAdded(false);
-            navigation.navigate("LoggedOut")
+            navigation.navigate("LoggedOut");
           },
-          style: "cancel"
+          style: "cancel",
         },
-        { text: "Cancel", onPress: () => console.log("OK Pressed") }
+        { text: "Cancel", onPress: () => console.log("OK Pressed") },
       ]
     );
 
@@ -88,10 +88,7 @@ export default function Settings({ navigation }) {
                         paddingHorizontal: 15,
                         paddingVertical: 15,
                         borderRadius: 10,
-                        // opacity: 0.9,
                         flexDirection: "column",
-
-                        // alignItems: "center",
                       }}
                     >
                       <View
@@ -113,12 +110,11 @@ export default function Settings({ navigation }) {
                           <TouchableOpacity onPress={() => {}} styles={{}}>
                             <View
                               style={{
-                                // backgroundColor: "white",
                                 paddingHorizontal: 15,
                                 paddingTop: 10,
                                 borderRadius: 10,
                                 paddingVertical: 12,
-                                // backgroundColor:'red',
+
                                 marginTop: 5,
                               }}
                             >
@@ -173,7 +169,6 @@ export default function Settings({ navigation }) {
                                 paddingHorizontal: 15,
                                 paddingVertical: 10,
                                 borderRadius: 10,
-                                // backgroundColor:'red'
                               }}
                             >
                               <Text style={{ fontSize: 15 }}>Electronics</Text>
@@ -189,11 +184,9 @@ export default function Settings({ navigation }) {
                             <View
                               style={{
                                 paddingHorizontal: 15,
-                                // paddingTop: 18,
-                                // paddingBottom: 15,
+
                                 paddingVertical: 10,
                                 borderRadius: 10,
-                                // backgroundColor:'red',
                               }}
                             >
                               <Text style={{ fontSize: 15 }}>Men's Fashion</Text>
@@ -209,11 +202,9 @@ export default function Settings({ navigation }) {
                             <View
                               style={{
                                 paddingHorizontal: 15,
-                                // paddingTop: 18,
-                                // paddingBottom: 10,
+
                                 paddingVertical: 10,
                                 borderRadius: 10,
-                                // backgroundColor:'red',
                               }}
                             >
                               <Text style={{ fontSize: 15 }}>Health</Text>
@@ -247,10 +238,8 @@ export default function Settings({ navigation }) {
                         paddingHorizontal: 15,
                         paddingVertical: 15,
                         borderRadius: 10,
-                        // opacity: 0.9,
-                        flexDirection: "column",
 
-                        // alignItems: "center",
+                        flexDirection: "column",
                       }}
                     >
                       <View
@@ -272,12 +261,10 @@ export default function Settings({ navigation }) {
                           <TouchableOpacity onPress={() => {}} styles={{}}>
                             <View
                               style={{
-                                // backgroundColor: "white",
                                 paddingHorizontal: 15,
                                 paddingTop: 13,
                                 borderRadius: 10,
                                 paddingVertical: 12,
-                                // backgroundColor:'red',
                                 marginTop: 5,
                               }}
                             >
@@ -376,7 +363,12 @@ export default function Settings({ navigation }) {
                                   <Text style={{ fontSize: 15 }}>Switch Accounts</Text>
                                 </View>
                               </TouchableOpacity>
-                              <TouchableOpacity onPress={() => {signOutAlert()}} styles={{}}>
+                              <TouchableOpacity
+                                onPress={() => {
+                                  signOutAlert();
+                                }}
+                                styles={{}}
+                              >
                                 <View
                                   style={{
                                     paddingHorizontal: 15,
@@ -384,7 +376,7 @@ export default function Settings({ navigation }) {
                                     borderRadius: 10,
                                   }}
                                 >
-                                  <Text style={{ fontSize: 15 }}>Not {credentials.name}? Sign Out</Text>
+                                  <Text style={{ fontSize: 15 }}>Not {name}? Sign Out</Text>
                                 </View>
                               </TouchableOpacity>
                             </View>
@@ -413,10 +405,8 @@ export default function Settings({ navigation }) {
                         paddingHorizontal: 15,
                         paddingVertical: 15,
                         borderRadius: 10,
-                        // opacity: 0.9,
-                        flexDirection: "column",
 
-                        // alignItems: "center",
+                        flexDirection: "column",
                       }}
                     >
                       <View
@@ -436,47 +426,45 @@ export default function Settings({ navigation }) {
                     </View>
                   </TouchableOpacity>
                 </View>
-                { !loggedIn &&
-                <View style={{ marginTop: 12, paddingHorizontal: 10 }}>
-                  <TouchableOpacity
-                    onPress={() => {
-                      navigation.navigate("LoginScreen");
-                    }}
-                  >
-                    <View
-                      style={{
-                        backgroundColor: "white",
-                        borderColor: "#839a9a",
-                        borderWidth: 1,
-                        backgroundColor: "white",
-                        marginBottom: 0,
-                        paddingHorizontal: 15,
-                        paddingVertical: 15,
-                        borderRadius: 10,
-                        // opacity: 0.9,
-                        flexDirection: "column",
-
-                        // alignItems: "center",
+                {!loggedIn && (
+                  <View style={{ marginTop: 12, paddingHorizontal: 10 }}>
+                    <TouchableOpacity
+                      onPress={() => {
+                        navigation.navigate("LoginScreen");
                       }}
                     >
                       <View
                         style={{
-                          flexDirection: "row",
-                          alignItems: "center",
-                          justifyContent: "space-between",
+                          backgroundColor: "white",
+                          borderColor: "#839a9a",
+                          borderWidth: 1,
+                          backgroundColor: "white",
+                          marginBottom: 0,
+                          paddingHorizontal: 15,
+                          paddingVertical: 15,
+                          borderRadius: 10,
+
+                          flexDirection: "column",
                         }}
                       >
-                        <View style={{ flexDirection: "row" }}>
-                          <Text style={{ paddingLeft: 15, fontSize: 16 }}>Sign In</Text>
-                        </View>
-                        <View style={{}}>
-                          <AntDesign style={{}} name="right" size={15} />
+                        <View
+                          style={{
+                            flexDirection: "row",
+                            alignItems: "center",
+                            justifyContent: "space-between",
+                          }}
+                        >
+                          <View style={{ flexDirection: "row" }}>
+                            <Text style={{ paddingLeft: 15, fontSize: 16 }}>Sign In</Text>
+                          </View>
+                          <View style={{}}>
+                            <AntDesign style={{}} name="right" size={15} />
+                          </View>
                         </View>
                       </View>
-                    </View>
-                  </TouchableOpacity>
-                </View>
-              }
+                    </TouchableOpacity>
+                  </View>
+                )}
               </View>
             </ScrollView>
           </LinearGradient>

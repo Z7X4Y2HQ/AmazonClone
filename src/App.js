@@ -25,8 +25,11 @@ export default () => {
   const [loggedIn, setLoggedIn] = useState(false);
   const [credentialsAdded, setCredentialsAdded] = useState(false);
 
-  const [credentials, setCredentials] = useState({ name: undefined , email: undefined, password: undefined});
-  const [OTPCheck, setOTPCheck] = useState({ OTPInput: undefined });
+  const [name, setName] = useState();
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+
+  const [OTPCheck, setOTPCheck] = useState(undefined);
 
 
 
@@ -44,7 +47,10 @@ export default () => {
             cartItemsNum, setCartItemsNum,
             emptyCart, setEmptyCart,
             addedToCart, setAddedToCart,
-            credentials, setCredentials,
+            // credentials, setCredentials,
+            name, setName,
+            email, setEmail,
+            password, setPassword,
             OTPCheck, setOTPCheck,
             loggedIn, setLoggedIn,
             credentialsAdded, setCredentialsAdded,

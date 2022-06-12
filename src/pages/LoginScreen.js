@@ -11,7 +11,10 @@ export default function LoginScreen({ navigation }) {
   const [deexpand, sedetexpand] = useState(true);
   const [icon, seticon] = useState(false);
 
-  const { credentials, setCredentials } = useContext(NavBarContext);
+  const { name, setName } = useContext(NavBarContext);
+  const { email, setEmail } = useContext(NavBarContext);
+  const { password, setPassword } = useContext(NavBarContext);
+
   const { OTPCheck, setOTPCheck } = useContext(NavBarContext);
   const { loggedIn, setLoggedIn } = useContext(NavBarContext);
   const { credentialsAdded, setCredentialsAdded } = useContext(NavBarContext);
@@ -35,8 +38,10 @@ export default function LoginScreen({ navigation }) {
   const [OTP, setOTP] = useState(OTPGenerator());
   const [incorrectOTP, setIncorrectOTP] = useState(false);
 
-  console.log(credentials);
-  console.log("ushadoahdoisahdosdhaodaishdauhi: ", OTPCheck);
+  console.log("Name: ", name);
+  console.log("Email: ", email);
+  console.log("Password: ", password);
+  console.log("OTP: ", OTPCheck);
 
   return (
     <View>
@@ -164,10 +169,7 @@ export default function LoginScreen({ navigation }) {
                   >
                     <Text style={{ fontWeight: "bold" }}>Name</Text>
                     <TextInput
-                      onChangeText={(name) => setCredentials(...credentials, name)}
-                      // onEndEditing={(event) => {
-                      //   setCredentials({ ...credentials, name: event.nativeEvent.text });
-                      // }}
+                      onChangeText={(name) => setName(name)}
                       style={{
                         backgroundColor: "white",
                         borderWidth: 1,
@@ -190,10 +192,7 @@ export default function LoginScreen({ navigation }) {
                     <Text style={{ fontWeight: "bold" }}>Email or phone number</Text>
                     <TextInput
                       keyboardType="email-address"
-                      onEndEditing={(event) => {
-                        setCredentials({ ...credentials, email: event.nativeEvent.text });
-                        setEmailAdded(true);
-                      }}
+                      onChangeText={(email) => {setEmail(email); setEmailAdded(true)}}
                       style={{
                         backgroundColor: "white",
                         borderWidth: 1,
@@ -209,9 +208,7 @@ export default function LoginScreen({ navigation }) {
                   <View style={{ paddingHorizontal: 15, paddingVertical: 15 }}>
                     <Text style={{ fontWeight: "bold" }}>Create a Password</Text>
                     <TextInput
-                      onEndEditing={(event) => {
-                        setCredentials({ ...credentials, password: event.nativeEvent.text });
-                      }}
+                      onChangeText={(password) => setPassword(password)}
                       secureTextEntry={isChecked3 ? false : true}
                       style={{
                         backgroundColor: "white",
@@ -253,49 +250,49 @@ export default function LoginScreen({ navigation }) {
                       <Pressable
                         onPress={() => {
                           if (
-                            credentials.name == undefined &&
-                            credentials.email == undefined &&
-                            credentials.password == undefined
+                            name == undefined &&
+                            email == undefined &&
+                            password == undefined
                           ) {
                             setAlert(true);
                             setMissingName(true);
                             setMissingEmail(true);
                             setMissingPassword(true);
                           } else if (
-                            credentials.name == undefined &&
-                            credentials.email == undefined
+                            name == undefined &&
+                            email == undefined
                           ) {
                             setAlert(true);
                             setMissingName(true);
                             setMissingEmail(true);
                             setMissingPassword(false);
                           } else if (
-                            credentials.name == undefined &&
-                            credentials.password == undefined
+                            name == undefined &&
+                            password == undefined
                           ) {
                             setAlert(true);
                             setMissingName(true);
                             setMissingEmail(false);
                             setMissingPassword(true);
                           } else if (
-                            credentials.email == undefined &&
-                            credentials.password == undefined
+                            email == undefined &&
+                            password == undefined
                           ) {
                             setAlert(true);
                             setMissingName(false);
                             setMissingEmail(true);
                             setMissingPassword(true);
-                          } else if (credentials.name == undefined) {
+                          } else if (name == undefined) {
                             setAlert(true);
                             setMissingName(true);
                             setMissingEmail(false);
                             setMissingPassword(false);
-                          } else if (credentials.email == undefined) {
+                          } else if (email == undefined) {
                             setAlert(true);
                             setMissingName(false);
                             setMissingEmail(true);
                             setMissingPassword(false);
-                          } else if (credentials.password == undefined) {
+                          } else if (password == undefined) {
                             setAlert(true);
                             setMissingName(false);
                             setMissingEmail(false);
@@ -349,9 +346,7 @@ export default function LoginScreen({ navigation }) {
                     alignItems: "center",
                     paddingVertical: 15,
                     paddingLeft: 10,
-
                     flex: 1,
-                    // backgroundColor:'yellow',
                     backgroundColor: isChecked ? "white" : "#f2f2f2",
                     borderTopWidth: 1,
                     borderLeftWidth: 1,
@@ -526,7 +521,7 @@ export default function LoginScreen({ navigation }) {
               paddingVertical: 10,
             }}
           >
-            To verify your email, we've sent a One Time Password (OTP) to {credentials.email}{" "}
+            To verify your email, we've sent a One Time Password (OTP) to {email}{" "}
             <Text style={{ color: "#3f7f8e" }}>
               {"("}Change{")"}
             </Text>

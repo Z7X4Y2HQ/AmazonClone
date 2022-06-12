@@ -12,6 +12,8 @@ export default function Author({ navigation }) {
   const { previousScreens } = useContext(NavBarContext);
   const { credentials, setCredentials } = useContext(NavBarContext);
   const { loggedIn, setLoggedIn } = useContext(NavBarContext);
+  const { name, setName } = useContext(NavBarContext);
+
 
   useEffect(() => {
     const backAction = () => {
@@ -20,7 +22,7 @@ export default function Author({ navigation }) {
 
     const backHandler = BackHandler.addEventListener("hardwareBackPress", backAction);
 
-    setCurrentScreen("Account");
+    setCurrentScreen("Author");
 
     return () => backHandler.remove();
   }, []);
@@ -52,7 +54,7 @@ export default function Author({ navigation }) {
               colors={["#fff", "#94dfd8", "#94dfda"]}
             >
               <View style={{ height: 60, marginBottom: 25 }}>
-                <Text style={styles.signInHeading}>Hello, <Text style={{ fontWeight: 'bold'}}>{credentials.name}</Text></Text>
+                <Text style={styles.signInHeading}>Hello, <Text style={{ fontWeight: 'bold'}}>{name}</Text></Text>
               </View>
             </LinearGradient>
         </View>

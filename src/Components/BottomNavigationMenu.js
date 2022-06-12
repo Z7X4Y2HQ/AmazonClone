@@ -33,6 +33,7 @@ export default function BottomMenu({ navigation }) {
         onPress={() => {
           if (loggedIn == true) {
             navigation.navigate("Author");
+            setCurrentScreen("Author");
           } else {
             navigation.navigate("Account");
             setCurrentScreen("Account");
@@ -40,7 +41,10 @@ export default function BottomMenu({ navigation }) {
         }}
       >
         <FontAwesome
-          style={{ color: currentScreen == "Account" ? "#008298" : "black", margin: 8 }}
+          style={{
+            color: currentScreen == "Account" || currentScreen == "Author" ? "#008298" : "black",
+            margin: 8,
+          }}
           name="user-o"
           size={24}
           color="black"
