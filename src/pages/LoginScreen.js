@@ -36,6 +36,7 @@ export default function LoginScreen({ navigation }) {
   const [incorrectOTP, setIncorrectOTP] = useState(false);
 
   console.log(credentials);
+  console.log("ushadoahdoisahdosdhaodaishdauhi: ", OTPCheck);
 
   return (
     <View>
@@ -163,9 +164,10 @@ export default function LoginScreen({ navigation }) {
                   >
                     <Text style={{ fontWeight: "bold" }}>Name</Text>
                     <TextInput
-                      onEndEditing={(event) => {
-                        setCredentials({ ...credentials, name: event.nativeEvent.text });
-                      }}
+                      onChangeText={(name) => setCredentials(...credentials, name)}
+                      // onEndEditing={(event) => {
+                      //   setCredentials({ ...credentials, name: event.nativeEvent.text });
+                      // }}
                       style={{
                         backgroundColor: "white",
                         borderWidth: 1,
@@ -187,6 +189,7 @@ export default function LoginScreen({ navigation }) {
                   >
                     <Text style={{ fontWeight: "bold" }}>Email or phone number</Text>
                     <TextInput
+                      keyboardType="email-address"
                       onEndEditing={(event) => {
                         setCredentials({ ...credentials, email: event.nativeEvent.text });
                         setEmailAdded(true);
@@ -485,7 +488,7 @@ export default function LoginScreen({ navigation }) {
               <Text style={{ color: "#0e71b9" }}>Help</Text>
             </View>
             <View style={{ paddingTop: 5 }}>
-              <Text style={{ fontSize: 11 }}>1996-2022, Amazon.com,Inc. or its affilliates</Text>
+              <Text style={{ fontSize: 11 }}>© 1996-2022, Amazon.com, Inc. or its affilliates</Text>
             </View>
           </View>
         </ScrollView>
@@ -537,9 +540,7 @@ export default function LoginScreen({ navigation }) {
             <Text style={{ fontWeight: "bold" }}>Enter OTP</Text>
             <TextInput
               keyboardType="numeric"
-              onEndEditing={(event) => {
-                setOTPCheck({ ...OTPCheck, OTPInput: event.nativeEvent.text });
-              }}
+              onChangeText={(num) => setOTPCheck(num)}
               style={{
                 backgroundColor: "white",
                 borderWidth: 1,
@@ -559,10 +560,7 @@ export default function LoginScreen({ navigation }) {
           )}
           <Pressable
             onPress={() => {
-              console.log("OTP: ", "" + OTP);
-              console.log("OTPInput: ", OTPCheck.OTPInput);
-
-              if ("" + OTP == OTPCheck.OTPInput) {
+              if ("" + OTP == OTPCheck) {
                 setIncorrectOTP(false);
                 setLoggedIn(true);
                 navigation.navigate("Author");
@@ -587,10 +585,36 @@ export default function LoginScreen({ navigation }) {
                 setOTP((OTP) => OTPGenerator());
               }}
             >
-              <Text style={{ color: "#3f7f8e" }}>Resent OTP</Text>
+              <Text style={{ color: "#3f7f8e" }}>Resend OTP</Text>
             </Pressable>
           </View>
-          <Text>{OTP}</Text>
+          <View style={{ justifyContent: "center", alignItems: "center" }}>
+            <View
+              style={{
+                borderTopColor: "#bdc3c7",
+                width: "77%",
+                alignItems: "center",
+                justifyContent: "space-evenly",
+                borderTopWidth: 0.7,
+                flexDirection: "row",
+                paddingTop: 19,
+                paddingHorizontal: 25,
+                paddingBottom: 3,
+              }}
+            >
+              <Text style={{ fontSize: 10, color: "#0e71b9" }}>Conditions of Use</Text>
+              <Text style={{ fontSize: 10, color: "#0e71b9" }}>Privacy Notice</Text>
+              <Text style={{ fontSize: 10, color: "#0e71b9" }}>Help</Text>
+            </View>
+            <View style={{ paddingTop: 5 }}>
+              <Text style={{ color: "#636464", fontSize: 10.5 }}>
+                © 1996-2022, Amazon.com, Inc. or its affilliates
+              </Text>
+              <Text style={{ color: "#636464", fontSize: 10.5, textAlign: "center", marginTop: 9 }}>
+                <Text style={{ fontWeight: "bold" }}>OTP:</Text> {OTP}
+              </Text>
+            </View>
+          </View>
         </View>
       )}
     </View>
