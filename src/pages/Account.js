@@ -126,7 +126,8 @@ const styles = StyleSheet.create({
   },
   headerLogo: {
     height: 30,
-    width: 100,
+    width: 90,
+    marginLeft: 8
   },
   signInHeading: {
     fontSize: 22,

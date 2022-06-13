@@ -15,7 +15,7 @@ export default SearchBar = ({ref, navigation}) => {
   return(
     <LinearGradient start={{x: 0, y: 0}} end={{x: 1, y: 0}}  colors={['#81d8e3', '#93dfd9', '#a5e7cf']}>
         <View style={styles.searchBarContainer}>
-          { currentScreen == "ProductPageFromHome"
+          { currentScreen == "ProductPageFromHome" 
           ?    
           <Pressable style={{marginTop:22, paddingHorizontal: 8}} onPress={() => {navigation.goBack()}}>
             {({ pressed }) => (<AntDesign style={{ color: pressed ? '#008298' : 'black'}} name="arrowleft" size={24} color="black" />)}

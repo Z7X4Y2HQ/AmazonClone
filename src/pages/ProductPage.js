@@ -51,7 +51,7 @@ export default function ProductPage({ route, navigation }) {
       backAction
     );
      
-    setCurrentScreen("ProductPageFromHome")
+    setCurrentScreen(previousScreens.current[previousScreens.current.length - 1]) 
 
     return () => backHandler.remove();
   }, []);

@@ -11,10 +11,18 @@ import Cart from "./pages/Cart";
 import ProductPage from "./pages/ProductPage";
 import ListScreen from "./pages/List";
 import Account from "./pages/Account";
-import LoggedOutScreen from "./pages/LoggedOutScreen";
+import SignIn from "./pages/SignIn";
+import Profile from "./pages/Profile";
+import Notifications from "./pages/Notifications";
+import LoggedOut from "./pages/LoggedOutScreen";
 import { NavBarContext } from "./Contexts/NavBarContext";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
+var loginStateLoaded = false;
+var loadedCredentials = false;
 
 export default () => {
+
   const Stack = createNativeStackNavigator();
   const navigationRef = useRef(null);
   const previousScreens = useRef([]);
@@ -31,7 +39,38 @@ export default () => {
 
   const [OTPCheck, setOTPCheck] = useState(undefined);
 
+  async function loadCredentials() {
+    var creds = await AsyncStorage.getItem("credentials");
+    if (creds !== null) {
+      creds = JSON.parse(creds);
+      console.log("Credentials loaded.\n");
+      setName(creds.name);
+      setEmail(creds.email);
+      setPassword(creds.password);
+    }
+    return creds;
+  }
 
+  if (loadedCredentials == false) {
+    loadedCredentials = loadCredentials();
+  }
+
+  async function loadLoginState() {
+    var login = await AsyncStorage.getItem("loginState");
+    if (login !== null) {
+      setLoggedIn(login == "true");
+    }
+    return login;
+  }
+
+  if (loginStateLoaded == false) {
+    loadLoginState();
+    loginStateLoaded = true;
+  }
+
+  console.log("Name: ", name);
+  console.log("Email: ", email);
+  console.log("Password: ", password);
 
   return (
     <View style={{ flex: 1 }}>
@@ -47,7 +86,6 @@ export default () => {
             cartItemsNum, setCartItemsNum,
             emptyCart, setEmptyCart,
             addedToCart, setAddedToCart,
-            // credentials, setCredentials,
             name, setName,
             email, setEmail,
             password, setPassword,
@@ -68,6 +106,9 @@ export default () => {
             <Stack.Screen name="Account" component={Account} />
             <Stack.Screen name="Author" component={Author} />
             <Stack.Screen name="LoggedOut" component={LoggedOut} />
+            <Stack.Screen name="SignIn" component={SignIn} />
+            <Stack.Screen name="Notifications" component={Notifications} />
+            <Stack.Screen name="Profile" component={Profile} />
           </Stack.Navigator>
         </NavBarContext.Provider>
       </NavigationContainer>

@@ -1,31 +1,13 @@
 import { useEffect, useRef, useContext } from "react";
-import { View, Pressable, StyleSheet, BackHandler } from "react-native";
+import { View, Text, Pressable, StyleSheet, BackHandler } from "react-native";
 import { Searchbar } from "react-native-paper";
 import { LinearGradient } from "expo-linear-gradient";
 import { AntDesign } from "@expo/vector-icons";
-import SearchBar from "../Components/SearchBar";
 import { NavBarContext } from "../Contexts/NavBarContext";
+import BottomMenu from "../Components/BottomNavigationMenu";
 
-export default function Search({ navigation }) {
+export default function Notifications({ navigation }) {
   const { currentScreen, setCurrentScreen } = useContext(NavBarContext);
-  const { previousScreens } = useContext(NavBarContext);
-  const search = useRef();
-
-  useEffect(() => {
-    // const backAction = () => {
-    //   currentScreen == "Search" || currentScreen == "ProductPageFromHome" ? setCurrentScreen("Home") : undefined
-    // };
-    // const backHandler = BackHandler.addEventListener(
-    //   "hardwareBackPress",
-    //   backAction
-    // );
-
-    setTimeout(() => {
-      search.current.focus();
-    }, 1);
-
-    // return () => backHandler.remove();
-  }, []);
 
   return (
     <View style={{ flex: 1 }}>
@@ -60,7 +42,6 @@ export default function Search({ navigation }) {
                 )}
               </Pressable>
               <Searchbar
-                ref={search}
                 onPressIn={() => {
                   navigation.navigate("Search");
                   setCurrentScreen("Search");
@@ -71,8 +52,20 @@ export default function Search({ navigation }) {
               />
             </View>
           </LinearGradient>
+          <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+            <Text style={{ color: "#757d7e", fontSize: 15, margin: 5 }}>No messages</Text>
+            <Pressable
+              onPress={() => {
+                navigation.navigate("Home");
+                setCurrentScreen("Home");
+              }}
+            >
+              <Text style={{ color: "#218297", fontWeight: "bold" }}>CONTINUE SHOPPING</Text>
+            </Pressable>
+          </View>
         </View>
       </View>
+      <BottomMenu navigation={navigation} />
     </View>
   );
 }

@@ -12,10 +12,16 @@ import {
 import { LinearGradient } from "expo-linear-gradient";
 import { List } from "react-native-paper";
 import { FontAwesome, Feather, AntDesign } from "@expo/vector-icons";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import BottomMenu from "../Components/BottomNavigationMenu";
 import SearchBar from "../Components/SearchBar";
 import { NavBarContext } from "../Contexts/NavBarContext";
+
+async function saveLoginState(loggedIn) {
+  await AsyncStorage.setItem("loginState", loggedIn);
+  console.log("Login State saved.\n", loggedIn);
+}
 
 export default function Settings({ navigation }) {
   const [expanded, setExpanded] = useState(false);
@@ -36,14 +42,12 @@ export default function Settings({ navigation }) {
 
     const backHandler = BackHandler.addEventListener("hardwareBackPress", backAction);
 
-    setCurrentScreen("Settings");
-
     return () => backHandler.remove();
   }, []);
 
   const signOutAlert = () =>
     Alert.alert(
-      "ConFirm Sign Out",
+      "Confirm Sign Out",
       name + ", you are signing out of your Amazon apps on this device.",
       [
         {
@@ -51,6 +55,7 @@ export default function Settings({ navigation }) {
           onPress: () => {
             setLoggedIn(false);
             setCredentialsAdded(false);
+            saveLoginState("false");
             navigation.navigate("LoggedOut");
           },
           style: "cancel",

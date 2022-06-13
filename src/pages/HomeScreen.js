@@ -27,6 +27,8 @@ import HomeHeadingText from "../Components/HomeHeadingText";
 
 import { NavBarContext } from "../Contexts/NavBarContext";
 
+
+
 const { width } = Dimensions.get("window");
 const height = (width * 101) / 115;
 

@@ -1,15 +1,35 @@
 import React, { useState, useEffect, useContext } from "react";
 import { ScrollView, Text, Image, StyleSheet, TextInput, View, Pressable } from "react-native";
 import Checkbox from "expo-checkbox";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { LinearGradient } from "expo-linear-gradient";
 import { AntDesign } from "@expo/vector-icons";
 import { NavBarContext } from "../Contexts/NavBarContext";
+
+async function saveCredentials(name, email, password) {
+  var creds = {
+    name: name,
+    email: email,
+    password: password,
+  };
+  await AsyncStorage.setItem("credentials", JSON.stringify(creds));
+  console.log("Credentials saved.\n", creds);
+}
+
+async function saveLoginState(loggedIn) {
+  await AsyncStorage.setItem("loginState", loggedIn);
+  console.log("Login State saved.\n", loggedIn);
+}
 
 export default function LoginScreen({ navigation }) {
   const [isSelected, setSelection] = useState(false);
   const [expand, setexpand] = useState(false);
   const [deexpand, sedetexpand] = useState(true);
   const [icon, seticon] = useState(false);
+
+  const [signInEmail, setSignInEmail] = useState(undefined);
+  const [noEmailAlert, setNoEmailAlert] = useState(false);
+  const [signInEmailAdded, setSignInEmailAdded] = useState(false);
 
   const { name, setName } = useContext(NavBarContext);
   const { email, setEmail } = useContext(NavBarContext);
@@ -38,9 +58,10 @@ export default function LoginScreen({ navigation }) {
   const [OTP, setOTP] = useState(OTPGenerator());
   const [incorrectOTP, setIncorrectOTP] = useState(false);
 
-  console.log("Name: ", name);
+    console.log("Name: ", name);
   console.log("Email: ", email);
   console.log("Password: ", password);
+
   console.log("OTP: ", OTPCheck);
 
   return (
@@ -61,6 +82,27 @@ export default function LoginScreen({ navigation }) {
               source={require("../assets/Images/amazon_black.png")}
             ></Image>
           </View>
+          {noEmailAlert && (
+            <View
+              style={{
+                borderWidth: 0.7,
+                backgroundColor: "white",
+                borderTopColor: "black",
+                borderColor: "#d3be60",
+                borderRadius: 5,
+                margin: 11,
+                paddingVertical: 8,
+                paddingHorizontal: 16,
+              }}
+            >
+              <Text style={{ color: "#746419", fontWeight: "bold", paddingBottom: 5 }}>
+                No account found with this email address
+              </Text>
+              <Text style={{ width: "90%", fontSize: 14, paddingVertical: 0.7 }}>
+                Please check your email address or click create Account if you are new to Amazon
+              </Text>
+            </View>
+          )}
           {alert && (
             <View
               style={{
@@ -192,7 +234,10 @@ export default function LoginScreen({ navigation }) {
                     <Text style={{ fontWeight: "bold" }}>Email or phone number</Text>
                     <TextInput
                       keyboardType="email-address"
-                      onChangeText={(email) => {setEmail(email); setEmailAdded(true)}}
+                      onChangeText={(email) => {
+                        setEmail(email);
+                        setEmailAdded(true);
+                      }}
                       style={{
                         backgroundColor: "white",
                         borderWidth: 1,
@@ -242,42 +287,29 @@ export default function LoginScreen({ navigation }) {
 
                   <View style={{ alignItems: "center", paddingHorizontal: 15 }}>
                     <LinearGradient
-                      style={{ width: "100%", borderRadius: 3 }}
+                      style={{ width: "100%", borderRadius: 3, marginTop: 1 }}
                       start={{ x: 0, y: 1 }}
                       end={{ x: 0, y: 0 }}
                       colors={["#edbc58", "#f2cb7d", "#f4daa7"]}
                     >
                       <Pressable
                         onPress={() => {
-                          if (
-                            name == undefined &&
-                            email == undefined &&
-                            password == undefined
-                          ) {
+                          if (name == undefined && email == undefined && password == undefined) {
                             setAlert(true);
                             setMissingName(true);
                             setMissingEmail(true);
                             setMissingPassword(true);
-                          } else if (
-                            name == undefined &&
-                            email == undefined
-                          ) {
+                          } else if (name == undefined && email == undefined) {
                             setAlert(true);
                             setMissingName(true);
                             setMissingEmail(true);
                             setMissingPassword(false);
-                          } else if (
-                            name == undefined &&
-                            password == undefined
-                          ) {
+                          } else if (name == undefined && password == undefined) {
                             setAlert(true);
                             setMissingName(true);
                             setMissingEmail(false);
                             setMissingPassword(true);
-                          } else if (
-                            email == undefined &&
-                            password == undefined
-                          ) {
+                          } else if (email == undefined && password == undefined) {
                             setAlert(true);
                             setMissingName(false);
                             setMissingEmail(true);
@@ -299,6 +331,7 @@ export default function LoginScreen({ navigation }) {
                             setMissingPassword(true);
                           } else {
                             setCredentialsAdded(true);
+                            saveCredentials(name, email, password);
                           }
                         }}
                         style={{
@@ -306,7 +339,6 @@ export default function LoginScreen({ navigation }) {
                           borderRadius: 3,
                           borderColor: "#ac9057",
                           padding: 13,
-                          marginTop: 1,
                           color: "black",
                           width: "100%",
                           alignItems: "center",
@@ -394,11 +426,15 @@ export default function LoginScreen({ navigation }) {
                   <View style={{ paddingHorizontal: 15, paddingBottom: 15 }}>
                     <Text style={{ fontSize: 14, fontWeight: "bold" }}>Email or phone number</Text>
                     <TextInput
+                      onChangeText={(signInEmail) => {
+                        setSignInEmail(signInEmail);
+                        console.log("Sign In Email: ", signInEmail);
+                      }}
                       style={{
                         backgroundColor: "white",
                         borderWidth: 1,
                         borderRadius: 3,
-                        borderColor: "#ececec",
+                        borderColor: missingEmail ? "#e42d20" : "#ececec",
                         padding: 10,
                         marginTop: 6,
                         color: "black",
@@ -408,18 +444,32 @@ export default function LoginScreen({ navigation }) {
                   </View>
                   <View style={{ alignItems: "center", paddingHorizontal: 15 }}>
                     <LinearGradient
-                      style={{ width: "100%", borderRadius: 3 }}
+                      style={{ width: "100%", borderRadius: 3, marginTop: 1}}
                       start={{ x: 0, y: 1 }}
                       end={{ x: 0, y: 0 }}
                       colors={["#edbc58", "#f2cb7d", "#f4daa7"]}
                     >
                       <Pressable
+                        onPress={() => {
+                          if (signInEmail == undefined) {
+                            setAlert(true);
+                            setMissingName(false);
+                            setMissingEmail(true);
+                            setMissingPassword(false);
+                          } else if (signInEmail != email) {
+                            console.log("email wrong");
+                            setNoEmailAlert(true);
+                          } else {
+                            console.log("email right");
+                            setNoEmailAlert(false);
+                            navigation.navigate("SignIn")
+                          }
+                        }}
                         style={{
                           borderWidth: 1,
                           borderRadius: 3,
                           borderColor: "#ac9057",
                           padding: 13,
-                          marginTop: 1,
                           color: "black",
                           width: "100%",
                           alignItems: "center",
@@ -488,6 +538,114 @@ export default function LoginScreen({ navigation }) {
           </View>
         </ScrollView>
       )}
+      {signInEmailAdded && (
+        <View style={{ marginTop: 24 }}>
+          <View
+            style={{
+              alignItems: "center",
+              paddingVertical: 8,
+              backgroundColor: "#f0f0f0",
+              borderBottomColor: "#dcdcdc",
+              borderBottomWidth: 2,
+            }}
+          >
+            <Image
+              style={{ height: 33, width: 95 }}
+              source={require("../assets/Images/amazon_black.png")}
+            ></Image>
+          </View>
+          <Text
+            style={{
+              fontSize: 22,
+              paddingLeft: 20,
+              paddingVertical: 10,
+              fontWeight: "700",
+            }}
+          >
+            Sign-In
+          </Text>
+          <Text
+            style={{
+              paddingLeft: 20,
+              paddingRight: 50,
+              paddingVertical: 10,
+            }}
+          >
+            {email}{" "}
+            <Text style={{ color: "#3f7f8e" }}>
+              {"("}Change{")"}
+            </Text>
+          </Text>
+          <View
+            style={{
+              paddingHorizontal: 20,
+              paddingVertical: 7,
+            }}
+          >
+            <Text style={{ fontWeight: "bold" }}>Amazon password</Text>
+            <TextInput
+              style={{
+                backgroundColor: "white",
+                borderWidth: 1,
+                borderRadius: 3,
+                borderColor: "#ececec",
+                padding: 10,
+                marginTop: 6,
+                color: "black",
+                elevation: 1,
+              }}
+            ></TextInput>
+          </View>
+          <Pressable
+            style={{
+              marginHorizontal: 20,
+              borderRadius: 7,
+              padding: 14,
+              color: "black",
+              alignItems: "center",
+              backgroundColor: "#fdd800",
+            }}
+          >
+            <Text>Sign-In</Text>
+          </Pressable>
+          <View style={{ justifyContent: "center", alignItems: "center", paddingVertical: 22 }}>
+            <Pressable
+              onPress={() => {
+                setOTP((OTP) => OTPGenerator());
+              }}
+            >
+              <Text style={{ color: "#3f7f8e" }}>Resend OTP</Text>
+            </Pressable>
+          </View>
+          <View style={{ justifyContent: "center", alignItems: "center" }}>
+            <View
+              style={{
+                borderTopColor: "#bdc3c7",
+                width: "77%",
+                alignItems: "center",
+                justifyContent: "space-evenly",
+                borderTopWidth: 0.7,
+                flexDirection: "row",
+                paddingTop: 19,
+                paddingHorizontal: 25,
+                paddingBottom: 3,
+              }}
+            >
+              <Text style={{ fontSize: 10, color: "#0e71b9" }}>Conditions of Use</Text>
+              <Text style={{ fontSize: 10, color: "#0e71b9" }}>Privacy Notice</Text>
+              <Text style={{ fontSize: 10, color: "#0e71b9" }}>Help</Text>
+            </View>
+            <View style={{ paddingTop: 5 }}>
+              <Text style={{ color: "#636464", fontSize: 10.5 }}>
+                © 1996-2022, Amazon.com, Inc. or its affilliates
+              </Text>
+              <Text style={{ color: "#636464", fontSize: 10.5, textAlign: "center", marginTop: 9 }}>
+                <Text style={{ fontWeight: "bold" }}>OTP:</Text> {OTP}
+              </Text>
+            </View>
+          </View>
+        </View>
+      )}
       {credentialsAdded && (
         <View style={{ marginTop: 24 }}>
           <View
@@ -534,13 +692,14 @@ export default function LoginScreen({ navigation }) {
           >
             <Text style={{ fontWeight: "bold" }}>Enter OTP</Text>
             <TextInput
+              placeholder={OTP + ""}
               keyboardType="numeric"
               onChangeText={(num) => setOTPCheck(num)}
               style={{
                 backgroundColor: "white",
                 borderWidth: 1,
                 borderRadius: 3,
-                borderColor: missingName ? "#e42d20" : "#ececec",
+                borderColor: "#ececec",
                 padding: 10,
                 marginTop: 6,
                 color: "black",
@@ -558,6 +717,7 @@ export default function LoginScreen({ navigation }) {
               if ("" + OTP == OTPCheck) {
                 setIncorrectOTP(false);
                 setLoggedIn(true);
+                saveLoginState("true");
                 navigation.navigate("Author");
               } else {
                 setIncorrectOTP(true);
