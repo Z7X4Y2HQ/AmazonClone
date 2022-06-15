@@ -49,6 +49,15 @@ export default function Cart({ route, navigation }) {
     return () => backHandler.remove();
   }, []);
 
+  const subheadings = [
+    "Echo...Echo...",
+    "Nothing in here.. Only possibilities",
+    "Zip. Zilch. Nada.",
+    "Zip. Zilch. Nada.",
+    "Echo...Echo...",
+    "Nothing in here.. Only possibilities",
+  ];
+
   return (
     <View style={styles.mainContainer}>
       <View style={{ flex: 14, flexDirection: "row", alignItems: "flex-start" }}>
@@ -84,7 +93,9 @@ export default function Cart({ route, navigation }) {
                     <Text style={{ fontSize: 22, fontWeight: "bold" }}>
                       Your Amazon cart is Ready
                     </Text>
-                    <Text style={{ color: "#646564" }}>Nothing in here. Only possibilities</Text>
+                    <Text style={{ color: "#646564" }}>
+                      {subheadings[Math.floor(0 + Math.random() * 6)]}
+                    </Text>
                   </View>
                   <View style={{ marginTop: 15 }}>
                     <Text style={{ color: "#458090" }}>Shop today's deals</Text>

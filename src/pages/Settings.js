@@ -506,7 +506,7 @@ export default function Settings({ navigation }) {
         >
           <Pressable
             onPress={() => {
-              navigation.navigate("LoginScreen");
+              navigation.navigate("YourOrder");
             }}
           >
             <View
@@ -525,7 +525,7 @@ export default function Settings({ navigation }) {
           </Pressable>
           <Pressable
             onPress={() => {
-              navigation.navigate("LoginScreen");
+              navigation.navigate("BuyAgain");
             }}
           >
             <View

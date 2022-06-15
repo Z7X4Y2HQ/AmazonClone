@@ -34,6 +34,7 @@ export default function Cart({ route, navigation }) {
   const { previousScreens } = useContext(NavBarContext);
   const { emptyCart, setEmptyCart } = useContext(NavBarContext);
   const { cartItemsNum, setCartItemsNum } = useContext(NavBarContext);
+  const { loggedIn, setLoggedIn } = useContext(NavBarContext);
   const { addedToCart, setAddedToCart } = useContext(NavBarContext);
 
   useEffect(() => {
@@ -173,7 +174,11 @@ export default function Cart({ route, navigation }) {
                                 setCartItemsNum(0);
                                 setEmptyCart(!emptyCart);
                                 setAddedToCart([]);
-                                navigation.navigate("Cart");
+                                if (loggedIn == true) {
+                                  navigation.navigate("CartLoggedIn");
+                                } else {
+                                  navigation.navigate("Cart");
+                                }
                               } else {
                                 setCartItemsNum(
                                   (cartItemsNum) => (cartItemsNum = cartItemsNum - 1)
@@ -236,7 +241,11 @@ export default function Cart({ route, navigation }) {
                             setCartItemsNum((cartItemsNum) => (cartItemsNum = 0));
                             setEmptyCart(!emptyCart);
                             setAddedToCart([]);
-                            navigation.navigate("Cart");
+                            if (loggedIn == true) {
+                              navigation.navigate("CartLoggedIn");
+                            } else {
+                              navigation.navigate("Cart");
+                            }
                           }}
                           style={{
                             elevation: 3,

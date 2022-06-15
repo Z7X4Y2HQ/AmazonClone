@@ -7,7 +7,7 @@ export default function BottomMenu({ navigation }) {
   const { currentScreen, setCurrentScreen } = useContext(NavBarContext);
   const { cartItemsNum, setCartItemsNum } = useContext(NavBarContext);
   const { loggedIn, setLoggedIn } = useContext(NavBarContext);
-  const { emptyCart, setEmptyCart } = useContext(NavBarContext)
+  const { emptyCart, setEmptyCart } = useContext(NavBarContext);
 
   return (
     <View style={styles.BottomMenu}>
@@ -53,7 +53,10 @@ export default function BottomMenu({ navigation }) {
       </Pressable>
       <Pressable
         onPress={() => {
-          if (emptyCart == true) {
+          if (emptyCart == true && loggedIn == true) {
+            navigation.navigate("CartLoggedIn");
+            setCurrentScreen("Cart");
+          } else if (emptyCart == true && loggedIn == false) {
             navigation.navigate("Cart");
             setCurrentScreen("Cart");
           } else {
@@ -104,8 +107,10 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     justifyContent: "space-around",
-    borderTopWidth: 2,
+    borderTopWidth: 1,
+    borderBottomWidth: 1,
     borderTopColor: "#d6dbda",
+    borderBottomColor: "#d6dbda",
     backgroundColor: "white",
   },
 });

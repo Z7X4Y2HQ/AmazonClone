@@ -76,7 +76,7 @@ export default function Author({ navigation }) {
                   Hello, <Text style={{ fontWeight: "bold" }}>{name}</Text>
                 </Text>
                 <Pressable
-                onPress={() => navigation.navigate("Profile")}
+                  onPress={() => navigation.navigate("Profile")}
                   style={{
                     borderRadius: 50,
                     padding: 3,
@@ -98,6 +98,9 @@ export default function Author({ navigation }) {
                 style={{ flexDirection: "row", justifyContent: "space-evenly", paddingBottom: 10 }}
               >
                 <Pressable
+                  onPress={() => {
+                    navigation.navigate("YourOrder");
+                  }}
                   style={{
                     backgroundColor: "#fafafa",
                     paddingVertical: 12,
@@ -110,6 +113,9 @@ export default function Author({ navigation }) {
                   <Text style={{ textAlign: "center", fontSize: 15 }}>Your Orders</Text>
                 </Pressable>
                 <Pressable
+                  onPress={() => {
+                    navigation.navigate("BuyAgain");
+                  }}
                   style={{
                     backgroundColor: "#fafafa",
                     paddingVertical: 12,
@@ -149,12 +155,12 @@ export default function Author({ navigation }) {
                 </Pressable>
               </View>
             </View>
-            <View style={{ paddingHorizontal: 20, paddingVertical: 16 }}>
+            <Pressable style={{ paddingHorizontal: 20, paddingVertical: 16 }}>
               <Text style={{ fontWeight: "bold", fontSize: 18, paddingBottom: 16 }}>
                 Your Orders
               </Text>
               <Text style={{ color: "#6c6c6c", fontSize: 15 }}>Hi, you have no recent orders.</Text>
-            </View>
+            </Pressable>
             <View style={{ alignItems: "center", paddingBottom: 12 }}>
               <Pressable
                 onPress={() => {
@@ -195,6 +201,7 @@ export default function Author({ navigation }) {
               <View>
                 <FlatList
                   horizontal
+                  showsHorizontalScrollIndicator={false}
                   data={resumeShopping}
                   renderItem={({ item }) => (
                     <Pressable
@@ -230,7 +237,7 @@ export default function Author({ navigation }) {
               </View>
             </View>
             <Divider />
-            <View style={{ paddingHorizontal: 20, paddingVertical: 8, paddingTop:12 }}>
+            <View style={{ paddingHorizontal: 20, paddingVertical: 8, paddingTop: 12 }}>
               <Text style={{ fontWeight: "bold", fontSize: 18, paddingBottom: 16 }}>
                 Your Lists
               </Text>
@@ -262,7 +269,7 @@ export default function Author({ navigation }) {
                     borderRadius: 7,
                     borderColor: "#e3e7e5",
                     marginHorizontal: 4,
-                    marginLeft: 21
+                    marginLeft: 21,
                   }}
                 >
                   <Text style={{ paddingHorizontal: 12, fontSize: 15, textAlign: "center" }}>
@@ -275,7 +282,7 @@ export default function Author({ navigation }) {
                     borderWidth: 1,
                     borderRadius: 7,
                     borderColor: "#e3e7e5",
-                    marginHorizontal: 4
+                    marginHorizontal: 4,
                   }}
                 >
                   <Text style={{ paddingHorizontal: 12, fontSize: 15, textAlign: "center" }}>
@@ -288,7 +295,7 @@ export default function Author({ navigation }) {
                     borderWidth: 1,
                     borderRadius: 7,
                     borderColor: "#e3e7e5",
-                    marginHorizontal: 4
+                    marginHorizontal: 4,
                   }}
                 >
                   <Text style={{ paddingHorizontal: 12, fontSize: 15, textAlign: "center" }}>
@@ -301,7 +308,7 @@ export default function Author({ navigation }) {
                     borderWidth: 1,
                     borderRadius: 7,
                     borderColor: "#e3e7e5",
-                    marginHorizontal: 4
+                    marginHorizontal: 4,
                   }}
                 >
                   <Text style={{ paddingHorizontal: 12, fontSize: 15, textAlign: "center" }}>
@@ -309,12 +316,15 @@ export default function Author({ navigation }) {
                   </Text>
                 </Pressable>
                 <Pressable
+                  onPress={() => {
+                    navigation.navigate("YourOrder");
+                  }}
                   style={{
                     paddingVertical: 12,
                     borderWidth: 1,
                     borderRadius: 7,
                     borderColor: "#e3e7e5",
-                    marginHorizontal: 4
+                    marginHorizontal: 4,
                   }}
                 >
                   <Text style={{ paddingHorizontal: 12, fontSize: 15, textAlign: "center" }}>
@@ -327,7 +337,7 @@ export default function Author({ navigation }) {
                     borderWidth: 1,
                     borderRadius: 7,
                     borderColor: "#e3e7e5",
-                    marginHorizontal: 4
+                    marginHorizontal: 4,
                   }}
                 >
                   <Text style={{ paddingHorizontal: 12, fontSize: 15, textAlign: "center" }}>
@@ -338,18 +348,23 @@ export default function Author({ navigation }) {
             </View>
             <Divider />
             <View style={{ paddingHorizontal: 20, paddingVertical: 16 }}>
-              <Text style={{ fontWeight: "bold", fontSize: 18}}>
-                Gift Card Balance: $0.00
-              </Text>
+              <Text style={{ fontWeight: "bold", fontSize: 18 }}>Gift Card Balance: $0.00</Text>
             </View>
-            <View style={{ alignItems: "center", paddingBottom: 12, flexDirection: 'row', justifyContent: 'space-evenly' }}>
+            <View
+              style={{
+                alignItems: "center",
+                paddingBottom: 12,
+                flexDirection: "row",
+                justifyContent: "space-evenly",
+              }}
+            >
               <Pressable
                 style={{
                   paddingVertical: 14,
                   borderWidth: 1,
                   borderRadius: 7,
                   borderColor: "#e3e7e5",
-                  width: "43%"
+                  width: "43%",
                 }}
               >
                 <Text style={{ fontSize: 15, textAlign: "center" }}>Redeem Gift Card</Text>
@@ -360,21 +375,24 @@ export default function Author({ navigation }) {
                   borderWidth: 1,
                   borderRadius: 7,
                   borderColor: "#e3e7e5",
-                  width: "43%"
+                  width: "43%",
                 }}
               >
                 <Text style={{ fontSize: 15, textAlign: "center" }}>Reload Balance</Text>
               </Pressable>
             </View>
             <Divider />
-            <View style={{ paddingHorizontal: 20, paddingVertical: 8, paddingTop:12 }}>
-              <Text style={{ fontWeight: "bold", fontSize: 18, paddingBottom: 16 }}>
-                Buy Again
+            <View style={{ paddingHorizontal: 20, paddingVertical: 8, paddingTop: 12 }}>
+              <Text style={{ fontWeight: "bold", fontSize: 18, paddingBottom: 16 }}>Buy Again</Text>
+              <Text style={{ color: "#6c6c6c", fontSize: 15 }}>
+                See what others are reordering on Buy Again
               </Text>
-              <Text style={{ color: "#6c6c6c", fontSize: 15 }}>See what others are reordering on Buy Again</Text>
             </View>
             <View style={{ alignItems: "center", paddingBottom: 12 }}>
               <Pressable
+                onPress={() => {
+                  navigation.navigate("BuyAgain");
+                }}
                 style={{
                   paddingVertical: 14,
                   borderWidth: 1,

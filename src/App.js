@@ -16,6 +16,9 @@ import Profile from "./pages/Profile";
 import Notifications from "./pages/Notifications";
 import LoggedOut from "./pages/LoggedOutScreen";
 import AddedtoCart from "./pages/AddedtoCart";
+import CartLoggedIn from "./pages/CartLoggedIn";
+import YourOrder from "./pages/YourOrder";
+import BuyAgain from "./pages/BuyAgain";
 import { NavBarContext } from "./Contexts/NavBarContext";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
@@ -23,7 +26,6 @@ var loginStateLoaded = false;
 var loadedCredentials = false;
 
 export default () => {
-
   const Stack = createNativeStackNavigator();
   const navigationRef = useRef(null);
   const previousScreens = useRef([]);
@@ -83,20 +85,30 @@ export default () => {
       >
         <NavBarContext.Provider
           value={{
-            currentScreen, setCurrentScreen,
-            cartItemsNum, setCartItemsNum,
-            emptyCart, setEmptyCart,
-            addedToCart, setAddedToCart,
-            name, setName,
-            email, setEmail,
-            password, setPassword,
-            OTPCheck, setOTPCheck,
-            loggedIn, setLoggedIn,
-            credentialsAdded, setCredentialsAdded,
+            currentScreen,
+            setCurrentScreen,
+            cartItemsNum,
+            setCartItemsNum,
+            emptyCart,
+            setEmptyCart,
+            addedToCart,
+            setAddedToCart,
+            name,
+            setName,
+            email,
+            setEmail,
+            password,
+            setPassword,
+            OTPCheck,
+            setOTPCheck,
+            loggedIn,
+            setLoggedIn,
+            credentialsAdded,
+            setCredentialsAdded,
             previousScreens,
           }}
         >
-          <Stack.Navigator initialRouteName="Home" screenOptions={{ headerShown: false }}>
+          <Stack.Navigator initialRouteName="YourOrder" screenOptions={{ headerShown: false }}>
             <Stack.Screen name="Home" component={HomeScreen} />
             <Stack.Screen name="LoginScreen" component={LoginScreen} />
             <Stack.Screen name="Cart" component={Cart} />
@@ -111,6 +123,9 @@ export default () => {
             <Stack.Screen name="Notifications" component={Notifications} />
             <Stack.Screen name="Profile" component={Profile} />
             <Stack.Screen name="AddedtoCart" component={AddedtoCart} />
+            <Stack.Screen name="CartLoggedIn" component={CartLoggedIn} />
+            <Stack.Screen name="YourOrder" component={YourOrder} />
+            <Stack.Screen name="BuyAgain" component={BuyAgain} />
           </Stack.Navigator>
         </NavBarContext.Provider>
       </NavigationContainer>
