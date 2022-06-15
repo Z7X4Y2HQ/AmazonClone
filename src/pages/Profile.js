@@ -223,9 +223,135 @@ export default function Profile({ navigation }) {
               </View>
             </View>
             <Text style={{ paddingHorizontal: 14, paddingVertical: 20 }}>
-            {name.charAt(0).toUpperCase() + name.slice(1)} has no activity to share.
+              {name.charAt(0).toUpperCase() + name.slice(1)} has no activity to share.
             </Text>
             <Divider />
+            <Divider />
+            <View style={{ paddingHorizontal: 14, paddingVertical: 10 }}>
+              <Text style={{ fontWeight: "bold", paddingVertical: 5 }}>
+                Shopping lists and wish lists
+              </Text>
+              <Text style={{ color: "#286e7f", paddingBottom: 5 }}>
+                Create multiple lists for yourself and others
+              </Text>
+            </View>
+            <Divider />
+            <View style={{ paddingHorizontal: 14, paddingVertical: 10 }}>
+              <Text style={{ fontWeight: "bold" }}>
+                Account{" "}
+                <Text style={{ fontWeight: "normal", fontStyle: "italic", fontSize: 13 }}>
+                  Always private
+                </Text>
+              </Text>
+              <Text style={{ paddingVertical: 5, paddingRight: 20 }}>
+                Check order, add payments options, manage your password and more
+              </Text>
+              <Text style={{ color: "#286e7f", paddingVertical: 5 }}>Go to your account</Text>
+            </View>
+            <Divider />
+            <View style={{ paddingHorizontal: 14, paddingVertical: 10 }}>
+              <Text style={{ fontWeight: "bold" }}>
+                Household{" "}
+                <Text style={{ fontWeight: "normal", fontStyle: "italic", fontSize: 13 }}>
+                  Always private
+                </Text>
+              </Text>
+              <Text style={{ paddingVertical: 5, paddingRight: 20 }}>
+                Connect and share Prime benefits and digital content with your whole family
+              </Text>
+            </View>
+            <View
+              style={{
+                paddingLeft: 8,
+                flexDirection: "row",
+                alignItems: "center",
+                paddingBottom: 10,
+              }}
+            >
+              <View
+                style={{
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  paddingRight: 25,
+                }}
+              >
+                <Pressable
+                  style={{
+                    borderRadius: 100,
+                    padding: 8,
+                    backgroundColor: "#abb7b7",
+                    borderWidth: 4,
+                    borderColor: "white",
+                  }}
+                >
+                  <Image
+                    style={{ height: 70, width: 70, resizeMode: "contain" }}
+                    source={require("../assets/Images/userIcon.png")}
+                  />
+                </Pressable>
+                <Text>{name}</Text>
+              </View>
+              <View
+                style={{ flexDirection: "column", justifyContent: "center", alignItems: "center" }}
+              >
+                <Pressable
+                  style={{
+                    borderRadius: 100,
+                    padding: 21,
+                    backgroundColor: "#f2f2f2",
+                    borderWidth: 4,
+                    borderColor: "white",
+                  }}
+                >
+                  <Entypo name="plus" size={40} color="black" />
+                </Pressable>
+                <Text>Add a person</Text>
+              </View>
+            </View>
+            <Text
+              style={{
+                color: "#286e7f",
+                paddingVertical: 10,
+                paddingHorizontal: 14,
+                fontWeight: "bold",
+              }}
+            >
+              Create your household
+            </Text>
+            <Divider />
+            <View style={{ paddingHorizontal: 14, paddingVertical: 10 }}>
+              <Text style={{ fontWeight: "bold" }}>
+                Your garage{" "}
+                <Text style={{ fontWeight: "normal", fontStyle: "italic", fontSize: 13 }}>
+                  private
+                </Text>
+              </Text>
+              <Text style={{ paddingVertical: 5, paddingRight: 20 }}>
+                Find parts and accessories that fit your vehicle and ask other oweners for tips and
+                advice
+              </Text>
+              <View style={{ justifyContent: 'center', alignItems: 'center', paddingVertical: 10}}>
+                <Image
+                  style={{
+                    height: 138,
+                    width: 301,
+                    resizeMode: "contain",
+                  }}
+                  source={require("../assets/Images/car.png")}
+                />
+              </View>
+              <Text
+                style={{
+                  color: "#286e7f",
+                  paddingVertical: 10,
+                  paddingHorizontal: 14,
+                  fontWeight: "bold",
+                }}
+              >
+                Shop parts and accessories from your garage
+              </Text>
+            </View>
           </ScrollView>
         </View>
       </View>

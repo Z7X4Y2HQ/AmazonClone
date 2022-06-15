@@ -17,7 +17,6 @@ const height = width/2 ;
 
 
 export default function ProductPage({ route, navigation }) {
-
   
   const items = route.params;
   

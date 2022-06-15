@@ -15,6 +15,7 @@ import SignIn from "./pages/SignIn";
 import Profile from "./pages/Profile";
 import Notifications from "./pages/Notifications";
 import LoggedOut from "./pages/LoggedOutScreen";
+import AddedtoCart from "./pages/AddedtoCart";
 import { NavBarContext } from "./Contexts/NavBarContext";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
@@ -109,6 +110,7 @@ export default () => {
             <Stack.Screen name="SignIn" component={SignIn} />
             <Stack.Screen name="Notifications" component={Notifications} />
             <Stack.Screen name="Profile" component={Profile} />
+            <Stack.Screen name="AddedtoCart" component={AddedtoCart} />
           </Stack.Navigator>
         </NavBarContext.Provider>
       </NavigationContainer>

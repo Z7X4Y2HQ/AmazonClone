@@ -7,6 +7,7 @@ export default function BottomMenu({ navigation }) {
   const { currentScreen, setCurrentScreen } = useContext(NavBarContext);
   const { cartItemsNum, setCartItemsNum } = useContext(NavBarContext);
   const { loggedIn, setLoggedIn } = useContext(NavBarContext);
+  const { emptyCart, setEmptyCart } = useContext(NavBarContext)
 
   return (
     <View style={styles.BottomMenu}>
@@ -52,8 +53,13 @@ export default function BottomMenu({ navigation }) {
       </Pressable>
       <Pressable
         onPress={() => {
-          navigation.navigate("Cart");
-          setCurrentScreen("Cart");
+          if (emptyCart == true) {
+            navigation.navigate("Cart");
+            setCurrentScreen("Cart");
+          } else {
+            navigation.navigate("AddedtoCart");
+            setCurrentScreen("Cart");
+          }
         }}
       >
         <View>
