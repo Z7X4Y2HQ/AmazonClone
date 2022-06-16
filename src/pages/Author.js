@@ -142,6 +142,9 @@ export default function Author({ navigation }) {
                   <Text style={{ textAlign: "center", fontSize: 15 }}>Your Account</Text>
                 </Pressable>
                 <Pressable
+                  onPress={() => {
+                    navigation.navigate("YourLists");
+                  }}
                   style={{
                     backgroundColor: "#fafafa",
                     paddingVertical: 12,

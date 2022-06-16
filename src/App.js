@@ -21,6 +21,7 @@ import YourOrder from "./pages/YourOrder";
 import BuyAgain from "./pages/BuyAgain";
 import { NavBarContext } from "./Contexts/NavBarContext";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import YourLists from "./pages/YourLists";
 
 var loginStateLoaded = false;
 var loadedCredentials = false;
@@ -109,7 +110,7 @@ export default () => {
           }}
         >
           <Stack.Navigator initialRouteName="Home" screenOptions={{ headerShown: false }}>
-            <Stack.Screen name="Home" component={HomeScreen} />
+            {/* <Stack.Screen name="Home" component={HomeScreen} />
             <Stack.Screen name="LoginScreen" component={LoginScreen} />
             <Stack.Screen name="Cart" component={Cart} />
             <Stack.Screen name="Settings" component={Settings} />
@@ -125,7 +126,8 @@ export default () => {
             <Stack.Screen name="AddedtoCart" component={AddedtoCart} />
             <Stack.Screen name="CartLoggedIn" component={CartLoggedIn} />
             <Stack.Screen name="YourOrder" component={YourOrder} />
-            <Stack.Screen name="BuyAgain" component={BuyAgain} />
+            <Stack.Screen name="BuyAgain" component={BuyAgain} /> */}
+            <Stack.Screen name="YourLists" component={YourLists} />
           </Stack.Navigator>
         </NavBarContext.Provider>
       </NavigationContainer>
