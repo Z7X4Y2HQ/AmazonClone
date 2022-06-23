@@ -4,7 +4,6 @@
     "slug": "AmazonClone",
     "version": "1.0.0",
     "sdkVersion": "44.0.0",
-    "plugins": ["./react-native-mmkv-plugin.js"],
     "androidNavigationBar": {
       "backgroundColor": "#ffffff",
       "barStyle": "dark-content"
