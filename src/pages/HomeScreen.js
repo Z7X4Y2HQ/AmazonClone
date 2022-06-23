@@ -27,8 +27,6 @@ import HomeHeadingText from "../Components/HomeHeadingText";
 
 import { NavBarContext } from "../Contexts/NavBarContext";
 
-
-
 const { width } = Dimensions.get("window");
 const height = (width * 101) / 115;
 
@@ -49,10 +47,6 @@ const headerOver = [
 export default function HomeScreen({ navigation }) {
   const { currentScreen, setCurrentScreen } = useContext(NavBarContext);
   const { previousScreens } = useContext(NavBarContext);
-
-  console.log("\nPrevious Screeen : ", previousScreens);
-  console.log("\nCurrent Screeen : ", currentScreen);
-  console.log("\nPrevious Screen : ", previousScreens.current[previousScreens.current.length - 1]);
 
   useEffect(() => {
     const backAction = () => {
@@ -83,7 +77,10 @@ export default function HomeScreen({ navigation }) {
                 <Image key={index} source={{ uri: image }} style={styles.headerImage} />
               ))}
             </ScrollView>
-            <ScrollView style={styles.headerCategorySlider} showsHorizontalScrollIndicator={false} horizontal
+            <ScrollView
+              style={styles.headerCategorySlider}
+              showsHorizontalScrollIndicator={false}
+              horizontal
             >
               {headerOver.map((image, index) => (
                 <Image key={index} source={{ uri: image }} style={styles.headerCategoryImage} />

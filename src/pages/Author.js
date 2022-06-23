@@ -130,6 +130,9 @@ export default function Author({ navigation }) {
               </View>
               <View style={{ flexDirection: "row", justifyContent: "space-evenly" }}>
                 <Pressable
+                  onPress={() => {
+                    navigation.navigate("YourAccount");
+                  }}
                   style={{
                     backgroundColor: "#fafafa",
                     paddingVertical: 12,
@@ -248,6 +251,9 @@ export default function Author({ navigation }) {
             </View>
             <View style={{ alignItems: "center", paddingBottom: 12 }}>
               <Pressable
+                onPress={() => {
+                  navigation.navigate("YourLists");
+                }}
                 style={{
                   paddingVertical: 14,
                   borderWidth: 1,
@@ -260,8 +266,17 @@ export default function Author({ navigation }) {
               </Pressable>
             </View>
             <Divider />
-            <View style={{ paddingHorizontal: 20, paddingVertical: 16 }}>
+            <View
+              style={{
+                paddingHorizontal: 20,
+                paddingVertical: 16,
+                alignItems: "center",
+                flexDirection: "row",
+                justifyContent: "space-between",
+              }}
+            >
               <Text style={{ fontWeight: "bold", fontSize: 18 }}>Your Account</Text>
+              <Text style={{ fontSize: 15, color: "#27788c" }}>See all</Text>
             </View>
             <View style={{ alignItems: "center", paddingBottom: 12 }}>
               <ScrollView horizontal>
@@ -343,15 +358,30 @@ export default function Author({ navigation }) {
                     marginHorizontal: 4,
                   }}
                 >
-                  <Text style={{ paddingHorizontal: 12, fontSize: 15, textAlign: "center" }}>
+                  <Text
+                    style={{
+                      paddingHorizontal: 12,
+                      fontSize: 15,
+                      textAlign: "center",
+                    }}
+                  >
                     Memberships & subscriptions
                   </Text>
                 </Pressable>
               </ScrollView>
             </View>
             <Divider />
-            <View style={{ paddingHorizontal: 20, paddingVertical: 16 }}>
+            <View
+              style={{
+                paddingHorizontal: 20,
+                paddingVertical: 16,
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "space-between",
+              }}
+            >
               <Text style={{ fontWeight: "bold", fontSize: 18 }}>Gift Card Balance: $0.00</Text>
+              <Text style={{ fontSize: 15, color: "#27788c" }}>Manage</Text>
             </View>
             <View
               style={{

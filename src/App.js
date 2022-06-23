@@ -19,6 +19,8 @@ import AddedtoCart from "./pages/AddedtoCart";
 import CartLoggedIn from "./pages/CartLoggedIn";
 import YourOrder from "./pages/YourOrder";
 import BuyAgain from "./pages/BuyAgain";
+import YourAccount from "./pages/YourAccount";
+import CheckOut from "./pages/CheckOut";
 import { NavBarContext } from "./Contexts/NavBarContext";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import YourLists from "./pages/YourLists";
@@ -47,7 +49,6 @@ export default () => {
     var creds = await AsyncStorage.getItem("credentials");
     if (creds !== null) {
       creds = JSON.parse(creds);
-      console.log("Credentials loaded.\n");
       setName(creds.name);
       setEmail(creds.email);
       setPassword(creds.password);
@@ -71,10 +72,6 @@ export default () => {
     loadLoginState();
     loginStateLoaded = true;
   }
-
-  console.log("Name: ", name);
-  console.log("Email: ", email);
-  console.log("Password: ", password);
 
   return (
     <View style={{ flex: 1 }}>
@@ -110,7 +107,7 @@ export default () => {
           }}
         >
           <Stack.Navigator initialRouteName="Home" screenOptions={{ headerShown: false }}>
-            {/* <Stack.Screen name="Home" component={HomeScreen} />
+            <Stack.Screen name="Home" component={HomeScreen} />
             <Stack.Screen name="LoginScreen" component={LoginScreen} />
             <Stack.Screen name="Cart" component={Cart} />
             <Stack.Screen name="Settings" component={Settings} />
@@ -126,8 +123,10 @@ export default () => {
             <Stack.Screen name="AddedtoCart" component={AddedtoCart} />
             <Stack.Screen name="CartLoggedIn" component={CartLoggedIn} />
             <Stack.Screen name="YourOrder" component={YourOrder} />
-            <Stack.Screen name="BuyAgain" component={BuyAgain} /> */}
+            <Stack.Screen name="BuyAgain" component={BuyAgain} />
             <Stack.Screen name="YourLists" component={YourLists} />
+            <Stack.Screen name="YourAccount" component={YourAccount} />
+            <Stack.Screen name="CheckOut" component={CheckOut} />
           </Stack.Navigator>
         </NavBarContext.Provider>
       </NavigationContainer>

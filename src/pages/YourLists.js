@@ -7,6 +7,7 @@ import {
   BackHandler,
   ImageBackground,
   ScrollView,
+  Image,
 } from "react-native";
 import { Searchbar } from "react-native-paper";
 import { LinearGradient } from "expo-linear-gradient";
@@ -18,13 +19,12 @@ function ListPoints(props) {
   return (
     <View
       style={{
-        paddingHorizontal: 14,
         paddingVertical: 8,
         paddingBottom: 15,
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",
-        borderBottomWidth: 1,
+        borderBottomWidth: props.bbw ? 0 : 0.7,
         borderBottomColor: "#f4f4f4",
       }}
     >
@@ -38,7 +38,30 @@ function ListPoints(props) {
   );
 }
 
-export default function Notifications({ navigation }) {
+function CategoryList(props) {
+  return (
+    <View
+      style={{
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+        paddingVertical: 14,
+        borderBottomWidth: props.bbw ? 0 : 0.7,
+        borderBottomColor: "#ebebeb",
+      }}
+    >
+      <View style={{ flexDirection: "row", alignItems: "center" }}>
+        <Image style={{ height: 50, width: 50, resizeMode: "contain" }} source={props.image} />
+        <Text style={{ paddingHorizontal: 14, fontSize: 15 }}>{props.title}</Text>
+      </View>
+      <View>
+        <AntDesign name="right" size={20} color="black" />
+      </View>
+    </View>
+  );
+}
+
+export default function YourLists({ navigation }) {
   const { currentScreen, setCurrentScreen } = useContext(NavBarContext);
 
   return (
@@ -108,7 +131,7 @@ export default function Notifications({ navigation }) {
                       alignItems: "center",
                     }}
                   >
-                    <Text>Create a list </Text>
+                    <Text>Create a list</Text>
                   </Pressable>
                 </View>
               </ImageBackground>
@@ -157,22 +180,34 @@ export default function Notifications({ navigation }) {
                 <Ionicons name="ios-gift" size={56} color="#bababa" />
               </View>
             </View>
-            <ListPoints
-              heading="Save time"
-              detail="Add your items and ideas in one convenient location"
-            />
-            <ListPoints
-              heading="Give great gifts"
-              detail="Remember your friends' lists and share yours"
-            />
-            <ListPoints
-              heading="Check price changes"
-              detail="Check when items from your list drop in price"
-            />
-            <ListPoints
-              heading="Get notified about deals"
-              detail="Get push notifications for deals when using the mobile app"
-            />
+            <View style={{ paddingHorizontal: 14 }}>
+              <ListPoints
+                heading="Save time"
+                detail="Add your items and ideas in one convenient location"
+              />
+              <ListPoints
+                heading="Give great gifts"
+                detail="Remember your friends' lists and share yours"
+              />
+              <ListPoints
+                heading="Check price changes"
+                detail="Check when items from your list drop in price"
+              />
+              <ListPoints
+                heading="Get notified about deals"
+                detail="Get push notifications for deals when using the mobile app"
+                bbw={1}
+              />
+            </View>
+            <View style={{ paddingHorizontal: 14, borderTopWidth: 0.7, borderTopColor: "#ebebeb" }}>
+              <CategoryList image={require("../assets/Images/blank.png")} title="Idea Lists" />
+              <CategoryList image={require("../assets/Images/babyreg.png")} title="Baby Registry" />
+              <CategoryList
+                image={require("../assets/Images/weddingreg.png")}
+                title="Wedding Registry"
+                bbw={1}
+              />
+            </View>
           </ScrollView>
         </View>
       </View>

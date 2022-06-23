@@ -4,10 +4,10 @@ import { NavBarContext } from "../Contexts/NavBarContext";
 import { LinearGradient } from "expo-linear-gradient";
 import Checkbox from "expo-checkbox";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useNavigation } from "@react-navigation/native";
 
 async function saveLoginState(loggedIn) {
   await AsyncStorage.setItem("loginState", loggedIn);
-  console.log("Login State saved.\n", loggedIn);
 }
 
 export default function SignIn({ navigation }) {
@@ -22,12 +22,7 @@ export default function SignIn({ navigation }) {
   const [isChecked, setChecked] = useState(false);
   const [signInPassword, setSignInPassword] = useState();
 
-  console.log(signInPassword);
-  console.log(password);
-  console.log("Wrong Password: ", signInPassword != password)
-  console.log("Missing Password: ", signInPassword == undefined);
-  console.log(passwordIncorrect);
-  console.log(passwordMissing);
+  const navigationReset = useNavigation();
 
   return (
     <View style={{ marginTop: 24 }}>
@@ -157,7 +152,10 @@ export default function SignIn({ navigation }) {
                 setAlert(false);
                 setPasswordIncorrect(false);
                 setPasswordMissing(false);
-                navigation.navigate("Author");
+                navigationReset.reset({
+                  index: 0,
+                  routes: [{ name: "Author" }],
+                });
               }
             }}
             style={{

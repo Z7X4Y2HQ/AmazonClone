@@ -6,6 +6,8 @@ import { LinearGradient } from "expo-linear-gradient";
 import { AntDesign } from "@expo/vector-icons";
 import { NavBarContext } from "../Contexts/NavBarContext";
 
+import { useNavigation } from "@react-navigation/native";
+
 async function saveCredentials(name, email, password) {
   var creds = {
     name: name,
@@ -13,12 +15,12 @@ async function saveCredentials(name, email, password) {
     password: password,
   };
   await AsyncStorage.setItem("credentials", JSON.stringify(creds));
-  console.log("Credentials saved.\n", creds);
+
 }
 
 async function saveLoginState(loggedIn) {
   await AsyncStorage.setItem("loginState", loggedIn);
-  console.log("Login State saved.\n", loggedIn);
+
 }
 
 export default function LoginScreen({ navigation }) {
@@ -51,18 +53,14 @@ export default function LoginScreen({ navigation }) {
   const [isChecked2, setChecked2] = useState(true);
   const [isChecked3, setChecked3] = useState(false);
 
+  const navigationReset = useNavigation();
+
   function OTPGenerator() {
     return Math.floor(100000 + Math.random() * 900000);
   }
 
   const [OTP, setOTP] = useState(OTPGenerator());
   const [incorrectOTP, setIncorrectOTP] = useState(false);
-
-    console.log("Name: ", name);
-  console.log("Email: ", email);
-  console.log("Password: ", password);
-
-  console.log("OTP: ", OTPCheck);
 
   return (
     <View>
@@ -428,7 +426,6 @@ export default function LoginScreen({ navigation }) {
                     <TextInput
                       onChangeText={(signInEmail) => {
                         setSignInEmail(signInEmail);
-                        console.log("Sign In Email: ", signInEmail);
                       }}
                       style={{
                         backgroundColor: "white",
@@ -444,7 +441,7 @@ export default function LoginScreen({ navigation }) {
                   </View>
                   <View style={{ alignItems: "center", paddingHorizontal: 15 }}>
                     <LinearGradient
-                      style={{ width: "100%", borderRadius: 3, marginTop: 1}}
+                      style={{ width: "100%", borderRadius: 3, marginTop: 1 }}
                       start={{ x: 0, y: 1 }}
                       end={{ x: 0, y: 0 }}
                       colors={["#edbc58", "#f2cb7d", "#f4daa7"]}
@@ -457,12 +454,10 @@ export default function LoginScreen({ navigation }) {
                             setMissingEmail(true);
                             setMissingPassword(false);
                           } else if (signInEmail != email) {
-                            console.log("email wrong");
                             setNoEmailAlert(true);
                           } else {
-                            console.log("email right");
                             setNoEmailAlert(false);
-                            navigation.navigate("SignIn")
+                            navigation.navigate("SignIn");
                           }
                         }}
                         style={{
@@ -718,7 +713,10 @@ export default function LoginScreen({ navigation }) {
                 setIncorrectOTP(false);
                 setLoggedIn(true);
                 saveLoginState("true");
-                navigation.navigate("Author");
+                navigationReset.reset({
+                  index: 0,
+                  routes: [{ name: "Author" }],
+                });
               } else {
                 setIncorrectOTP(true);
               }
@@ -732,7 +730,7 @@ export default function LoginScreen({ navigation }) {
               backgroundColor: "#fdd800",
             }}
           >
-            <Text>Create yout Amazon account</Text>
+            <Text>Create your Amazon account</Text>
           </Pressable>
           <View style={{ justifyContent: "center", alignItems: "center", paddingVertical: 22 }}>
             <Pressable

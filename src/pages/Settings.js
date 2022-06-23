@@ -18,9 +18,10 @@ import BottomMenu from "../Components/BottomNavigationMenu";
 import SearchBar from "../Components/SearchBar";
 import { NavBarContext } from "../Contexts/NavBarContext";
 
+import { useNavigation } from "@react-navigation/native";
+
 async function saveLoginState(loggedIn) {
   await AsyncStorage.setItem("loginState", loggedIn);
-  console.log("Login State saved.\n", loggedIn);
 }
 
 export default function Settings({ navigation }) {
@@ -34,6 +35,8 @@ export default function Settings({ navigation }) {
   const { credentials, setCredentials } = useContext(NavBarContext);
   const { credentialsAdded, setCredentialsAdded } = useContext(NavBarContext);
   const { name, setName } = useContext(NavBarContext);
+
+  const navigationReset = useNavigation();
 
   useEffect(() => {
     const backAction = () => {
@@ -56,7 +59,10 @@ export default function Settings({ navigation }) {
             setLoggedIn(false);
             setCredentialsAdded(false);
             saveLoginState("false");
-            navigation.navigate("LoggedOut");
+            navigationReset.reset({
+              index: 0,
+              routes: [{ name: "LoggedOut" }],
+            });
           },
           style: "cancel",
         },
@@ -391,13 +397,10 @@ export default function Settings({ navigation }) {
                     </View>
                   </TouchableOpacity>
                 </View>
-
-                {/* Customer services */}
-                {/* Customer services */}
                 <View style={{ marginTop: 12, paddingHorizontal: 10 }}>
                   <TouchableOpacity
                     onPress={() => {
-                      navigation.navigate("LoginScreen");
+                      navigation.navigate("YourAccount");
                     }}
                   >
                     <View
@@ -544,7 +547,7 @@ export default function Settings({ navigation }) {
           </Pressable>
           <Pressable
             onPress={() => {
-              navigation.navigate("LoginScreen");
+              navigation.navigate("YourAccount");
             }}
           >
             <View
@@ -563,7 +566,7 @@ export default function Settings({ navigation }) {
           </Pressable>
           <Pressable
             onPress={() => {
-              navigation.navigate("LoginScreen");
+              navigation.navigate("YourLists");
             }}
           >
             <View

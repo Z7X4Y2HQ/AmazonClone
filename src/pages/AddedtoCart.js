@@ -84,7 +84,7 @@ export default function Cart({ route, navigation }) {
                   <View style={{ paddingHorizontal: 14 }}>
                     <TouchableOpacity
                       onPress={() => {
-                        navigation.navigate("LoginScreen");
+                        navigation.navigate("CheckOut");
                       }}
                       style={{
                         elevation: 3,
