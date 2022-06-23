@@ -15,12 +15,10 @@ async function saveCredentials(name, email, password) {
     password: password,
   };
   await AsyncStorage.setItem("credentials", JSON.stringify(creds));
-
 }
 
 async function saveLoginState(loggedIn) {
   await AsyncStorage.setItem("loginState", loggedIn);
-
 }
 
 export default function LoginScreen({ navigation }) {
@@ -97,7 +95,7 @@ export default function LoginScreen({ navigation }) {
                 No account found with this email address
               </Text>
               <Text style={{ width: "90%", fontSize: 14, paddingVertical: 0.7 }}>
-                Please check your email address or click create Account if you are new to Amazon
+                Please check your email address or click create Account if you are new to Flip Mart
               </Text>
             </View>
           )}
@@ -182,7 +180,7 @@ export default function LoginScreen({ navigation }) {
                   <Text style={{ fontWeight: "bold", paddingLeft: 10 }}>
                     Create Account.{" "}
                     <Text style={{ fontSize: 12, fontWeight: isChecked2 ? "bold" : undefined }}>
-                      New to Amazon?
+                      New to Flip Mart?
                     </Text>
                   </Text>
                 </View>
@@ -354,7 +352,7 @@ export default function LoginScreen({ navigation }) {
                     }}
                   >
                     <Text style={{ color: "black", width: "100%" }}>
-                      By creating an account, you agree to Amazon's{" "}
+                      By creating an account, you agree to Flip Mart's{" "}
                       <Text style={{ color: "#0e71b9" }}>Conditions of Use</Text> and
                       <Text style={{ color: "#0e71b9" }}> Privacy Notice</Text>
                     </Text>
@@ -482,7 +480,7 @@ export default function LoginScreen({ navigation }) {
                     }}
                   >
                     <Text style={{ color: "black", width: "100%", paddingBottom: 10 }}>
-                      By Continuing, you agree to Amazon's{" "}
+                      By Continuing, you agree to Flip Mart's{" "}
                       <Text style={{ color: "#0e71b9" }}>Conditions of Use</Text> and
                       <Text style={{ color: "#0e71b9" }}> Privacy Notice</Text>
                     </Text>
@@ -528,7 +526,9 @@ export default function LoginScreen({ navigation }) {
               <Text style={{ color: "#0e71b9" }}>Help</Text>
             </View>
             <View style={{ paddingTop: 5 }}>
-              <Text style={{ fontSize: 11 }}>© 1996-2022, Amazon.com, Inc. or its affilliates</Text>
+              <Text style={{ fontSize: 11 }}>
+                © 1996-2022, Flipmart.com, Inc. or its affilliates
+              </Text>
             </View>
           </View>
         </ScrollView>
@@ -577,7 +577,7 @@ export default function LoginScreen({ navigation }) {
               paddingVertical: 7,
             }}
           >
-            <Text style={{ fontWeight: "bold" }}>Amazon password</Text>
+            <Text style={{ fontWeight: "bold" }}>Flip Mart password</Text>
             <TextInput
               style={{
                 backgroundColor: "white",
@@ -632,7 +632,7 @@ export default function LoginScreen({ navigation }) {
             </View>
             <View style={{ paddingTop: 5 }}>
               <Text style={{ color: "#636464", fontSize: 10.5 }}>
-                © 1996-2022, Amazon.com, Inc. or its affilliates
+                © 1996-2022, Flipmart.com, Inc. or its affilliates
               </Text>
               <Text style={{ color: "#636464", fontSize: 10.5, textAlign: "center", marginTop: 9 }}>
                 <Text style={{ fontWeight: "bold" }}>OTP:</Text> {OTP}
@@ -730,7 +730,7 @@ export default function LoginScreen({ navigation }) {
               backgroundColor: "#fdd800",
             }}
           >
-            <Text>Create your Amazon account</Text>
+            <Text>Create your Flip Mart account</Text>
           </Pressable>
           <View style={{ justifyContent: "center", alignItems: "center", paddingVertical: 22 }}>
             <Pressable
@@ -761,7 +761,7 @@ export default function LoginScreen({ navigation }) {
             </View>
             <View style={{ paddingTop: 5 }}>
               <Text style={{ color: "#636464", fontSize: 10.5 }}>
-                © 1996-2022, Amazon.com, Inc. or its affilliates
+                © 1996-2022, Flipmart.com, Inc. or its affilliates
               </Text>
               <Text style={{ color: "#636464", fontSize: 10.5, textAlign: "center", marginTop: 9 }}>
                 <Text style={{ fontWeight: "bold" }}>OTP:</Text> {OTP}

@@ -51,7 +51,7 @@ export default function Settings({ navigation }) {
   const signOutAlert = () =>
     Alert.alert(
       "Confirm Sign Out",
-      name + ", you are signing out of your Amazon apps on this device.",
+      name + ", you are signing out of your Flip Mart apps on this device.",
       [
         {
           text: "SIGN OUT",
@@ -328,7 +328,7 @@ export default function Settings({ navigation }) {
                                     borderRadius: 10,
                                   }}
                                 >
-                                  <Text style={{ fontSize: 15 }}>AmazonSmile</Text>
+                                  <Text style={{ fontSize: 15 }}>FlipMartSmile</Text>
                                 </View>
                               </TouchableOpacity>
                               <TouchableOpacity onPress={() => {}} styles={{}}>
@@ -451,7 +451,6 @@ export default function Settings({ navigation }) {
                           paddingHorizontal: 15,
                           paddingVertical: 15,
                           borderRadius: 10,
-
                           flexDirection: "column",
                         }}
                       >

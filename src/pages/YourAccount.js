@@ -78,7 +78,7 @@ export default function YourAccount({ navigation }) {
                 }}
                 style={styles.searchBar}
                 iconColor="black"
-                placeholder="Search Amazon"
+                placeholder="Search Flip Mart"
               />
             </View>
           </LinearGradient>
@@ -111,7 +111,7 @@ export default function YourAccount({ navigation }) {
                 roundBottomBorder={0}
               />
               <Pages
-                title="Your Amazon Day"
+                title="Your Flip Mart Day"
                 topBorder={0}
                 roundTopBorder={0}
                 roundBottomBorder={1}
@@ -126,7 +126,7 @@ export default function YourAccount({ navigation }) {
                 roundBottomBorder={0}
               />
               <Pages
-                title="Login with Amazon"
+                title="Login with Flip Mart"
                 topBorder={0}
                 roundTopBorder={0}
                 roundBottomBorder={0}
@@ -174,7 +174,7 @@ export default function YourAccount({ navigation }) {
                 roundBottomBorder={0}
               />
               <Pages
-                title="Amazon Fresh settings"
+                title="Flip Mart Fresh settings"
                 topBorder={0}
                 roundTopBorder={0}
                 roundBottomBorder={0}
@@ -211,7 +211,7 @@ export default function YourAccount({ navigation }) {
                 roundBottomBorder={0}
               />
               <Pages
-                title="Amazon Music settings"
+                title="Flip Mart Music settings"
                 topBorder={0}
                 roundTopBorder={0}
                 roundBottomBorder={0}
@@ -237,7 +237,7 @@ export default function YourAccount({ navigation }) {
                 roundBottomBorder={0}
               />
               <Pages
-                title="Your Amazon credit cards"
+                title="Your Flip Mart credit cards"
                 topBorder={0}
                 roundTopBorder={0}
                 roundBottomBorder={0}
@@ -324,7 +324,7 @@ export default function YourAccount({ navigation }) {
                 roundBottomBorder={0}
               />
               <Pages
-                title="Manage Amazon App Camera Images"
+                title="Manage Flip Mart App Camera Images"
                 topBorder={0}
                 roundTopBorder={0}
                 roundBottomBorder={1}
@@ -337,7 +337,7 @@ export default function YourAccount({ navigation }) {
                 roundBottomBorder={0}
               />
               <Pages
-                title="Close Your Amazon Account"
+                title="Close Your Flip Mart Account"
                 topBorder={0}
                 roundTopBorder={0}
                 roundBottomBorder={0}

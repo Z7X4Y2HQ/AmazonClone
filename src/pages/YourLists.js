@@ -103,7 +103,7 @@ export default function YourLists({ navigation }) {
                 }}
                 style={styles.searchBar}
                 iconColor="black"
-                placeholder="Search Amazon"
+                placeholder="Search Flip Mart"
               />
             </View>
           </LinearGradient>

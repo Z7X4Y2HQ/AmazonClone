@@ -89,7 +89,7 @@ export default function SignIn({ navigation }) {
           paddingVertical: 7,
         }}
       >
-        <Text style={{ paddingLeft: 6, fontWeight: "bold" }}>Amazon password</Text>
+        <Text style={{ paddingLeft: 6, fontWeight: "bold" }}>Flip Mart password</Text>
         <TextInput
           onChangeText={(password) => setSignInPassword(password)}
           secureTextEntry={isChecked ? false : true}
@@ -194,7 +194,7 @@ export default function SignIn({ navigation }) {
         </View>
         <View style={{ paddingTop: 5 }}>
           <Text style={{ color: "#636464", fontSize: 10.5 }}>
-            © 1996-2022, Amazon.com, Inc. or its affilliates
+            © 1996-2022, Flipmart.com, Inc. or its affilliates
           </Text>
           <Text
             style={{ color: "#636464", fontSize: 10.5, textAlign: "center", marginTop: 9 }}

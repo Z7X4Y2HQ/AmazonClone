@@ -57,7 +57,7 @@ export default function YourOrder({ navigation }) {
                 }}
                 style={styles.searchBar}
                 iconColor="black"
-                placeholder="Search Amazon"
+                placeholder="Search Flip Mart"
               />
             </View>
           </LinearGradient>

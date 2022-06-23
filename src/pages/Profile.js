@@ -81,7 +81,7 @@ export default function Profile({ navigation }) {
                 }}
                 style={styles.searchBar}
                 iconColor="black"
-                placeholder="Search Amazon"
+                placeholder="Search Flip Mart"
               />
             </View>
           </LinearGradient>
@@ -331,7 +331,7 @@ export default function Profile({ navigation }) {
                 Find parts and accessories that fit your vehicle and ask other oweners for tips and
                 advice
               </Text>
-              <View style={{ justifyContent: 'center', alignItems: 'center', paddingVertical: 10}}>
+              <View style={{ justifyContent: "center", alignItems: "center", paddingVertical: 10 }}>
                 <Image
                   style={{
                     height: 138,

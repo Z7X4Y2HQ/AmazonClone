@@ -70,7 +70,7 @@ export default function BuyAgain({ navigation }) {
                 }}
                 style={styles.searchBar}
                 iconColor="black"
-                placeholder="Search Amazon"
+                placeholder="Search Flip Mart"
               />
             </View>
             <View style={{ padding: 12 }}>

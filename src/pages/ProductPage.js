@@ -465,7 +465,7 @@ export default function ProductPage({ route, navigation }) {
                 </View>
               </View>
               <Text style={{ paddingHorizontal: 14, paddingBottom: 10, fontSize: 15 }}>
-                Ships from and sold by Amazon.com
+                Ships from and sold by Flipmart.com
               </Text>
             </View>
             <View
@@ -608,7 +608,8 @@ export default function ProductPage({ route, navigation }) {
                 </Text>
               </Text>
               <Text style={{ fontSize: 15, paddingVertical: 5 }}>
-                Support: <Text style={{ color: "#15798b" }}>Free Amazon tech support included</Text>
+                Support:{" "}
+                <Text style={{ color: "#15798b" }}>Free Flip Mart tech support included</Text>
               </Text>
               <Text style={{ fontSize: 16, paddingVertical: 10, color: "#15798b" }}>
                 ADD TO LIST
@@ -642,7 +643,7 @@ export default function ProductPage({ route, navigation }) {
                 borderColor: "#e3e5e4",
               }}
             >
-              <Text style={{ fontSize: 17, fontWeight: "bold" }}>Other sellers on Amazon</Text>
+              <Text style={{ fontSize: 17, fontWeight: "bold" }}>Other sellers on Flip Mart</Text>
               <Pressable>
                 <View
                   style={{

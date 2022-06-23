@@ -91,7 +91,7 @@ export default function Cart({ route, navigation }) {
                   </View>
                   <View style={{ alignItems: "center" }}>
                     <Text style={{ fontSize: 22, fontWeight: "bold" }}>
-                      Your Amazon cart is Ready
+                      Your Flip Mart cart is Ready
                     </Text>
                     <Text style={{ color: "#646564" }}>
                       {subheadings[Math.floor(0 + Math.random() * 6)]}

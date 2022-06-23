@@ -55,9 +55,7 @@ export default LoggedOut = ({ navigation }) => {
           colors={["#e7e9ec", "#eff1f3", "#f7f9fb"]}
         >
           <Pressable
-            onPress={() =>
-                navigation.navigate("LoginScreen")
-            }
+            onPress={() => navigation.navigate("LoginScreen")}
             style={{
               borderWidth: 0.7,
               borderRadius: 3,
@@ -69,7 +67,7 @@ export default LoggedOut = ({ navigation }) => {
               alignItems: "center",
             }}
           >
-            <Text>New to Amazon.com? Create an account</Text>
+            <Text>New to Flipmart.com? Create an account</Text>
           </Pressable>
         </LinearGradient>
         <LinearGradient
@@ -79,7 +77,7 @@ export default LoggedOut = ({ navigation }) => {
           colors={["#e7e9ec", "#eff1f3", "#f7f9fb"]}
         >
           <Pressable
-          onPress={() => navigation.navigate("Home")}
+            onPress={() => navigation.navigate("Home")}
             style={{
               borderWidth: 0.7,
               borderRadius: 3,

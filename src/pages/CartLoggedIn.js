@@ -76,7 +76,7 @@ export default function CartLoggedIn({ route, navigation }) {
                 source={require("../assets/Images/cart.png")}
               />
               <View style={{ flexDirection: "column" }}>
-                <Text style={{ fontSize: 13 }}>Your Amazon Cart is empty</Text>
+                <Text style={{ fontSize: 13 }}>Your Flip Mart Cart is empty</Text>
                 <Text style={{ fontSize: 13, color: "#757777" }}>
                   {subheadings[Math.floor(0 + Math.random() * 6)]}
                 </Text>
