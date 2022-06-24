@@ -1,5 +1,14 @@
 import React, { useState, useEffect, useContext } from "react";
-import { ScrollView, Text, Image, StyleSheet, TextInput, View, Pressable } from "react-native";
+import {
+  ScrollView,
+  Text,
+  Image,
+  StyleSheet,
+  TextInput,
+  View,
+  Pressable,
+  BackHandler,
+} from "react-native";
 import Checkbox from "expo-checkbox";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { LinearGradient } from "expo-linear-gradient";
@@ -60,6 +69,16 @@ export default function LoginScreen({ navigation }) {
   const [OTP, setOTP] = useState(OTPGenerator());
   const [incorrectOTP, setIncorrectOTP] = useState(false);
 
+  useEffect(() => {
+    const backAction = () => {
+      setCredentialsAdded(false);
+    };
+
+    const backHandler = BackHandler.addEventListener("hardwareBackPress", backAction);
+
+    return () => backHandler.remove();
+  }, []);
+
   return (
     <View>
       {!credentialsAdded && (
@@ -74,8 +93,8 @@ export default function LoginScreen({ navigation }) {
             }}
           >
             <Image
-              style={{ height: 33, width: 95 }}
-              source={require("../assets/Images/amazon_black.png")}
+              style={{ height: 30, width: 55, resizeMode: "cover" }}
+              source={require("../assets/Images/FM-logo-dark.png")}
             ></Image>
           </View>
           {noEmailAlert && (
@@ -546,7 +565,7 @@ export default function LoginScreen({ navigation }) {
           >
             <Image
               style={{ height: 33, width: 95 }}
-              source={require("../assets/Images/amazon_black.png")}
+              source={require("../assets/Images/FM-logo-dark.png")}
             ></Image>
           </View>
           <Text
@@ -653,8 +672,8 @@ export default function LoginScreen({ navigation }) {
             }}
           >
             <Image
-              style={{ height: 33, width: 95 }}
-              source={require("../assets/Images/amazon_black.png")}
+              style={{ height: 30, width: 55, resizeMode: "cover" }}
+              source={require("../assets/Images/FM-logo-dark.png")}
             ></Image>
           </View>
           <Text

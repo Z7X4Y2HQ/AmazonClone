@@ -1,4 +1,4 @@
-package com.amazonn.clone;
+package com.flipmart.store;
 
 import android.os.Build;
 import android.os.Bundle;

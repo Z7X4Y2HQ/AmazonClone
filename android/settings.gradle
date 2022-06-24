@@ -1,4 +1,4 @@
-rootProject.name = 'AmazonClone'
+rootProject.name = 'FlipMart'
 include ':react-native-video'
 project(':react-native-video').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-video/android')
 

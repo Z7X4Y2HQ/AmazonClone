@@ -24,9 +24,12 @@ import CheckOut from "./pages/CheckOut";
 import { NavBarContext } from "./Contexts/NavBarContext";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import YourLists from "./pages/YourLists";
+import SplashScreen from "./pages/SplashScreen";
+import CustomerServices from "./pages/CustomerServices";
 
 var loginStateLoaded = false;
 var loadedCredentials = false;
+var cartItemsNumLoaded = false;
 
 export default () => {
   const Stack = createNativeStackNavigator();
@@ -38,6 +41,7 @@ export default () => {
   const [addedToCart, setAddedToCart] = useState();
   const [loggedIn, setLoggedIn] = useState(false);
   const [credentialsAdded, setCredentialsAdded] = useState(false);
+  const [qty, setQty] = useState(1);
 
   const [name, setName] = useState();
   const [email, setEmail] = useState();
@@ -104,9 +108,11 @@ export default () => {
             credentialsAdded,
             setCredentialsAdded,
             previousScreens,
+            qty,
+            setQty,
           }}
         >
-          <Stack.Navigator initialRouteName="Home" screenOptions={{ headerShown: false }}>
+          <Stack.Navigator initialRouteName="SplashScreen" screenOptions={{ headerShown: false }}>
             <Stack.Screen name="Home" component={HomeScreen} />
             <Stack.Screen name="LoginScreen" component={LoginScreen} />
             <Stack.Screen name="Cart" component={Cart} />
@@ -127,6 +133,8 @@ export default () => {
             <Stack.Screen name="YourLists" component={YourLists} />
             <Stack.Screen name="YourAccount" component={YourAccount} />
             <Stack.Screen name="CheckOut" component={CheckOut} />
+            <Stack.Screen name="SplashScreen" component={SplashScreen} />
+            <Stack.Screen name="CustomerServices" component={CustomerServices} />
           </Stack.Navigator>
         </NavBarContext.Provider>
       </NavigationContainer>

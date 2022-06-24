@@ -25,6 +25,7 @@ import {
   AntDesign,
 } from "@expo/vector-icons";
 import Checkbox from "expo-checkbox";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import BottomMenu from "../Components/BottomNavigationMenu";
 import Divider from "../Components/Divider";
@@ -42,7 +43,6 @@ export default function ProductPage({ route, navigation }) {
   const scrollX = useRef(new Animated.Value(0)).current;
   const { width: windowWidth } = useWindowDimensions();
 
-  const [qty, setQty] = useState(1);
   const [modalVisible, setModalVisible] = useState(false);
   const [isExpanded, setIsExpanded] = useState(true);
   const [selectedCardIndex, setSelectedCardIndex] = useState(0);
@@ -56,6 +56,8 @@ export default function ProductPage({ route, navigation }) {
   const { cartItemsNum, setCartItemsNum } = useContext(NavBarContext);
   const { emptyCart, setEmptyCart } = useContext(NavBarContext);
   const { addedToCart, setAddedToCart } = useContext(NavBarContext);
+  const { qty, setQty } = useContext(NavBarContext);
+  const { loggedIn, setLoggedIn } = useContext(NavBarContext);
 
   useEffect(() => {
     const backAction = () => {
@@ -434,7 +436,11 @@ export default function ProductPage({ route, navigation }) {
               <View style={{ paddingHorizontal: 14 }}>
                 <TouchableOpacity
                   onPress={() => {
-                    setCartItemsNum((cartItemsNum) => (cartItemsNum = cartItemsNum + 1));
+                    if (qty > 1) {
+                      setCartItemsNum((cartItemsNum) => (cartItemsNum = cartItemsNum + qty));
+                    } else {
+                      setCartItemsNum((cartItemsNum) => (cartItemsNum = cartItemsNum + 1));
+                    }
                     setEmptyCart(false);
                     setAddedToCart(items);
                   }}
@@ -444,7 +450,11 @@ export default function ProductPage({ route, navigation }) {
                 </TouchableOpacity>
                 <TouchableOpacity
                   onPress={() => {
-                    navigation.navigate("CheckOut");
+                    if (loggedIn) {
+                      navigation.navigate("CheckOut");
+                    } else {
+                      navigation.navigate("LoginScreen");
+                    }
                   }}
                   style={styles.buy}
                 >

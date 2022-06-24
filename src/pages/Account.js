@@ -32,7 +32,7 @@ export default function Account({ navigation }) {
             <View style={{ alignItems: "center" }}>
               <Image
                 style={styles.headerLogo}
-                source={require("../assets/Images/amazon_black.png")}
+                source={require("../assets/Images/FM-logo-dark.png")}
               ></Image>
             </View>
             <View style={{ flexDirection: "row" }}>
@@ -85,7 +85,7 @@ export default function Account({ navigation }) {
                 ></Image>
               </View>
               <View>
-                <Text style={[styles.perksText, { marginVertical: 30, width: 280 }]}>
+                <Text style={[styles.perksText, { marginVertical: 30, width: 260 }]}>
                   Check order status and track, change or return items
                 </Text>
                 <Text style={[styles.perksText, { marginTop: 15, width: 260 }]}>
@@ -126,8 +126,9 @@ const styles = StyleSheet.create({
   },
   headerLogo: {
     height: 30,
-    width: 90,
-    marginLeft: 8
+    width: 55,
+    marginLeft: 16,
+    resizeMode: "cover",
   },
   signInHeading: {
     fontSize: 22,

@@ -11,8 +11,8 @@ export default LoggedOut = ({ navigation }) => {
     <View style={{ marginTop: 24 }}>
       <View style={{ alignItems: "center", justifyContent: "center", paddingVertical: 50 }}>
         <Image
-          style={{ height: 70, resizeMode: "contain" }}
-          source={require("../assets/Images/amazon_black.png")}
+          style={{ width: 180, height: 180, resizeMode: "contain" }}
+          source={require("../assets/Images/FM-logo-large.png")}
         ></Image>
       </View>
       <View>

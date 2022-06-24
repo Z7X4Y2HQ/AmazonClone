@@ -1,4 +1,4 @@
-package com.amazonn.clone;
+package com.flipmart.store;
     
     import com.facebook.react.bridge.JSIModuleSpec;
     import com.facebook.react.bridge.JavaScriptContextHolder;

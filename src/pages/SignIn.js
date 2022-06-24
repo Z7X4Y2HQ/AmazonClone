@@ -1,5 +1,14 @@
 import React, { useState, useEffect, useContext } from "react";
-import { ScrollView, Text, Image, StyleSheet, TextInput, View, Pressable } from "react-native";
+import {
+  ScrollView,
+  Text,
+  Image,
+  StyleSheet,
+  TextInput,
+  View,
+  Pressable,
+  BackHandler,
+} from "react-native";
 import { NavBarContext } from "../Contexts/NavBarContext";
 import { LinearGradient } from "expo-linear-gradient";
 import Checkbox from "expo-checkbox";
@@ -36,8 +45,13 @@ export default function SignIn({ navigation }) {
         }}
       >
         <Image
-          style={{ height: 33, width: 95 }}
-          source={require("../assets/Images/amazon_black.png")}
+          style={{
+            height: 30,
+            width: 55,
+
+            resizeMode: "cover",
+          }}
+          source={require("../assets/Images/FM-logo-dark.png")}
         ></Image>
       </View>
       {alert && (

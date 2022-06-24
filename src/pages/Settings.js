@@ -35,6 +35,9 @@ export default function Settings({ navigation }) {
   const { credentials, setCredentials } = useContext(NavBarContext);
   const { credentialsAdded, setCredentialsAdded } = useContext(NavBarContext);
   const { name, setName } = useContext(NavBarContext);
+  const { emptyCart, setEmptyCart } = useContext(NavBarContext);
+  const { addedToCart, setAddedToCart } = useContext(NavBarContext);
+  const { cartItemsNum, setCartItemsNum } = useContext(NavBarContext);
 
   const navigationReset = useNavigation();
 
@@ -59,6 +62,9 @@ export default function Settings({ navigation }) {
             setLoggedIn(false);
             setCredentialsAdded(false);
             saveLoginState("false");
+            setEmptyCart(true);
+            setCartItemsNum((cartItemsNum) => (cartItemsNum = 0));
+            setAddedToCart([]);
             navigationReset.reset({
               index: 0,
               routes: [{ name: "LoggedOut" }],
@@ -400,7 +406,7 @@ export default function Settings({ navigation }) {
                 <View style={{ marginTop: 12, paddingHorizontal: 10 }}>
                   <TouchableOpacity
                     onPress={() => {
-                      navigation.navigate("YourAccount");
+                      navigation.navigate("CustomerServices");
                     }}
                   >
                     <View
@@ -508,7 +514,11 @@ export default function Settings({ navigation }) {
         >
           <Pressable
             onPress={() => {
-              navigation.navigate("YourOrder");
+              if (loggedIn) {
+                navigation.navigate("YourOrder");
+              } else {
+                navigation.navigate("LoginScreen");
+              }
             }}
           >
             <View
@@ -527,7 +537,11 @@ export default function Settings({ navigation }) {
           </Pressable>
           <Pressable
             onPress={() => {
-              navigation.navigate("BuyAgain");
+              if (loggedIn) {
+                navigation.navigate("BuyAgain");
+              } else {
+                navigation.navigate("LoginScreen");
+              }
             }}
           >
             <View
@@ -546,7 +560,11 @@ export default function Settings({ navigation }) {
           </Pressable>
           <Pressable
             onPress={() => {
-              navigation.navigate("YourAccount");
+              if (loggedIn) {
+                navigation.navigate("YourAccount");
+              } else {
+                navigation.navigate("LoginScreen");
+              }
             }}
           >
             <View
@@ -565,7 +583,11 @@ export default function Settings({ navigation }) {
           </Pressable>
           <Pressable
             onPress={() => {
-              navigation.navigate("YourLists");
+              if (loggedIn) {
+                navigation.navigate("YourLists");
+              } else {
+                navigation.navigate("LoginScreen");
+              }
             }}
           >
             <View

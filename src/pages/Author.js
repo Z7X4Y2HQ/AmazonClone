@@ -45,7 +45,7 @@ export default function Author({ navigation }) {
             <View style={{ alignItems: "center" }}>
               <Image
                 style={styles.headerLogo}
-                source={require("../assets/Images/amazon_black.png")}
+                source={require("../assets/Images/FM-logo-dark.png")}
               ></Image>
             </View>
             <View style={{ flexDirection: "row" }}>
@@ -468,8 +468,9 @@ const styles = StyleSheet.create({
   },
   headerLogo: {
     height: 30,
-    width: 90,
-    marginLeft: 8,
+    width: 55,
+    marginLeft: 16,
+    resizeMode: "cover",
   },
   signInHeading: {
     fontSize: 22,

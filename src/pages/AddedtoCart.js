@@ -20,13 +20,12 @@ import BottomMenu from "../Components/BottomNavigationMenu";
 
 import LocationIndicator from "../Components/LocationIndicator";
 import { NavBarContext } from "../Contexts/NavBarContext";
-import Divider from "../Components/Divider";
 
-import Productsdata from "../assets/Data/data.json";
-import { backgroundColor } from "react-native/Libraries/Components/View/ReactNativeStyleAttributes";
+import { useNavigation } from "@react-navigation/native";
 
 export default function Cart({ route, navigation }) {
   const items = route.params;
+  const navigationReset = useNavigation();
 
   const [isChecked, setChecked] = useState(false);
 
@@ -74,7 +73,7 @@ export default function Cart({ route, navigation }) {
                       <Text style={{ lineHeight: 28, fontSize: 19 }}>Subtotal </Text>
                       <Text style={{ fontWeight: "bold", lineHeight: 21, fontSize: 12 }}>$</Text>
                       <Text style={{ fontWeight: "bold", fontSize: 20 }}>
-                        {addedToCart.newPrice}
+                        {addedToCart.newPrice * cartItemsNum}
                       </Text>
                       <Text style={{ fontWeight: "bold", lineHeight: 21, fontSize: 12 }}>
                         {addedToCart.cents}
@@ -175,9 +174,15 @@ export default function Cart({ route, navigation }) {
                                 setEmptyCart(!emptyCart);
                                 setAddedToCart([]);
                                 if (loggedIn == true) {
-                                  navigation.navigate("CartLoggedIn");
+                                  navigationReset.reset({
+                                    index: 0,
+                                    routes: [{ name: "CartLoggedIn" }],
+                                  });
                                 } else {
-                                  navigation.navigate("Cart");
+                                  navigationReset.reset({
+                                    index: 0,
+                                    routes: [{ name: "Cart" }],
+                                  });
                                 }
                               } else {
                                 setCartItemsNum(
@@ -377,7 +382,7 @@ export default function Cart({ route, navigation }) {
                                   setAddedToCart(item);
                                 }}
                                 style={{
-                                  width: 80,
+                                  width: 85,
                                   elevation: 3,
                                   paddingHorizontal: 10,
                                   paddingVertical: 6,
@@ -452,7 +457,7 @@ export default function Cart({ route, navigation }) {
                                   setAddedToCart(item);
                                 }}
                                 style={{
-                                  width: 80,
+                                  width: 85,
                                   elevation: 3,
                                   paddingHorizontal: 10,
                                   paddingVertical: 6,
