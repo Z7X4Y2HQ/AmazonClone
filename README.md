@@ -1,5 +1,5 @@
 # Amazon Clone
-CheckList of things that need to be done by the end of this Week, Hopefully
+CheckList of things that need to be done by the end of this Week, Hopefully (Couldn't lol)
 - [ ] Fix ProductPage Qty Modal
 - [ ] Radio Buttons in the LoginScreen (Modify Checkbox Component)
 - [ ] Filters (Use Modal)
