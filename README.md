@@ -4,16 +4,16 @@ CheckList of things that need to be done by the end of this Week, Hopefully
 - [ ] Radio Buttons in the LoginScreen (Modify Checkbox Component)
 - [ ] Filters (Use Modal)
 - [ ] Clean Code
-- [ ] Add a Splash Screen and the Amazon Logo
 - [ ] Search Function
 - [ ] Better JSON file (More Data)
 - [ ] Better Product Page Based off of the New JSON File (IF There is)
 - [ ] Working category slider on Home header ImageSlider
 - [ ] ~~Try [react-native-mmkv-storage](https://github.com/ammarahm-ed/react-native-mmkv-storage) for localStorage~~
-- [ ] Try [AsyncStorage](https://react-native-async-storage.github.io/async-storage/docs/usage) for localStorage
-- [ ] Set LoggedIn State Properly, where needed
-- [ ] Complete Add to Cart Functionilty
-- [ ] Complete Login Functionilty
+- [x] Try [AsyncStorage](https://react-native-async-storage.github.io/async-storage/docs/usage) for localStorage
+- [x] Add a Splash Screen and the Amazon Logo
+- [x] Set LoggedIn State Properly, where needed
+- [x] Complete Add to Cart Functionilty [partially working]
+- [x] Complete Login Functionilty [only one user, gets rewrittern on making another account]
 - [x] Better Navbar
 - [x] Recreate Settings Page with Pressable
 - [x] Edit Cart Icon in Bottom Navigation (Add to Cart Number)
